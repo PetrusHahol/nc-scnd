@@ -16,14 +16,14 @@ import java.sql.SQLException;
  * Created by Asus on 06.11.2016.
  */
 public class firstServlet extends HttpServlet{
+    JDBC user = new JDBC();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("inf", 150);
         PreparedStatement preparedStatement = null;
-        JDBC user = new JDBC();
-/*
         try {
-           /* preparedStatement = user.connection.prepareStatement("SELECT * FROM information");
+            preparedStatement = user.getConnection().prepareStatement("SELECT * FROM information");
             ResultSet answer = preparedStatement.executeQuery();
             while (answer.next()) {
                 System.out.println("Номер в выборке #" + answer.getRow()
@@ -36,7 +36,6 @@ public class firstServlet extends HttpServlet{
         }
         System.out.println("SKAAAAAAAA");
         req.getRequestDispatcher("index.jsp").forward(req,resp);
-*/
     }
 
     @Override
