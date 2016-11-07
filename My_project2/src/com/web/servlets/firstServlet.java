@@ -57,6 +57,8 @@ public class firstServlet extends HttpServlet{
             req.setAttribute("from", from);
             req.setAttribute("to", to);
             req.setAttribute("date", date);
+            System.out.println(date.size()-1);
+            req.setAttribute("size", date.size()-1);
 
         } catch (SQLException e) {
             System.out.println("SKAAAAAAAA((9((");

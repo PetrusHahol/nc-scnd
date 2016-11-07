@@ -6,12 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
     <style>
     <%@ include file="static/css/style.css" %>
-
+    li {
+        list-style-type: none;
+    }
     </style>
 </head>
 <body>
@@ -24,17 +27,27 @@
     </a>
 </div>
 <div class = "data">
-    <c:forEach  items= "${from}" var="num">
-        {num}
-    </c:forEach>
-
-    <c:forEach var="num" items= "${to}" >
-        <p>${num}</p>
-    </c:forEach>
-
-    <c:forEach var="num" items= "${date}" >
-        <p>${num}</p>
-    </c:forEach>
+    <ul>
+        <li>
+            <c:forEach  var="k" begin="0" end="${size}">
+                <div class = "container">
+                        <ul class = "table">
+                            <li>
+                                <p>
+                                    <c:out value="${from[k]}"/>
+                                </p>
+                                <p>
+                                    <c:out value="${to[k]}"/>
+                                </p>
+                                <p>
+                                    <c:out value="${date[k]}"/>
+                                </p>
+                            </li>
+                        </ul>
+                </div>
+            </c:forEach>
+        </li>
+    </ul>
 </div>
 </body>
 </html>
