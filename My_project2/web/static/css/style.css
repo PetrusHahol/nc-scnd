@@ -1,0 +1,27 @@
+.cloud{
+    height: 50px;
+    width: auto;
+    background: black;
+}
+.data{
+    height: 500px;
+    width: auto;
+    color: black;
+}
+.My_button{
+    float: right;
+    color: azure;
+    margin-right: 20px;
+    font-size: 25px;
+    margin-top: 7px;
+    text-decoration: none;
+    font-family: Garamond;
+}
+
+.Vk_photo{
+    float: left;
+    margin-left: 10px;
+    margin-top: 7px;
+    height: 30px;
+    width: auto;
+}

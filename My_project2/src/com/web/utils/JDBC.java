@@ -1,4 +1,4 @@
-package com.web.servlets.utils;
+package com.web.utils;
 import java.sql.*;
 import java.util.logging.*;
 
