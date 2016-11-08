@@ -27,27 +27,62 @@
     </a>
 </div>
 <div class = "data">
-    <ul>
-        <li>
+    <td>
+        <div class = "container">
+            <div class = "missing">
+                <tl class = main_table>
+
+                </tl>
+            </div>
+            <div class = "missing">
+                <tl class = main_table>
+                    <h1>From</h1>
+                </tl>
+            </div>
+            <div class = "missing">
+                <tl class = main_table>
+                    <h1>To</h1>
+                </tl>
+            </div>
+            <div class = "missing">
+                <tl class = main_table>
+                    <h1>Date</h1>
+                </tl>
+            </div>
+        </div>
+
+
             <c:forEach  var="k" begin="0" end="${size}">
                 <div class = "container">
-                        <ul class = "table">
-                            <li>
+                    <div class = "missing">
+                        <tl class = flight>
+                            <h1>Flight №<c:out value = "${k+1}"/> </h1>
+                        </tl>
+                    </div>
+                    <div class = "missing">
+                        <tl class = "table">
                                 <p>
                                     <c:out value="${from[k]}"/>
                                 </p>
+                        </tl>
+                    </div>
+                    <div class = "missing">
+                        <tl  class = table>
                                 <p>
                                     <c:out value="${to[k]}"/>
                                 </p>
+                        </tl>
+                    </div>
+                    <div class = "missing">
+                        <tl  class = table>
                                 <p>
                                     <c:out value="${date[k]}"/>
                                 </p>
-                            </li>
-                        </ul>
+                        </tl>
+                    </div>
                 </div>
             </c:forEach>
-        </li>
-    </ul>
+    </td>
 </div>
 </body>
 </html>

@@ -4,9 +4,10 @@
     background: black;
 }
 .data{
-    height: 500px;
-    width: auto;
+    width: 80%;
     color: black;
+    margin-top: 20px;
+    margin-left: 10px;
 }
 .My_button{
     float: right;
@@ -27,19 +28,27 @@
 }
 
 .container{
-    width: 240px;
-    height: 140px;
-    float:left;
+    width: 100%;
+    margin-top: 5px;
+    height: 100px;
+    align-content: center;
+}
+
+.missing{
+    margin-left: 5px;
+    width: 24%;
+    height: 100%;
+    float: left;
 }
 .table{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    text-align: center;
-    width: 180px;
-    height: 100px;
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+
+    width: 96%;
+    height: 60%;
     float: left;
     color: #032300;
-    padding: 10px 20px;
     background: -moz-linear-gradient(
             top,
             #ffffff 0%,
@@ -67,5 +76,123 @@
             0px -1px 0px rgba(000,000,000,0.2),
             0px 1px 0px rgba(255,255,255,1);
 }
+
+
+.main_table{
+    font-family:  Candara, sans-serif;
+    font-size: 14px;
+    text-align: center ;
+    width: 96%;
+    height: 60%;
+    float: left;
+    color: #343e9e;
+
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #b5b5b5);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ffffff),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #343e9e;
+    -moz-box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px -1px 0px rgba(000,000,000,0.2),
+            0px 1px 0px rgba(255,255,255,1);
+}
+
+.flight{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+    width: 95%;
+    height: 60%;
+    float: left;
+    color: #032300;
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #b5b5b5);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ffffff),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #62090a;
+    -moz-box-shadow:
+
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+
+            0px 1px 3px rgba(172, 9, 0, 0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+
+            0px -1px 0px rgba(000,000,000,0.2),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            0px 1px 0px rgba(255,255,255,1);
+}
+
+.flight:hover{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+
+    width: 95%;
+    height: 60%;
+    float: left;
+    color: #9e1b1b;
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #b5b5b5);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ffffff),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #1f0626;
+    -moz-box-shadow:
+
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+
+            0px -1px 0px rgba(000,000,000,0.2),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px 1px 3px rgba(12, 48, 57, 0.5),
+            0px 1px 0px rgba(255,255,255,1);
+}
+
 
 
