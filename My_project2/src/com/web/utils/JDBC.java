@@ -12,10 +12,8 @@ public class JDBC {
     private static final String name = "postgres";
     private static final String password = "qwerty12345";
 
-
     public JDBC() {
         try {
-            System.out.println("Драйвер подключен");
             Class.forName(driver);
         } catch (Exception e) {
             System.out.println(e.getMessage());

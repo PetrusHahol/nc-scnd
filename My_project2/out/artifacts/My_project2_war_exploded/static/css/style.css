@@ -194,5 +194,48 @@
             0px 1px 0px rgba(255,255,255,1);
 }
 
+.FormLocate{
+    height: 600px;
+    padding-top: 100px;
+    padding-left: 40%;
+}
 
+.SignIn{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+    width: 40%;
+    min-width: 300px;
+    height: 600px;
+    color: #152c9e;
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #b5632f);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ffbfb7),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #ac0c16;
+    -moz-box-shadow:
+
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+
+            0px 1px 3px rgba(19, 58, 128, 0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+
+            0px -1px 0px rgba(32, 74, 114, 0.2),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px 1px 3px rgba(12, 48, 57, 0.5),
+            0px 1px 0px rgba(255,255,255,1);
+}
 

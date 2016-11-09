@@ -19,8 +19,9 @@ import java.util.*;
  * Created by Asus on 06.11.2016.
  */
 
-@WebServlet("/firstservlet")
-public class firstServlet extends HttpServlet{
+@WebServlet("/Controller")
+public class Controller extends HttpServlet{
+
     JDBC user = new JDBC();
     Admin admin = new Admin();
 
@@ -45,14 +46,9 @@ public class firstServlet extends HttpServlet{
             List<String> date = new ArrayList();
 
             while (answer.next()) {
-                System.out.println("Номер в выборке #" + answer.getRow()
-                        + "\t Номер в базе #" + answer.getInt("id")
-                        + "\t" + answer.getString("city_from")+ answer.getString("city_to")
-                        + answer.getTimestamp("flight_date"));
                 from.add(answer.getString("city_from"));
                 to.add(answer.getString("city_to"));
                 date.add(answer.getTimestamp("flight_date").toString());
-
             }
             req.setAttribute("from", from);
             req.setAttribute("to", to);
@@ -67,7 +63,10 @@ public class firstServlet extends HttpServlet{
         System.err.println(req);
         System.err.println(resp);
         try {
-            req.getRequestDispatcher("main.jsp").forward(req,resp);
+            System.out.println();
+            System.out.println(req.getParameter("username"));
+            String name = req.getParameter("command") + ".jsp";
+            req.getRequestDispatcher(name).forward(req,resp);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
