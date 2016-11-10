@@ -26,15 +26,20 @@
 </div>
 <div class = "FormLocate">
     <form class = "SignIn" action="Controller?command=SignIn" method="POST">
-        <td>
-            <p>Enter login: <input type="text" name="login">
-            <p>Enter first name: <input type="text" name="firstname"></p>
-            <p>Enter second name: <input type="text" name="secondname"></p>
-            <p>Enter mail <input type="text" name="mail"></p>
-            <p>Password: <input type="text" name="password1"></p>
-            <p>Confirm password <input type="text" name="password1"></p>
-        </td>
-            <input type="submit" value="Отправить" />
+        <div class =  "FormPosition">
+                <div class = "FieldArea">
+                    <input  class = "FormsLocate" type="text" name="Login">
+                    <p class = "FieldLocate">Login:</p>
+                </div>
+
+                <div class = "FieldArea">
+                    <input class = "FormsLocate" type="text" name="password">
+                    <p class = "FieldLocate">Password</p>
+                </div>
+        </div>
+        <div class = "ButtonPosition2">
+            <input class = "SubmitButton2" type="submit" value="Sign In" />
+        </div>
     </form>
 </div>
 </body>

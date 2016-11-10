@@ -200,13 +200,13 @@
     padding-left: 40%;
 }
 
-.SignIn{
+.Registration{
     font-family:  Candara, sans-serif;
     font-size: 16px;
     text-align: center ;
     width: 40%;
-    min-width: 300px;
-    height: 600px;
+    min-width: 400px;
+    height: 400px;
     color: #152c9e;
     background: -moz-linear-gradient(
             top,
@@ -239,3 +239,168 @@
             0px 1px 0px rgba(255,255,255,1);
 }
 
+.FieldLocate{
+   padding-left: 3px;
+    width: 50%;
+}
+.FormsLocate{
+    float: right;
+    width: 50%;
+}
+.FormPosition{
+    padding-top: 13%;
+    width: 90%;
+    padding-left: 5%;
+    height: 70%;
+}
+.ButtonPosition{
+    padding-top: 12.7%;
+
+}
+.FieldArea{
+    height: 11%;
+}
+
+.SubmitButton{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+    width: 50%;
+    height: 9%;
+    color: #2a129e;
+    background: -moz-linear-gradient(
+    top,
+    #ffffff 0%,
+    #ffffff 50%,
+    #06159e);
+    background: -webkit-gradient(
+    linear, left top, left bottom,
+    from(#ffffff),
+    color-stop(0.50, #fff3f6),
+    to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #ac7078;
+    -moz-box-shadow:
+
+    0px 1px 3px rgba(000,000,000,0.5),
+    inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+
+    0px 1px 3px rgba(28, 18, 172, 0.5),
+    inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+
+    0px -1px 0px rgba(32, 74, 114, 0.2),
+    inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+    0px 1px 3px rgba(12, 48, 57, 0.5),
+    0px 1px 0px rgba(255,255,255,1);
+}
+
+.SubmitButton:hover{
+    cursor: hand;
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ff6673),
+            to(#b5b5b5));
+    )
+}
+
+
+
+.SignIn{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+    width: 30%;
+    min-width: 300px;
+    height: 200px;
+    color: #152c9e;
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #b5632f);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ffbfb7),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #ac0c16;
+    -moz-box-shadow:
+
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+
+            0px 1px 3px rgba(19, 58, 128, 0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+
+            0px -1px 0px rgba(32, 74, 114, 0.2),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px 1px 3px rgba(12, 48, 57, 0.5),
+            0px 1px 0px rgba(255,255,255,1);
+}
+
+.ButtonPosition2{
+    padding-top: 2.5%;
+
+}
+
+
+
+.SubmitButton2{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+    width: 50%;
+    height: 15%;
+    color: #2a129e;
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #06159e);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #fff3f6),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #ac7078;
+    -moz-box-shadow:
+
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+
+            0px 1px 3px rgba(28, 18, 172, 0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+
+            0px -1px 0px rgba(32, 74, 114, 0.2),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px 1px 3px rgba(12, 48, 57, 0.5),
+            0px 1px 0px rgba(255,255,255,1);
+}
+
+.SubmitButton2:hover{
+    cursor: hand;
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ff6673),
+            to(#b5b5b5));
+)
+}

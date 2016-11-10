@@ -24,17 +24,40 @@
         <img class = "Vk_photo" src="/static/media/vk.png" />
     </a>
 </div>
+
 <div class = "FormLocate">
-    <form class = "SignIn" action="Controller?command=SignIn" method="POST">
-        <td>
-            <p>Enter login: <input type="text" name="login">
-            <p>Enter first name: <input type="text" name="firstname"></p>
-            <p>Enter second name: <input type="text" name="secondname"></p>
-            <p>Enter mail <input type="text" name="mail"></p>
-            <p>Password: <input type="text" name="password1"></p>
-            <p>Confirm password <input type="text" name="password1"></p>
-        </td>
-        <input type="submit" value="Отправить" />
+    <form class = "Registration" action="Controller?command=Registration" method="POST">
+        <div class =  "FormPosition">
+            <div class = "FieldArea">
+                <input class = "FormsLocate" type="text" name="login">
+                <p class = "FieldLocate">Login:</p>
+            </div>
+            <div class = "FieldArea">
+                <input  class = "FormsLocate" type="text" name="firstname">
+                <p class = "FieldLocate">First name:</p>
+            </div>
+            <div class = "FieldArea">
+                <input  class = "FormsLocate" type="text" name="secondname">
+                <p class = "FieldLocate">Second name:</p>
+            </div>
+
+            <div class = "FieldArea">
+                <input class = "FormsLocate" type="text" name="mail">
+                <p class = "FieldLocate">Mail </p>
+            </div>
+            <div class = "FieldArea">
+                <input class = "FormsLocate" type="text" name="password1">
+                <p class = "FieldLocate">Password:</p>
+            </div>
+
+            <div class = "FieldArea">
+                <input class = "FormsLocate" type="text" name="password1">
+                <p class = "FieldLocate">Confirm password </p>
+            </div>
+        </div>
+        <div class = "ButtonPosition">
+            <input class = "SubmitButton" type="submit" value="Registration" />
+        </div>
     </form>
 </div>
 </body>
