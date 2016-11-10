@@ -18,7 +18,7 @@
 </head>
 <body>
 <div class = "cloud">
-    <a href = "/" class="My_button">Registration</a>
+    <a href = "/Controller?command=Registration" class="My_button">Registration</a>
     <a href = "/Controller?command=SignIn" class="My_button">SignIn</a>
     <a href = "http://vk.com/pet1us">
         <img class = "Vk_photo" src="/static/media/vk.png" />

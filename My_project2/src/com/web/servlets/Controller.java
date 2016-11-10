@@ -1,6 +1,8 @@
 package com.web.servlets;
 
 import com.web.administrators.Admin;
+import com.web.command.ActionCommand;
+import com.web.command.finder.FindRequest;
 import com.web.utils.JDBC;
 
 import javax.servlet.ServletException;
@@ -36,8 +38,10 @@ public class Controller extends HttpServlet{
     }
 
     private void servletProcessing(HttpServletRequest req, HttpServletResponse resp){
-
+        ActionCommand findReq = new FindRequest().Command(req);
+        String page = findReq.execute(req);
         PreparedStatement preparedStatement = null;
+
         try {
             preparedStatement = admin.info();
             ResultSet answer = preparedStatement.executeQuery();
@@ -65,12 +69,13 @@ public class Controller extends HttpServlet{
         try {
             System.out.println();
             System.out.println(req.getParameter("username"));
-            String name = req.getParameter("command") + ".jsp";
-            req.getRequestDispatcher(name).forward(req,resp);
+            req.getRequestDispatcher(page).forward(req,resp);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
 }
