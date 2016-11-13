@@ -25,7 +25,7 @@
     </a>
 </div>
 <div class = "FormLocate">
-    <form class = "SignIn" action="Controller?command=SignIn" method="POST">
+    <form class = "SignIn" action="Controller?command=SignIn&auto=true" method="POST">
         <div class =  "FormPosition">
                 <div class = "FieldArea">
                     <input  class = "FormsLocate" type="text" name="login">
@@ -38,7 +38,7 @@
                 </div>
         </div>
         <div class = "ButtonPosition2">
-            <input class = "SubmitButton2" type="submit" value="Sign In" />
+            <input class = "SubmitButton2" type="submit" value="SignIn" />
         </div>
     </form>
 </div>

@@ -22,68 +22,10 @@
 <div class = "cloud">
     {%
         <a href = "/Controller?command=Registration&reg=false" class="My_button">Registration</a>
-        <a href = "/Controller?command=SignIn" class="My_button">SignIn</a>
+        <a href = "/Controller?command=SignIn&auto=false" class="My_button">SignIn</a>
     <a href = "http://vk.com/pet1us">
          <img class = "Vk_photo" src="/static/media/vk.png" />
     </a>
-</div>
-<div class = "data">
-    <td>
-        <div class = "container">
-            <div class = "missing">
-                <tl class = main_table>
-
-                </tl>
-            </div>
-            <div class = "missing">
-                <tl class = main_table>
-                    <h1>From</h1>
-                </tl>
-            </div>
-            <div class = "missing">
-                <tl class = main_table>
-                    <h1>To</h1>
-                </tl>
-            </div>
-            <div class = "missing">
-                <tl class = main_table>
-                    <h1>Date</h1>
-                </tl>
-            </div>
-        </div>
-
-
-            <c:forEach  var="k" begin="0" end="${size}">
-                <div class = "container">
-                    <div class = "missing">
-                        <tl class = flight>
-                            <h1>Flight №<c:out value = "${k+1}"/> </h1>
-                        </tl>
-                    </div>
-                    <div class = "missing">
-                        <tl class = "table">
-                                <p>
-                                    <c:out value="${from[k]}"/>
-                                </p>
-                        </tl>
-                    </div>
-                    <div class = "missing">
-                        <tl  class = table>
-                                <p>
-                                    <c:out value="${to[k]}"/>
-                                </p>
-                        </tl>
-                    </div>
-                    <div class = "missing">
-                        <tl  class = table>
-                                <p>
-                                    <c:out value="${date[k]}"/>
-                                </p>
-                        </tl>
-                    </div>
-                </div>
-            </c:forEach>
-    </td>
 </div>
 </body>
 </html>

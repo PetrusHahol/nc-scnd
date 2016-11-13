@@ -1,4 +1,5 @@
-package com.netcracker.petrusev.project2.command;
+package com.netcracker.petrusev.project2.command.commands;
+import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
@@ -44,7 +45,6 @@ public class RegistrationCommand implements ActionCommand {
             statement.executeUpdate();
             pool.putBack(connection);
         } catch (SQLException e) {
-            e.printStackTrace();
             return PageConstants.REGISTRATION;
         }
 
@@ -54,9 +54,9 @@ public class RegistrationCommand implements ActionCommand {
     @Override
      public String execute(HttpServletRequest request) {
 
-        String registration = request.getParameter("reg");
+        String registration = request.getParameter(CommandConstants.REG);
 
-        if (registration.equals("true")){
+        if (registration.equals(CommandConstants.TRUE)){
               if (getParameters(request))
                   return setParameters();
         }

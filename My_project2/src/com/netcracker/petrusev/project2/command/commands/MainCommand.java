@@ -1,4 +1,5 @@
-package com.netcracker.petrusev.project2.command;
+package com.netcracker.petrusev.project2.command.commands;
+import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 
 import javax.servlet.http.HttpServletRequest;

@@ -20,9 +20,9 @@
 <body>
 
 <div class = "cloud">
-    {%
-    <p  class="My_button">${user}</p>
+
     <a href = "/Controller?command=LogOut" class="My_button">LogOut</a>
+    <p  class="My_button">${user}</p>
     <a href = "http://vk.com/pet1us">
         <img class = "Vk_photo" src="/static/media/vk.png" />
     </a>

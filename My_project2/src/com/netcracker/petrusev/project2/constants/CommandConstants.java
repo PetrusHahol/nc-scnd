@@ -10,5 +10,10 @@ public class CommandConstants {
     public static final String MAIL = "mail";
     public static final String FIRST_PASSWORD= "password1";
     public static final String SECOND_PASSWORD = "password2";
+    public static final String REG = "reg";
+    public static final String AUTHORIZATION = "auto";
+    public static final String TRUE = "true";
+    public static final String FALSE = "false";
+    public static final String COMMAND = "command";
 
 }

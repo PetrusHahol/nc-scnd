@@ -1,9 +1,10 @@
 package com.netcracker.petrusev.project2.command.enums;
 
-import com.netcracker.petrusev.project2.command.ActionCommand;
-import com.netcracker.petrusev.project2.command.MainCommand;
-import com.netcracker.petrusev.project2.command.RegistrationCommand;
-import com.netcracker.petrusev.project2.command.SignInCommand;
+import com.netcracker.petrusev.project2.command.*;
+import com.netcracker.petrusev.project2.command.commands.LogOutCommand;
+import com.netcracker.petrusev.project2.command.commands.MainCommand;
+import com.netcracker.petrusev.project2.command.commands.RegistrationCommand;
+import com.netcracker.petrusev.project2.command.commands.SignInCommand;
 
 /**
  * Created by Asus on 10.11.2016.
@@ -23,6 +24,11 @@ public enum RequestsEnum {
     REGISTRATION {
         {
             this.command = new RegistrationCommand();
+        }
+    },
+    LOGOUT{
+        {
+            this.command = new LogOutCommand();
         }
     };
 
