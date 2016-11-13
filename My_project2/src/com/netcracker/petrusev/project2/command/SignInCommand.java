@@ -1,5 +1,7 @@
 package com.netcracker.petrusev.project2.command;
 
+import com.netcracker.petrusev.project2.constants.PageConstants;
+
 import javax.servlet.http.HttpServletRequest;
 
 public class SignInCommand implements ActionCommand {
@@ -32,6 +34,6 @@ public class SignInCommand implements ActionCommand {
       page = ConfigurationManager.getProperty("path.page.login");
     }
     */
-    return "/jsps/signin.jsp";
+    return PageConstants.SIGN_IN;
   }
 }

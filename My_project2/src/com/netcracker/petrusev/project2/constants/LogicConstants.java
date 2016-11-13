@@ -3,7 +3,7 @@ package com.netcracker.petrusev.project2.constants;
 /**
  * Created by Asus on 26.10.2016.
  */
-public class  Constants {
+public class LogicConstants {
     public static final int LOWER_LENGTH_WAIST = 100;
     public static final int UPPER_LENGTH_WAIST = 200;
     public static final int LOWER_AGE = 25;

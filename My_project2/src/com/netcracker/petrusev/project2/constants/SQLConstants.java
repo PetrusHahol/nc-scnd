@@ -6,17 +6,7 @@ import java.text.Format;
  * Created by Asus on 12.11.2016.
  */
 public  class SQLConstants {
+    public static final String INSERT_USER= "INSERT INTO USERS(login, first_name, second_name, " +
+            "mail, password, priority) VALUES(?, ?, ?, ?, ?, ? )";
 
-
-    public static String addUser(String login, String first_name, String second_name, String mail, String password, boolean priority){
-        return  "INSERT INTO USERS(login, first_name, second_name, " +
-                "mail, password, priority) VALUES('"+login+"','"+first_name+"','"+second_name+"','"+mail
-                +"','"+password+"','"+toString(priority)+"')";
-    }
-
-
-    private static String toString(boolean priority) {
-        if (priority) return "true";
-        return "false";
-    }
 }

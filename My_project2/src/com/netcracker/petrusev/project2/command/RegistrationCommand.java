@@ -1,14 +1,17 @@
 package com.netcracker.petrusev.project2.command;
-import com.netcracker.petrusev.project2.connections.JDBC;
+import com.netcracker.petrusev.project2.connections.ConnectionPool;
+import com.netcracker.petrusev.project2.constants.CommandConstants;
+import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.constants.SQLConstants;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Enumeration;
 
 public class RegistrationCommand implements ActionCommand {
+    private static ConnectionPool pool = new ConnectionPool();
+
     private String page = null;
     private String login = null;
     private String firstName = null;
@@ -18,28 +21,34 @@ public class RegistrationCommand implements ActionCommand {
     private String password2 = null;
 
     private boolean getParameters(HttpServletRequest request) {
-        login = request.getParameter("login");
-        firstName = request.getParameter("firstname");
-        secondName = request.getParameter("secondname");
-        mail = request.getParameter("mail");
-        password1 = request.getParameter("password1");
-        password2 = request.getParameter("password2");
-        return (password1.equals(password2) && login !=null &&
-                firstName != null && secondName != null && password1!=null);
+        login = request.getParameter(CommandConstants.LOGIN);
+        firstName = request.getParameter(CommandConstants.FIRST_NAME);
+        secondName = request.getParameter(CommandConstants.SECOND_NAME);
+        mail = request.getParameter(CommandConstants.MAIL);
+        password1 = request.getParameter(CommandConstants.FIRST_PASSWORD);
+        password2 = request.getParameter(CommandConstants.SECOND_PASSWORD);
+        return (password1.equals(password2) && !login.equals("") &&
+                !firstName.equals("") && !secondName.equals("") && !password1.equals(""));
     }
 
     private String setParameters(){
         try {
-            JDBC jdbc = new JDBC();
-            Connection connection = jdbc.getConnection();
-            Statement statement = connection.createStatement();
-            statement.execute(SQLConstants.addUser(login,firstName, secondName,mail,password1,false));
+            Connection connection = pool.retrieve();
+            PreparedStatement statement = connection.prepareStatement(SQLConstants.INSERT_USER);
+            statement.setString(1, login);
+            statement.setString(2, firstName);
+            statement.setString(3, secondName);
+            statement.setString(4, mail);
+            statement.setString(5, password1);
+            statement.setBoolean(6, false);
+            statement.executeUpdate();
+            pool.putBack(connection);
         } catch (SQLException e) {
             e.printStackTrace();
-            return "/jsps/registration.jsp";
+            return PageConstants.REGISTRATION;
         }
 
-        return  "/jsps/main.jsp";
+        return  PageConstants.MAIN;
     }
 
     @Override
@@ -52,6 +61,6 @@ public class RegistrationCommand implements ActionCommand {
                   return setParameters();
         }
 
-      return "/jsps/registration.jsp";
+      return PageConstants.REGISTRATION;
      }
 }
