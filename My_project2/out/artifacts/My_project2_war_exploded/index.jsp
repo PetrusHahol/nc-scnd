@@ -9,7 +9,7 @@
 <jsp:forward page="/Controller?command=main" ></jsp:forward>
 <html>
   <head>
-    <title>Index</title>
+    <title>Index${name}ex</title>
   </head>
   <body>
   </body>
