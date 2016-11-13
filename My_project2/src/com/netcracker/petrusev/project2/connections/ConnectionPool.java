@@ -40,7 +40,7 @@ public class ConnectionPool {
             if (usedConns.removeElement(c)) {
                 availableConns.addElement(c);
             } else {
-                throw new NullPointerException("Connection not in the usedConns array");
+                throw new NullPointerException("Error connection");
             }
         }
     }

@@ -53,7 +53,7 @@ public class SignInCommand implements ActionCommand {
   public String execute(HttpServletRequest request) {
     if (request.getParameter(CommandConstants.AUTHORIZATION).equals(CommandConstants.TRUE)) {
       if (setSession(getUser(request), request))
-        return PageConstants.USER_CONTENT;
+        return PageConstants.USER_CONTENT_REQUEST;
       else
         return PageConstants.SIGN_IN;
     }

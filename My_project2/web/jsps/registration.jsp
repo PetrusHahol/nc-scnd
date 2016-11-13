@@ -18,7 +18,6 @@
 </head>
 <body>
 <div class = "cloud">
-    <a href = "/Controller?command=Registration&reg=false" class="My_button">Registration</a>
     <a href = "/Controller?command=SignIn&auto=false" class="My_button">SignIn</a>
     <a href = "http://vk.com/pet1us">
         <img class = "Vk_photo" src="/static/media/vk.png" />
@@ -46,12 +45,12 @@
                 <p class = "FieldLocate">Mail </p>
             </div>
             <div class = "FieldArea">
-                <input class = "FormsLocate" type="text" name="password1">
+                <input class = "FormsLocate" type="password" name="password1">
                 <p class = "FieldLocate">Password:</p>
             </div>
 
             <div class = "FieldArea">
-                <input class = "FormsLocate" type="text" name="password2">
+                <input class = "FormsLocate" type="password" name="password2">
                 <p class = "FieldLocate">Confirm password </p>
             </div>
         </div>
