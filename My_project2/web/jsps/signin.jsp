@@ -28,12 +28,12 @@
     <form class = "SignIn" action="Controller?command=SignIn" method="POST">
         <div class =  "FormPosition">
                 <div class = "FieldArea">
-                    <input  class = "FormsLocate" type="text" name="Login">
+                    <input  class = "FormsLocate" type="text" name="login">
                     <p class = "FieldLocate">Login:</p>
                 </div>
 
                 <div class = "FieldArea">
-                    <input class = "FormsLocate" type="text" name="password">
+                    <input class = "FormsLocate" type="text" name="password1">
                     <p class = "FieldLocate">Password</p>
                 </div>
         </div>

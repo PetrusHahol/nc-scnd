@@ -1,4 +1,4 @@
-package DAO;
+package com.netcracker.petrusev.project2.DAO;
 
 /**
  * Created by Asus on 12.11.2016.

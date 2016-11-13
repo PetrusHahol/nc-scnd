@@ -20,6 +20,7 @@
 <body>
 
 <div class = "cloud">
+    {%
         <a href = "/Controller?command=Registration&reg=false" class="My_button">Registration</a>
         <a href = "/Controller?command=SignIn" class="My_button">SignIn</a>
     <a href = "http://vk.com/pet1us">

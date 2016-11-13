@@ -7,6 +7,8 @@ import java.text.Format;
  */
 public  class SQLConstants {
     public static final String INSERT_USER= "INSERT INTO USERS(login, first_name, second_name, " +
-            "mail, password, priority) VALUES(?, ?, ?, ?, ?, ? )";
+                                            "mail, password, priority) VALUES(?, ?, ?, ?, ?, ? )";
 
+    public static final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT * FROM users WHERE " +
+                                                        " login = ? AND password = ?";
 }
