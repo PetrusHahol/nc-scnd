@@ -1,4 +1,4 @@
-package com.netcracker.petrusev.project2.beans.administrators;
+package com.netcracker.petrusev.project2.beans.users;
 
 import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.connections.JDBC;

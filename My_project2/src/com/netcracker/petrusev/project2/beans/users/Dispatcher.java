@@ -1,4 +1,4 @@
-package com.netcracker.petrusev.project2.beans.administrators;
+package com.netcracker.petrusev.project2.beans.users;
 
 
 
@@ -6,7 +6,7 @@ import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.beans.entities.office.Navigator;
 import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
 import com.netcracker.petrusev.project2.beans.error.DataException;
-import com.netcracker.petrusev.project2.beans.administrators.extension.DispatcherInterface;
+import com.netcracker.petrusev.project2.beans.users.extension.DispatcherInterface;
 import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
 import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
 import com.netcracker.petrusev.project2.beans.entities.teams.Brigade;

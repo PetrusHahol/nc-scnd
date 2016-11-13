@@ -1,4 +1,4 @@
-package com.netcracker.petrusev.project2.beans.administrators.extension;
+package com.netcracker.petrusev.project2.beans.users.extension;
 
 /**
  * Created by Asus on 17.10.2016.

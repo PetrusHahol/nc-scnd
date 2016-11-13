@@ -1,7 +1,7 @@
 package com.netcracker.petrusev.project2.beans.loader;
 
 
-import com.netcracker.petrusev.project2.beans.administrators.Dispatcher;
+import com.netcracker.petrusev.project2.beans.users.Dispatcher;
 
 /**
  * Created by Asus on 26.10.2016.

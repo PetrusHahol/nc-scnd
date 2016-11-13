@@ -1,6 +1,6 @@
 package com.netcracker.petrusev.project2.controlers;
 
-import com.netcracker.petrusev.project2.beans.administrators.Admin;
+import com.netcracker.petrusev.project2.beans.users.Admin;
 import com.netcracker.petrusev.project2.connections.JDBC;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.command.finder.FindRequest;

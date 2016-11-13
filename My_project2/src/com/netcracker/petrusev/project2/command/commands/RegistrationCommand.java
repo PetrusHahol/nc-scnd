@@ -1,4 +1,6 @@
 package com.netcracker.petrusev.project2.command.commands;
+import com.netcracker.petrusev.project2.DAO.DAOUserImpl;
+import com.netcracker.petrusev.project2.beans.users.User;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
@@ -11,9 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class RegistrationCommand implements ActionCommand {
-    private static ConnectionPool pool = new ConnectionPool();
 
-    private String page = null;
     private String login = null;
     private String firstName = null;
     private String secondName = null;
@@ -34,16 +34,15 @@ public class RegistrationCommand implements ActionCommand {
 
     private String setParameters(){
         try {
-            Connection connection = pool.retrieve();
-            PreparedStatement statement = connection.prepareStatement(SQLConstants.INSERT_USER);
-            statement.setString(1, login);
-            statement.setString(2, firstName);
-            statement.setString(3, secondName);
-            statement.setString(4, mail);
-            statement.setString(5, password1);
-            statement.setBoolean(6, false);
-            statement.executeUpdate();
-            pool.putBack(connection);
+            User user = new User();
+            user.setLogin(login);
+            user.setFirstName(firstName);
+            user.setSecondName(secondName);
+            user.setMail(mail);
+            user.setPassword(password1);
+            DAOUserImpl daoUser = new DAOUserImpl();
+            daoUser.create(user);
+
         } catch (SQLException e) {
             return PageConstants.REGISTRATION;
         }

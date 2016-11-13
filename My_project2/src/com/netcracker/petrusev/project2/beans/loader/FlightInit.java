@@ -1,6 +1,6 @@
 package com.netcracker.petrusev.project2.beans.loader;
 
-import com.netcracker.petrusev.project2.beans.administrators.Admin;
+import com.netcracker.petrusev.project2.beans.users.Admin;
 
 import java.util.GregorianCalendar;
 import java.util.Random;
