@@ -6,8 +6,18 @@
 .data{
     width: 80%;
     color: black;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-left: 10px;
+}
+.name{
+    float: left;
+    color: azure;
+    font-size: 10px;
+    padding-left: 0.5%;
+    height: 100%;
+    padding-top: 13px;
+    text-decoration: none;
+    font-family: MingLiU-ExtB;
 }
 .My_button{
     float: right;
@@ -17,6 +27,16 @@
     margin-top: 7px;
     text-decoration: none;
     font-family: Garamond;
+}
+.user{
+    float: left;
+    color: azure;
+    font-size: 29px;
+    padding-left: 10%;
+    height: 100%;
+    margin-top: 6px;
+    text-decoration: none;
+    font-family: Mistral;
 }
 
 .Vk_photo {

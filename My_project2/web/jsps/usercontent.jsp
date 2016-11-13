@@ -22,10 +22,12 @@
 <div class = "cloud">
 
     <a href = "/Controller?command=LogOut" class="My_button">LogOut</a>
-    <p  class="My_button">${user}</p>
     <a href = "http://vk.com/pet1us">
         <img class = "Vk_photo" src="/static/media/vk.png" />
     </a>
+    <p  class="user">${user}</p>
+    <p  class="name">${firstname}</p>
+    <p  class="name">${secondname}</p>
 </div>
 <div class = "data">
     <td>

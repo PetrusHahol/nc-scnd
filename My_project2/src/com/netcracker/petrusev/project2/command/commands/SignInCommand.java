@@ -32,16 +32,23 @@ public class SignInCommand implements ActionCommand {
   }
 
   private boolean setSession(ResultSet user, HttpServletRequest request) {
-    String name = null;
+    String login = null;
+    String firstName = null;
+    String secondName = null;
     try {
       while (user.next()) {
-        name = user.getString(CommandConstants.LOGIN);
+        login = user.getString(CommandConstants.LOGIN);
+        firstName = user.getString(CommandConstants.FIRST_NAME);
+        secondName= user.getString(CommandConstants.SECOND_NAME);
       }
 
-      if (name == null)
+      if (login == null)
         return false;
       HttpSession session = request.getSession(true);
-      session.setAttribute(PermissionsConstants.USER, name);
+      session.setAttribute(PermissionsConstants.USER, login);
+      session.setAttribute(CommandConstants.FIRST_NAME, firstName);
+      session.setAttribute(CommandConstants.SECOND_NAME, secondName);
+
       return true;
 
     } catch (SQLException ex) {
