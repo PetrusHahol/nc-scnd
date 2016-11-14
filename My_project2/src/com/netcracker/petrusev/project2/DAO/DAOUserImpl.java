@@ -7,6 +7,7 @@ import com.netcracker.petrusev.project2.constants.SQLConstants;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
@@ -38,7 +39,21 @@ public class DAOUserImpl<T> implements DAOInterface{
         }
 
         @Override
-        public Object find(Object obj) {
-                return null;
+        public Object find(Object obj) throws SQLException {
+                Connection connection = pool.retrieve();
+                User user = (User) obj;
+                PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_USER_BY_LOGIN_AND_PASSWORD);
+                statement.setString(1,user.getLogin());
+                statement.setString(2,user.getPassword());
+                ResultSet set = statement.executeQuery();
+                user.setLogin(null);
+                user.setPassword(null);
+                while (set.next()) {
+                        user.setLogin(set.getString(CommandConstants.LOGIN));
+                        user.setFirstName(set.getString(CommandConstants.FIRST_NAME));
+                        user.setSecondName(set.getString(CommandConstants.SECOND_NAME));
+                }
+                pool.putBack(connection);
+                return user;
         }
 }

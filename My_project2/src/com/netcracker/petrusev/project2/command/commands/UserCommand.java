@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by Asus on 13.11.2016.
  */
-public class UserContent implements ActionCommand {
+public class UserCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) {

@@ -8,5 +8,5 @@ import java.sql.SQLException;
 public interface DAOInterface<T> {
     public void create(T obj) throws SQLException;
     public void delete(T obj);
-    public T find(T obj);
+    public T find(T obj) throws SQLException;
 }

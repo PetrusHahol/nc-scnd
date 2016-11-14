@@ -1,5 +1,7 @@
 package com.netcracker.petrusev.project2.command.commands;
 
+import com.netcracker.petrusev.project2.DAO.DAOUserImpl;
+import com.netcracker.petrusev.project2.beans.users.User;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
@@ -16,44 +18,32 @@ import java.sql.SQLException;
 
 public class SignInCommand implements ActionCommand {
   private static ConnectionPool pool = new ConnectionPool();
+  private static DAOUserImpl daoUser = new DAOUserImpl();
 
-  private ResultSet getUser(HttpServletRequest request) {
+  private User getUser(HttpServletRequest request) {
+    User user = new User();
     try {
-      Connection connection = pool.retrieve();
-      PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_USER_BY_LOGIN_AND_PASSWORD);
-      System.err.println(request.getParameter(CommandConstants.LOGIN));
-      statement.setString(1, request.getParameter(CommandConstants.LOGIN));
-      statement.setString(2, request.getParameter(CommandConstants.FIRST_PASSWORD));
-      pool.putBack(connection);
-      return statement.executeQuery();
-    } catch (SQLException ex) {
+      user.setLogin(request.getParameter(CommandConstants.LOGIN));
+      user.setPassword(request.getParameter(CommandConstants.FIRST_PASSWORD));
+      user = (User) daoUser.find(user);
+      return user;
+    }
+      catch (SQLException ex) {
       return null;
     }
   }
 
-  private boolean setSession(ResultSet user, HttpServletRequest request) {
+  private boolean setSession(User user, HttpServletRequest request) {
     String login = null;
     String firstName = null;
     String secondName = null;
-    try {
-      while (user.next()) {
-        login = user.getString(CommandConstants.LOGIN);
-        firstName = user.getString(CommandConstants.FIRST_NAME);
-        secondName= user.getString(CommandConstants.SECOND_NAME);
-      }
-
-      if (login == null)
+      if (user.getLogin() == null)
         return false;
       HttpSession session = request.getSession(true);
-      session.setAttribute(PermissionsConstants.USER, login);
-      session.setAttribute(CommandConstants.FIRST_NAME, firstName);
-      session.setAttribute(CommandConstants.SECOND_NAME, secondName);
-
+      session.setAttribute(PermissionsConstants.USER, user.getLogin());
+      session.setAttribute(CommandConstants.FIRST_NAME, user.getFirstName());
+      session.setAttribute(CommandConstants.SECOND_NAME, user.getSecondName());
       return true;
-
-    } catch (SQLException ex) {
-      return false;
-    }
   }
 
   @Override

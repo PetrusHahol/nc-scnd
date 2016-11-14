@@ -28,9 +28,9 @@ public enum RequestsEnum {
             this.command = new LogOutCommand();
         }
     },
-    USERCONTENT{
+    USERCOMMAND{
         {
-            this.command = new UserContent();
+            this.command = new UserCommand();
         }
     };
 
