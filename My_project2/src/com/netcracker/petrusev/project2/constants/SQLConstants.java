@@ -16,4 +16,8 @@ public  class SQLConstants {
                                                                "AND firstname = ? AND secondname = ?";
 
     public static final String GET_ALL_FLIGHT = "SELECT * FROM FLIGHT";
+
+    public static final String GET_STEWARDESS = "SELECT * FROM STEWARDESS";
+
+    public static final String GET_EMPLOYEE = "SELECT * FROM INFORMATION where id = ?";
 }

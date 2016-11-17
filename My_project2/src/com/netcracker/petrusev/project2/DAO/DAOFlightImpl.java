@@ -18,22 +18,22 @@ import java.util.List;
 public class DAOFlightImpl implements DAOInterface<Flight>{
     @Override
     public void create(Flight obj) throws SQLException {
-
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void delete(Flight obj) throws SQLException {
-
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public Flight find(Flight obj) throws SQLException {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public Flight update(Flight obj) throws SQLException {
-        return null;
+        throw new UnsupportedOperationException();
     }
 //15/37/40/04/228228
 
@@ -45,9 +45,9 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
         ResultSet set = statement.executeQuery();
         while(set.next()){
             Flight flight = new Flight();
-            flight.setFrom(set.getString(CommandConstants.from));
-            flight.setTo(set.getString(CommandConstants.to));
-            //flight.setDate(set.getTimestamp(CommandConstants.date)); do date
+            flight.setFrom(set.getString(CommandConstants.FROM));
+            flight.setTo(set.getString(CommandConstants.TO));
+            //flight.setDate(set.getTimestamp(CommandConstants.DATE)); do DATE
             answer.add(flight);
         }
         ConnectionPool.INSTANS.putBack(connection);

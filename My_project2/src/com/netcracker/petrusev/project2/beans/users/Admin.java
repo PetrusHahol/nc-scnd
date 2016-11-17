@@ -21,7 +21,7 @@ public class Admin  {
     public void downloadFlights(){
         try (BufferedReader in = new BufferedReader(
                 new InputStreamReader(
-                        new FileInputStream("src/com/output/flights.txt"), StandardCharsets.UTF_8))){
+                        new FileInputStream("src/com/output/FLIGHTS.txt"), StandardCharsets.UTF_8))){
             while (true) {
                 in.readLine();
                 addFlight(in.readLine(),in.readLine()
@@ -60,7 +60,7 @@ public class Admin  {
 
 
     public void saveFlights() {
-        try (PrintWriter out = new PrintWriter(new File("src/com/output/flights.txt").getAbsoluteFile())) {
+        try (PrintWriter out = new PrintWriter(new File("src/com/output/FLIGHTS.txt").getAbsoluteFile())) {
             try {
                 for (Flight iter : flights) {
                     out.println("-----------");
@@ -87,10 +87,10 @@ public class Admin  {
     /**
      * Return flight facility on the position that
      * we passed in this method. If the position does not correspond
-     * to any object, the result is null
+     * TO any object, the result is null
      *
-     * @param  index number of flights that your find in objects
-     * @return the Flight object from index or null if Flight is missing
+     * @param  index number of FLIGHTS that your find in objects
+     * @return the Flight object FROM index or null if Flight is missing
      * @see    Flight
      *
      *

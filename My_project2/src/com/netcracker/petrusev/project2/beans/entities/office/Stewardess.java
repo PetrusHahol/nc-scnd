@@ -9,6 +9,7 @@ public class Stewardess extends Employee {
 
     public static int objectsCounter;
 
+    public Stewardess(){}
 
     public Stewardess(String name, int age, int height, int experience
             , String passportData, int lengthWaist){

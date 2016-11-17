@@ -15,9 +15,12 @@ public class CommandConstants {
     public static final String TRUE = "true";
     public static final String FALSE = "false";
     public static final String COMMAND = "command";
-    public static final String from = "from";
-    public static final String to = "to";
-    public static final String date = "date";
-    public static final String size = "size";
+    public static final String FROM = "from";
+    public static final String TO = "to";
+    public static final String DATE = "date";
+    public static final String SIZE = "size";
+    public static final String GROUP = "group";
+    public static final String FLIGHTS = "flights";
+    public static final String EMPLOYEES = "employees";
 
 }

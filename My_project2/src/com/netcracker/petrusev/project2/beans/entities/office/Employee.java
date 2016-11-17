@@ -22,6 +22,10 @@ public abstract class Employee implements  Comparator<Pilot>{
         setPassportData(passportData);
     }
 
+    public Employee(){
+
+    }
+
     public String getName() {
         return this.name;
     }

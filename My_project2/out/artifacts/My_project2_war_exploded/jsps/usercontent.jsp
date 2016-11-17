@@ -44,8 +44,8 @@
 </div>
 <div class = "data">
     <a href = "/Controller?command=main&group=flights" class = "TextData">FLIGHTS</a>
-    <a href = "/Controller?command=main&group=brigade" class ="TextData">BRIGADES</a>
-    <a href = "/Controller?command=main&group=employee" class = "TextData">EMPLOYEES</a>
+    <a href = "/Controller?command=main&group=brigades" class ="TextData">BRIGADES</a>
+    <a href = "/Controller?command=main&group=employees" class = "TextData">EMPLOYEES</a>
 </div>
 <c:choose>
 <c:when test="${group == 'flights'}">
@@ -108,6 +108,67 @@
         </td>
     </div>
 </c:when>
+
+    <c:when test="${group == 'employees'}">
+        <div class = "data2">
+            <td>
+                <div class = "container">
+                    <div class = "missing">
+                        <tl class = main_table>
+
+                        </tl>
+                    </div>
+                    <div class = "missing">
+                        <tl class = main_table>
+                            <h1>age</h1>
+                        </tl>
+                    </div>
+                    <div class = "missing">
+                        <tl class = main_table>
+                            <h1>height</h1>
+                        </tl>
+                    </div>
+                    <div class = "missing">
+                        <tl class = main_table>
+                            <h1>not</h1>
+                        </tl>
+                    </div>
+                </div>
+
+
+                <c:forEach  var="k" begin="0" end="${size}">
+                    <div class = "container">
+                        <div class = "missing">
+                            <tl class = flight>
+                                <h1>bugagaAge №<c:out value = "${k+1}"/> </h1>
+                            </tl>
+                        </div>
+                        <div class = "missing">
+                            <tl class = "table">
+                                <p>
+                                    <c:out value="${age[k]}"/>
+                                </p>
+                            </tl>
+                        </div>
+                        <div class = "missing">
+                            <tl  class = table>
+                                <p>
+                                    <c:out value="${height[k]}"/>
+                                </p>
+                            </tl>
+                        </div>
+                        <div class = "missing">
+                            <tl  class = table>
+                                <p>
+                                    <c:out value="${date[k]}"/>
+                                </p>
+                            </tl>
+                        </div>
+                    </div>
+                </c:forEach>
+            </td>
+        </div>
+    </c:when>
 </c:choose>
 <div class = "footer">
     <p onclick="clicker()">

@@ -166,11 +166,11 @@ public class Dispatcher<T> implements DispatcherInterface {
     }
 
     /**
-     *This method assigns a flight passed a group of employees consisting
+     *This method assigns a flight passed a GROUP of employees consisting
      *of two pilots and one staff (stewardess, navigator and radio operator)
      *
-     *In the event that the method will not be transferred to at least one
-     *of the objects to be processed by an exception and the team will not be
+     *In the event that the method will not be transferred TO at least one
+     *of the objects TO be processed by an exception and the team will not be
      *created and scheduled for flight
      *
      * @param  firstPilot this object - first pilot in your new brigade
