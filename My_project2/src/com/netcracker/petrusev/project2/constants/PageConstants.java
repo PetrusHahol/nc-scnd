@@ -9,6 +9,6 @@ public class PageConstants {
     public static final String SIGN_IN = "/jsps/signin.jsp";;
     public static final String REGISTRATION = "/jsps/registration.jsp";;
     public static final String USER_CONTENT = "/jsps/usercontent.jsp";
-    public static final String USER_CONTENT_REQUEST = "Controller?command=UserCommand";
+    public static final String USER_CONTENT_REQUEST = "Controller?command=UserPageCommand";
 
 }

@@ -11,4 +11,7 @@ public  class SQLConstants {
 
     public static final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT * FROM users WHERE " +
                                                         " login = ? AND password = ?";
+
+    public static final String DELETE_USER_BY_LOGIN_AND_NAME = "DELETE FROM USERS WHERE login = ? " +
+                                                               "AND firstname = ? AND secondname = ?";
 }

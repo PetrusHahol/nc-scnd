@@ -12,7 +12,7 @@ public class MainCommand implements ActionCommand {
  public String execute(HttpServletRequest request) {
   try {
    System.err.println();
-   if (request.getSession().getAttribute(PermissionsConstants.USER).toString() != null)
+   if (request.getSession().getAttribute(CommandConstants.LOGIN).toString() != null)
     return PageConstants.USER_CONTENT_REQUEST;
   } catch (Exception ex) {
    return PageConstants.MAIN;

@@ -2,6 +2,7 @@ package com.netcracker.petrusev.project2.command.enums;
 
 import com.netcracker.petrusev.project2.command.*;
 import com.netcracker.petrusev.project2.command.commands.*;
+import com.netcracker.petrusev.project2.command.commands.user.*;
 
 /**
  * Created by Asus on 10.11.2016.
@@ -28,9 +29,14 @@ public enum RequestsEnum {
             this.command = new LogOutCommand();
         }
     },
-    USERCOMMAND{
+    DELETEUSER{
         {
-            this.command = new UserCommand();
+            this.command = new DeleteUserCommand();
+        }
+    },
+    USERPAGECOMMAND{
+        {
+            this.command = new UserPageCommand();
         }
     };
 

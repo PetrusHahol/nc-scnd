@@ -6,13 +6,16 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Vector;
 
-public class ConnectionPool {
+public enum ConnectionPool {
+        INSTANS;
+
     private static String url;
     private  Vector<Connection> availableConns = new Vector<Connection>();
     private  Vector<Connection> usedConns = new Vector<Connection>();
 
     private JDBC jdbc;
-    public  ConnectionPool() {
+
+    {
         for (int i = 0; i< PoolConstants.COUNT_FREE_CONN; i++)
             jdbc = new JDBC();
             availableConns.add(jdbc.getConnection());

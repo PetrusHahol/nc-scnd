@@ -1,4 +1,4 @@
-package com.netcracker.petrusev.project2.command.commands;
+package com.netcracker.petrusev.project2.command.commands.user;
 
 import com.netcracker.petrusev.project2.DAO.DAOUserImpl;
 import com.netcracker.petrusev.project2.beans.users.User;
@@ -17,7 +17,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class SignInCommand implements ActionCommand {
-  private static ConnectionPool pool = new ConnectionPool();
   private static DAOUserImpl daoUser = new DAOUserImpl();
 
   private User getUser(HttpServletRequest request) {
@@ -40,7 +39,7 @@ public class SignInCommand implements ActionCommand {
       if (user.getLogin() == null)
         return false;
       HttpSession session = request.getSession(true);
-      session.setAttribute(PermissionsConstants.USER, user.getLogin());
+      session.setAttribute(CommandConstants.LOGIN, user.getLogin());
       session.setAttribute(CommandConstants.FIRST_NAME, user.getFirstName());
       session.setAttribute(CommandConstants.SECOND_NAME, user.getSecondName());
       return true;

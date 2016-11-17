@@ -1,4 +1,4 @@
-package com.netcracker.petrusev.project2.command.commands;
+package com.netcracker.petrusev.project2.command.commands.user;
 import com.netcracker.petrusev.project2.DAO.DAOUserImpl;
 import com.netcracker.petrusev.project2.beans.users.User;
 import com.netcracker.petrusev.project2.command.ActionCommand;

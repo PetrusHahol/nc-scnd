@@ -16,6 +16,16 @@
             list-style-type: none;
         }
     </style>
+    <script type="text/javascript">
+
+        function clicker()
+        {
+           alert("You'r profile was deleted ");
+           this.href = "Controller/command=delete";
+        }
+
+    </script>
+
 </head>
 <body>
 
@@ -25,67 +35,20 @@
     <a href = "http://vk.com/pet1us">
         <img class = "Vk_photo" src="/static/media/vk.png" />
     </a>
-    <p  class="user">${user}</p>
+    <p  class="user">${login}</p>
     <p  class="name">${firstname}</p>
     <p  class="name">${secondname}</p>
+
 </div>
 <div class = "data">
-    <td>
-        <div class = "container">
-            <div class = "missing">
-                <tl class = main_table>
-
-                </tl>
-            </div>
-            <div class = "missing">
-                <tl class = main_table>
-                    <h1>From</h1>
-                </tl>
-            </div>
-            <div class = "missing">
-                <tl class = main_table>
-                    <h1>To</h1>
-                </tl>
-            </div>
-            <div class = "missing">
-                <tl class = main_table>
-                    <h1>Date</h1>
-                </tl>
-            </div>
-        </div>
-
-
-        <c:forEach  var="k" begin="0" end="${size}">
-            <div class = "container">
-                <div class = "missing">
-                    <tl class = flight>
-                        <h1>Flight №<c:out value = "${k+1}"/> </h1>
-                    </tl>
-                </div>
-                <div class = "missing">
-                    <tl class = "table">
-                        <p>
-                            <c:out value="${from[k]}"/>
-                        </p>
-                    </tl>
-                </div>
-                <div class = "missing">
-                    <tl  class = table>
-                        <p>
-                            <c:out value="${to[k]}"/>
-                        </p>
-                    </tl>
-                </div>
-                <div class = "missing">
-                    <tl  class = table>
-                        <p>
-                            <c:out value="${date[k]}"/>
-                        </p>
-                    </tl>
-                </div>
-            </div>
-        </c:forEach>
-    </td>
+    <a class = "TextData">FLIGHTS</a>
+    <a class ="TextData">BRIGADES</a>
+    <a class = "TextData">EMPLOYEES</a>
+</div>
+<div class = "footer">
+    <p onclick="clicker()">
+        <a href = "/Controller?command=deleteUser" class= "name"> DELETE ACCOUNT </a>
+    </p>
 </div>
 </body>
 </html>

@@ -9,19 +9,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Objects;
 
 /**
  * Created by Asus on 12.11.2016.
  */
-public class DAOUserImpl<T> implements DAOInterface{
+public class DAOUserImpl implements DAOInterface<User>{
 
-        private static ConnectionPool pool = new ConnectionPool();
 
         @Override
-        public void create(Object obj) throws SQLException{
-                Connection connection = pool.retrieve();
-                User user = (User) obj;
+        public void create(User user) throws SQLException{
+                Connection connection = ConnectionPool.INSTANS.retrieve();
                 PreparedStatement statement = connection.prepareStatement(SQLConstants.INSERT_USER);
                 statement.setString(1, (user.getLogin()));
                 statement.setString(2, user.getFirstName());
@@ -30,18 +29,23 @@ public class DAOUserImpl<T> implements DAOInterface{
                 statement.setString(5, user.getPassword());
                 statement.setString(6, CommandConstants.FALSE);
                 statement.executeUpdate();
-                pool.putBack(connection);
+                ConnectionPool.INSTANS.putBack(connection);
         }
 
         @Override
-        public void delete(Object obj) {
-
+        public void delete(User user) throws SQLException {
+                Connection connection = ConnectionPool.INSTANS.retrieve();
+                PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_USER_BY_LOGIN_AND_NAME);
+                statement.setString(1,user.getLogin());
+                statement.setString(2,user.getFirstName());
+                statement.setString(3,user.getSecondName());
+                statement.execute();
+                ConnectionPool.INSTANS.putBack(connection);
         }
 
         @Override
-        public Object find(Object obj) throws SQLException {
-                Connection connection = pool.retrieve();
-                User user = (User) obj;
+        public User find(User user) throws SQLException {
+                Connection connection = ConnectionPool.INSTANS.retrieve();
                 PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_USER_BY_LOGIN_AND_PASSWORD);
                 statement.setString(1,user.getLogin());
                 statement.setString(2,user.getPassword());
@@ -53,7 +57,18 @@ public class DAOUserImpl<T> implements DAOInterface{
                         user.setFirstName(set.getString(CommandConstants.FIRST_NAME));
                         user.setSecondName(set.getString(CommandConstants.SECOND_NAME));
                 }
-                pool.putBack(connection);
+                ConnectionPool.INSTANS.putBack(connection);
                 return user;
         }
+
+        @Override
+        public User update(User obj) throws SQLException {
+                throw new UnsupportedOperationException();
+        }
+
+        @Override
+        public List<User> allData(User obj) throws SQLException {
+                throw new UnsupportedOperationException();
+        }
+
 }

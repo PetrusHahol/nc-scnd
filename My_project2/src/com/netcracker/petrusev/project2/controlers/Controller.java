@@ -38,38 +38,9 @@ public class Controller extends HttpServlet{
     }
 
     private void servletProcessing(HttpServletRequest req, HttpServletResponse resp){
+        try {
         ActionCommand findReq = new FindRequest().Command(req);
-        String page = findReq.execute(req);
-        PreparedStatement preparedStatement = null;
-
-        try {
-            preparedStatement = admin.info();
-            ResultSet answer = preparedStatement.executeQuery();
-            List<String> from = new ArrayList();
-            List<String> to = new ArrayList();
-            List<String> date = new ArrayList();
-
-            while (answer.next()) {
-                from.add(answer.getString("city_from"));
-                to.add(answer.getString("city_to"));
-                date.add(answer.getTimestamp("flight_date").toString());
-            }
-            req.setAttribute("from", from);
-            req.setAttribute("to", to);
-            req.setAttribute("date", date);
-            System.out.println(date.size()-1);
-            req.setAttribute("size", date.size()-1);
-
-        } catch (SQLException e) {
-            System.out.println("SKAAAAAAAA((9((");
-        }
-        System.out.println("SKAAAAAAAA");
-        System.err.println(req);
-        System.err.println(resp);
-        try {
-            System.out.println();
-            System.out.println(req.getParameter("username"));
-            req.getRequestDispatcher(page).forward(req,resp);
+        String page = findReq.execute(req);req.getRequestDispatcher(page).forward(req,resp);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

@@ -1,4 +1,4 @@
-package com.netcracker.petrusev.project2.command.commands;
+package com.netcracker.petrusev.project2.command.commands.user;
 
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
