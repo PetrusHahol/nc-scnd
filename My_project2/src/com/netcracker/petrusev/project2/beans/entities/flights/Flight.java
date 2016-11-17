@@ -22,6 +22,10 @@ public class Flight implements  Serializable,Comparable, Comparator<Flight> {
 
     }
 
+    public Flight(){
+        objectsCounter++;
+    }
+
     @Override
     public String toString(){
         return ("FLIGHT From " + from + " - to - " + to + " - in - " + date.getTime() + "\n");

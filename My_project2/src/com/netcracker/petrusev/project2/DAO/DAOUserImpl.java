@@ -67,7 +67,7 @@ public class DAOUserImpl implements DAOInterface<User>{
         }
 
         @Override
-        public List<User> allData(User obj) throws SQLException {
+        public List<User> allData() throws SQLException {
                 throw new UnsupportedOperationException();
         }
 

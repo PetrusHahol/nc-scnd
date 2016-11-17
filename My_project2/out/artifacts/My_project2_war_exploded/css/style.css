@@ -7,8 +7,17 @@
     width: 90%;
     color: black;
     margin-top: 40px;
-    height: 1000px;
+    height: 200px;
 }
+
+.data2{
+    width: 100%;
+    color: black;
+    margin-top: 40px;
+    height: auto;
+    min-height: 500px;
+}
+
 .name{
     float: left;
     color: azure;
@@ -32,7 +41,9 @@
     margin-top: 100px;
     float: left;
     font-size: 50px;
+    text-decoration-color: black;
     text-decoration: none;
+
     font-family: Mistral;
     margin-left: 19%;
 }

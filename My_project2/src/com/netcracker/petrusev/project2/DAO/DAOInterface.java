@@ -11,5 +11,5 @@ public interface DAOInterface<T> {
     public void delete(T obj) throws SQLException;
     public T find(T obj) throws SQLException;
     public T update(T obj) throws SQLException;
-    public List<T> allData(T obj) throws SQLException;
+    public List<T> allData() throws SQLException;
 }

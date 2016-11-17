@@ -14,4 +14,6 @@ public  class SQLConstants {
 
     public static final String DELETE_USER_BY_LOGIN_AND_NAME = "DELETE FROM USERS WHERE login = ? " +
                                                                "AND firstname = ? AND secondname = ?";
+
+    public static final String GET_ALL_FLIGHT = "SELECT * FROM FLIGHT";
 }

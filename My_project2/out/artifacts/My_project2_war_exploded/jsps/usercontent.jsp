@@ -27,7 +27,9 @@
     </script>
 
 </head>
-<body>
+<body link="black"
+      alink="#00008b"
+      vlink ="black">
 
 <div class = "cloud">
 
@@ -41,10 +43,72 @@
 
 </div>
 <div class = "data">
-    <a class = "TextData">FLIGHTS</a>
-    <a class ="TextData">BRIGADES</a>
-    <a class = "TextData">EMPLOYEES</a>
+    <a href = "/Controller?command=main&group=flights" class = "TextData">FLIGHTS</a>
+    <a href = "/Controller?command=main&group=brigade" class ="TextData">BRIGADES</a>
+    <a href = "/Controller?command=main&group=employee" class = "TextData">EMPLOYEES</a>
 </div>
+<c:choose>
+<c:when test="${group == 'flights'}">
+    <div class = "data2">
+        <td>
+            <div class = "container">
+                <div class = "missing">
+                    <tl class = main_table>
+
+                    </tl>
+                </div>
+                <div class = "missing">
+                    <tl class = main_table>
+                        <h1>From</h1>
+                    </tl>
+                </div>
+                <div class = "missing">
+                    <tl class = main_table>
+                        <h1>To</h1>
+                    </tl>
+                </div>
+                <div class = "missing">
+                    <tl class = main_table>
+                        <h1>Date</h1>
+                    </tl>
+                </div>
+            </div>
+
+
+            <c:forEach  var="k" begin="0" end="${size}">
+                <div class = "container">
+                    <div class = "missing">
+                        <tl class = flight>
+                            <h1>Flight №<c:out value = "${k+1}"/> </h1>
+                        </tl>
+                    </div>
+                    <div class = "missing">
+                        <tl class = "table">
+                            <p>
+                                <c:out value="${from[k]}"/>
+                            </p>
+                        </tl>
+                    </div>
+                    <div class = "missing">
+                        <tl  class = table>
+                            <p>
+                                <c:out value="${to[k]}"/>
+                            </p>
+                        </tl>
+                    </div>
+                    <div class = "missing">
+                        <tl  class = table>
+                            <p>
+                                <c:out value="${date[k]}"/>
+                            </p>
+                        </tl>
+                    </div>
+                </div>
+            </c:forEach>
+        </td>
+    </div>
+</c:when>
+</c:choose>
 <div class = "footer">
     <p onclick="clicker()">
         <a href = "/Controller?command=deleteUser" class= "name"> DELETE ACCOUNT </a>
