@@ -7,7 +7,8 @@
     width: 90%;
     color: black;
     margin-top: 40px;
-    height: 200px;
+    min-height: 200px;
+    height: auto;
 }
 
 .data2{
@@ -15,7 +16,7 @@
     color: black;
     margin-top: 40px;
     height: auto;
-    min-height: 500px;
+    min-height: 1500px;
 }
 
 .name{
@@ -49,7 +50,7 @@
 }
 
 .footer{
-    margin-top: 100px;
+    margin-top: 200px;
     background: black;
     height: 200px;
     width: auto;
@@ -494,12 +495,62 @@
             0px 1px 0px rgba(255,255,255,1);
 }
 
-.SubmitButton3:hover{
+.SubmitButton3:hover {
     cursor: hand;
     background: -webkit-gradient(
             linear, left top, left bottom,
             from(#ffffff),
             color-stop(0.50, #ff6673),
             to(#b5b5b5));
-)
+}
+
+.column_data{
+    min-height: 500px;
+    height: 100%;
+    float: left;
+    width: 23.5%;
+    margin-left: 10px;
+}
+
+.missing_employee{
+    padding: 5px;
+    height: 150px;
+}
+
+
+.main_table_employee{
+    font-family:  Candara, sans-serif;
+    font-size: 14px;
+    text-align: center ;
+    width: 96%;
+    height: 95%;
+    float: left;
+    color: #04050b;
+
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #b5b5b5);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ffffff),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #04050b;
+    -moz-box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px -1px 0px rgba(000,000,000,0.2),
+            0px 1px 0px rgba(255,255,255,1);
 }

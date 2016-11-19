@@ -1,7 +1,7 @@
 package com.netcracker.petrusev.project2.command.commands.user;
 
 import com.netcracker.petrusev.project2.DAO.DAOFlightImpl;
-import com.netcracker.petrusev.project2.DAO.DaoEmployeeImpl;
+import com.netcracker.petrusev.project2.DAO.DAOEmployeeImpl;
 import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
 import com.netcracker.petrusev.project2.command.ActionCommand;
@@ -38,7 +38,7 @@ public class UserPageCommand implements ActionCommand {
     public void setEmployee(HttpServletRequest request) throws SQLException{
         List<Integer> age =  new ArrayList<Integer>();
         List<Integer> height =  new ArrayList<Integer>();
-        DaoEmployeeImpl daoEmployee = new DaoEmployeeImpl();
+        DAOEmployeeImpl daoEmployee = new DAOEmployeeImpl();
         for (Employee iter : daoEmployee.allData()){
             age.add(iter.getAge());
             height.add(iter.getHeight());

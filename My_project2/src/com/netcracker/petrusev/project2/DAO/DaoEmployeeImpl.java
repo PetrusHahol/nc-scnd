@@ -3,7 +3,6 @@ package com.netcracker.petrusev.project2.DAO;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
 import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
-import com.netcracker.petrusev.project2.constants.PermissionsConstants;
 import com.netcracker.petrusev.project2.constants.SQLConstants;
 
 import java.sql.Connection;
@@ -16,7 +15,7 @@ import java.util.List;
 /**
  * Created by Asus on 18.11.2016.
  */
-public class DaoEmployeeImpl implements DAOInterface<Employee>{
+public class DAOEmployeeImpl implements DAOInterface<Employee>{
 
 
     @Override
