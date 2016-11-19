@@ -21,7 +21,6 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.INSERT_FLIGHT);
         java.sql.Date date = new java.sql.Date(obj.getDate().getTime().getTime());
-
         statement.setString(1, (obj.getFrom()));
         statement.setString(2, obj.getTo());
         statement.setDate(3, date);
@@ -31,7 +30,14 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
 
     @Override
     public void delete(Flight obj) throws SQLException {
-        throw new UnsupportedOperationException();
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_FLIGHT);
+        java.sql.Date date = new java.sql.Date(obj.getDate().getTime().getTime());
+        statement.setString(1, obj.getFrom());
+        statement.setString(2, obj.getTo());
+        statement.setDate(3, date);
+        statement.executeUpdate();
+        ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override
@@ -43,8 +49,6 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
     public Flight update(Flight obj) throws SQLException {
         throw new UnsupportedOperationException();
     }
-//15/37/40/04/228228
-
 
     @Override
     public List<Flight> allData() throws SQLException {

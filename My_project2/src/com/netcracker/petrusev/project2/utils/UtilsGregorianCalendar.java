@@ -31,7 +31,7 @@ public enum UtilsGregorianCalendar {
     }
 
     public String convertFromGregorianCalendar(GregorianCalendar time){
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM.dd.yyyy");
         return dateFormat.format(time.getTime());
     }
 }

@@ -85,9 +85,18 @@
                 <c:forEach  var="k" begin="0" end="${size}">
                     <div class = "container">
                         <div class = "missing">
+
                             <tl class = flight>
+                                <c:choose>
+                                    <c:when test = "${priority == 'admin'}">
+                                        <a href ="/Controller?command=DeleteFlight&from=${from[k]}&to=${to[k]}&flight_date=${flight_date[k]}">
+                                            <img class = "Vk_photo" src="/static/media/Delete.png"/>
+                                        </a>
+                                    </c:when>
+                                </c:choose>
                                 <h1>Flight №<c:out value = "${k+1}"/> </h1>
                             </tl>
+
                         </div>
                         <div class = "missing">
                             <tl class = "table">

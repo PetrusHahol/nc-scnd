@@ -3,6 +3,7 @@ package com.netcracker.petrusev.project2.command.enums;
 import com.netcracker.petrusev.project2.command.*;
 import com.netcracker.petrusev.project2.command.commands.*;
 import com.netcracker.petrusev.project2.command.commands.flight.AddFlightCommand;
+import com.netcracker.petrusev.project2.command.commands.flight.DeleteFlightCommand;
 import com.netcracker.petrusev.project2.command.commands.user.*;
 
 /**
@@ -38,6 +39,11 @@ public enum RequestsEnum {
     ADDFLIGHT{
         {
             this.command = new AddFlightCommand();
+        }
+    },
+    DELETEFLIGHT{
+        {
+            this.command = new DeleteFlightCommand();
         }
     },
     USERPAGECOMMAND{

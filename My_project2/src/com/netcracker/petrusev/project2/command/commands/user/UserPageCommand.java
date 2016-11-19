@@ -7,6 +7,7 @@ import com.netcracker.petrusev.project2.beans.entities.office.Employee;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
+import com.netcracker.petrusev.project2.utils.UtilsGregorianCalendar;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
@@ -26,12 +27,12 @@ public class UserPageCommand implements ActionCommand {
         for (Flight iter : daoFlight.allData()){
             from.add(iter.getFrom());
             to.add(iter.getTo());
-            date.add(iter.getDate().getTime().toString());
+            date.add(UtilsGregorianCalendar.INSTANCE.convertFromGregorianCalendar(iter.getDate()));
         }
         request.setAttribute(CommandConstants.FROM, from);
         request.setAttribute(CommandConstants.TO, to);
         request.setAttribute(CommandConstants.DATE, date);
-        request.setAttribute(CommandConstants.SIZE, to.size());
+        request.setAttribute(CommandConstants.SIZE, to.size()-1);
     }
 
     public void setEmployee(HttpServletRequest request) throws SQLException{
