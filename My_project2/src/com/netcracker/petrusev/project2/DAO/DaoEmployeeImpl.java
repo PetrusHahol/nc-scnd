@@ -3,6 +3,7 @@ package com.netcracker.petrusev.project2.DAO;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
 import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
+import com.netcracker.petrusev.project2.constants.PermissionsConstants;
 import com.netcracker.petrusev.project2.constants.SQLConstants;
 
 import java.sql.Connection;
@@ -20,7 +21,6 @@ public class DaoEmployeeImpl implements DAOInterface<Employee>{
 
     @Override
     public void create(Employee obj) throws SQLException {
-        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -41,7 +41,7 @@ public class DaoEmployeeImpl implements DAOInterface<Employee>{
     @Override
     public List<Employee> allData() throws SQLException {
         List<Employee> answer = new ArrayList<Employee>();
-        Connection connection = ConnectionPool.INSTANS.retrieve();
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_STEWARDESS);
         ResultSet set = statement.executeQuery();
         while(set.next()){
@@ -58,7 +58,7 @@ public class DaoEmployeeImpl implements DAOInterface<Employee>{
             }
             answer.add(stewardess);
         }
-        ConnectionPool.INSTANS.putBack(connection);
+        ConnectionPool.INSTANCE.putBack(connection);
         return answer;
     }
 }

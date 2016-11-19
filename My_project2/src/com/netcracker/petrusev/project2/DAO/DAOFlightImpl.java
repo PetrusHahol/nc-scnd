@@ -3,12 +3,11 @@ package com.netcracker.petrusev.project2.DAO;
 import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
+import com.netcracker.petrusev.project2.constants.PermissionsConstants;
 import com.netcracker.petrusev.project2.constants.SQLConstants;
+import com.netcracker.petrusev.project2.utils.UtilsGregorianCalendar;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +17,16 @@ import java.util.List;
 public class DAOFlightImpl implements DAOInterface<Flight>{
     @Override
     public void create(Flight obj) throws SQLException {
-        throw new UnsupportedOperationException();
+
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.INSERT_FLIGHT);
+        java.sql.Date date = new java.sql.Date(obj.getDate().getTime().getTime());
+
+        statement.setString(1, (obj.getFrom()));
+        statement.setString(2, obj.getTo());
+        statement.setDate(3, date);
+        statement.executeUpdate();
+        ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override
@@ -37,20 +45,21 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
     }
 //15/37/40/04/228228
 
+
     @Override
     public List<Flight> allData() throws SQLException {
         List<Flight> answer = new ArrayList<>();
-        Connection connection  = ConnectionPool.INSTANS.retrieve();
+        Connection connection  = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_ALL_FLIGHT);
         ResultSet set = statement.executeQuery();
         while(set.next()){
             Flight flight = new Flight();
             flight.setFrom(set.getString(CommandConstants.FROM));
             flight.setTo(set.getString(CommandConstants.TO));
-            //flight.setDate(set.getTimestamp(CommandConstants.DATE)); do DATE
+            flight.setDate(UtilsGregorianCalendar.INSTANCE.convertIntoGregorianCalendar(set.getTimestamp(CommandConstants.DATE)));
             answer.add(flight);
         }
-        ConnectionPool.INSTANS.putBack(connection);
+        ConnectionPool.INSTANCE.putBack(connection);
         return answer;
     }
 }

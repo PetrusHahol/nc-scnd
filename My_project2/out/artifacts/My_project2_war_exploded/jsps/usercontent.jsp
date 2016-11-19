@@ -48,68 +48,14 @@
     <a href = "/Controller?command=main&group=employees" class = "TextData">EMPLOYEES</a>
 </div>
 <c:choose>
-<c:when test="${group == 'flights'}">
-    <div class = "data2">
-        <td>
-            <div class = "container">
-                <div class = "missing">
-                    <tl class = main_table>
-
-                    </tl>
-                </div>
-                <div class = "missing">
-                    <tl class = main_table>
-                        <h1>From</h1>
-                    </tl>
-                </div>
-                <div class = "missing">
-                    <tl class = main_table>
-                        <h1>To</h1>
-                    </tl>
-                </div>
-                <div class = "missing">
-                    <tl class = main_table>
-                        <h1>Date</h1>
-                    </tl>
-                </div>
-            </div>
-
-
-            <c:forEach  var="k" begin="0" end="${size}">
-                <div class = "container">
-                    <div class = "missing">
-                        <tl class = flight>
-                            <h1>Flight №<c:out value = "${k+1}"/> </h1>
-                        </tl>
-                    </div>
-                    <div class = "missing">
-                        <tl class = "table">
-                            <p>
-                                <c:out value="${from[k]}"/>
-                            </p>
-                        </tl>
-                    </div>
-                    <div class = "missing">
-                        <tl  class = table>
-                            <p>
-                                <c:out value="${to[k]}"/>
-                            </p>
-                        </tl>
-                    </div>
-                    <div class = "missing">
-                        <tl  class = table>
-                            <p>
-                                <c:out value="${date[k]}"/>
-                            </p>
-                        </tl>
-                    </div>
-                </div>
-            </c:forEach>
-        </td>
-    </div>
-</c:when>
-
-    <c:when test="${group == 'employees'}">
+    <c:when test="${group == 'flights'}">
+        <c:choose>
+            <c:when test = "${priority == 'admin'}">
+                <a href = "/Controller?command=addflight&reg=false">
+                    <img class = "Vk_photo" src="/static/media/add_data.png" />
+                </a>
+            </c:when>
+        </c:choose>
         <div class = "data2">
             <td>
                 <div class = "container">
@@ -120,17 +66,17 @@
                     </div>
                     <div class = "missing">
                         <tl class = main_table>
-                            <h1>age</h1>
+                            <h1>From</h1>
                         </tl>
                     </div>
                     <div class = "missing">
                         <tl class = main_table>
-                            <h1>height</h1>
+                            <h1>To</h1>
                         </tl>
                     </div>
                     <div class = "missing">
                         <tl class = main_table>
-                            <h1>not</h1>
+                            <h1>Date</h1>
                         </tl>
                     </div>
                 </div>
@@ -140,27 +86,27 @@
                     <div class = "container">
                         <div class = "missing">
                             <tl class = flight>
-                                <h1>bugagaAge №<c:out value = "${k+1}"/> </h1>
+                                <h1>Flight №<c:out value = "${k+1}"/> </h1>
                             </tl>
                         </div>
                         <div class = "missing">
                             <tl class = "table">
                                 <p>
-                                    <c:out value="${age[k]}"/>
+                                    <c:out value="${from[k]}"/>
                                 </p>
                             </tl>
                         </div>
                         <div class = "missing">
                             <tl  class = table>
                                 <p>
-                                    <c:out value="${height[k]}"/>
+                                    <c:out value="${to[k]}"/>
                                 </p>
                             </tl>
                         </div>
                         <div class = "missing">
                             <tl  class = table>
                                 <p>
-                                    <c:out value="${date[k]}"/>
+                                    <c:out value="${flight_date[k]}"/>
                                 </p>
                             </tl>
                         </div>
@@ -169,6 +115,67 @@
             </td>
         </div>
     </c:when>
+
+        <c:when test="${group == 'employees'}">
+            <div class = "data2">
+                <td>
+                    <div class = "container">
+                        <div class = "missing">
+                            <tl class = main_table>
+
+                            </tl>
+                        </div>
+                        <div class = "missing">
+                            <tl class = main_table>
+                                <h1>age</h1>
+                            </tl>
+                        </div>
+                        <div class = "missing">
+                            <tl class = main_table>
+                                <h1>height</h1>
+                            </tl>
+                        </div>
+                        <div class = "missing">
+                            <tl class = main_table>
+                                <h1>not</h1>
+                            </tl>
+                        </div>
+                    </div>
+
+
+                    <c:forEach  var="k" begin="0" end="${size}">
+                        <div class = "container">
+                            <div class = "missing">
+                                <tl class = flight>
+                                    <h1>bugagaAge №<c:out value = "${k+1}"/> </h1>
+                                </tl>
+                            </div>
+                            <div class = "missing">
+                                <tl class = "table">
+                                    <p>
+                                        <c:out value="${age[k]}"/>
+                                    </p>
+                                </tl>
+                            </div>
+                            <div class = "missing">
+                                <tl  class = table>
+                                    <p>
+                                        <c:out value="${height[k]}"/>
+                                    </p>
+                                </tl>
+                            </div>
+                            <div class = "missing">
+                                <tl  class = table>
+                                    <p>
+                                        <c:out value="${flight_date[k]}"/>
+                                    </p>
+                                </tl>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </td>
+            </div>
+        </c:when>
 </c:choose>
 <div class = "footer">
     <p onclick="clicker()">

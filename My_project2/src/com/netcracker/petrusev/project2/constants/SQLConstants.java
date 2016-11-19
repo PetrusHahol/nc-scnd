@@ -20,4 +20,6 @@ public  class SQLConstants {
     public static final String GET_STEWARDESS = "SELECT * FROM STEWARDESS";
 
     public static final String GET_EMPLOYEE = "SELECT * FROM INFORMATION where id = ?";
+
+    public static final String INSERT_FLIGHT = "INSERT INTO FLIGHT("+(char)(34) +"from"+(char)(34) +", "+(char)(34) +"to" + (char)(34) +", flight_date) VALUES(?, ?, ?)";
 }

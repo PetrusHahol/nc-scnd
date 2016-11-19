@@ -1,5 +1,7 @@
 package com.netcracker.petrusev.project2.DAO;
 
+import com.netcracker.petrusev.project2.beans.entities.office.Employee;
+
 import java.sql.SQLException;
 import java.util.List;
 

@@ -3,6 +3,7 @@ package com.netcracker.petrusev.project2.DAO;
 import com.netcracker.petrusev.project2.beans.users.User;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
+import com.netcracker.petrusev.project2.constants.PermissionsConstants;
 import com.netcracker.petrusev.project2.constants.SQLConstants;
 
 import java.sql.Connection;
@@ -10,7 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by Asus on 12.11.2016.
@@ -20,32 +20,32 @@ public class DAOUserImpl implements DAOInterface<User>{
 
         @Override
         public void create(User user) throws SQLException{
-                Connection connection = ConnectionPool.INSTANS.retrieve();
+                Connection connection = ConnectionPool.INSTANCE.retrieve();
                 PreparedStatement statement = connection.prepareStatement(SQLConstants.INSERT_USER);
                 statement.setString(1, (user.getLogin()));
                 statement.setString(2, user.getFirstName());
                 statement.setString(3, user.getSecondName());
                 statement.setString(4, user.getMail());
                 statement.setString(5, user.getPassword());
-                statement.setString(6, CommandConstants.FALSE);
+                statement.setString(6, PermissionsConstants.USER);
                 statement.executeUpdate();
-                ConnectionPool.INSTANS.putBack(connection);
+                ConnectionPool.INSTANCE.putBack(connection);
         }
 
         @Override
         public void delete(User user) throws SQLException {
-                Connection connection = ConnectionPool.INSTANS.retrieve();
+                Connection connection = ConnectionPool.INSTANCE.retrieve();
                 PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_USER_BY_LOGIN_AND_NAME);
                 statement.setString(1,user.getLogin());
                 statement.setString(2,user.getFirstName());
                 statement.setString(3,user.getSecondName());
                 statement.execute();
-                ConnectionPool.INSTANS.putBack(connection);
+                ConnectionPool.INSTANCE.putBack(connection);
         }
 
         @Override
         public User find(User user) throws SQLException {
-                Connection connection = ConnectionPool.INSTANS.retrieve();
+                Connection connection = ConnectionPool.INSTANCE.retrieve();
                 PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_USER_BY_LOGIN_AND_PASSWORD);
                 statement.setString(1,user.getLogin());
                 statement.setString(2,user.getPassword());
@@ -56,8 +56,9 @@ public class DAOUserImpl implements DAOInterface<User>{
                         user.setLogin(set.getString(CommandConstants.LOGIN));
                         user.setFirstName(set.getString(CommandConstants.FIRST_NAME));
                         user.setSecondName(set.getString(CommandConstants.SECOND_NAME));
+                        user.setPriority(set.getString(CommandConstants.PRIORITY));
                 }
-                ConnectionPool.INSTANS.putBack(connection);
+                ConnectionPool.INSTANCE.putBack(connection);
                 return user;
         }
 

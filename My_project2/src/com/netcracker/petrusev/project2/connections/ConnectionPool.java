@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.Vector;
 
 public enum ConnectionPool {
-        INSTANS;
+    INSTANCE;
 
     private static String url;
     private  Vector<Connection> availableConns = new Vector<Connection>();

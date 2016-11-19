@@ -42,6 +42,7 @@ public class SignInCommand implements ActionCommand {
       session.setAttribute(CommandConstants.LOGIN, user.getLogin());
       session.setAttribute(CommandConstants.FIRST_NAME, user.getFirstName());
       session.setAttribute(CommandConstants.SECOND_NAME, user.getSecondName());
+      session.setAttribute(CommandConstants.PRIORITY, user.getPriority());
       return true;
   }
 

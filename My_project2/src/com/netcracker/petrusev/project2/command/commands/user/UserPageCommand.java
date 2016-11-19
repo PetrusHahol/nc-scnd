@@ -26,9 +26,11 @@ public class UserPageCommand implements ActionCommand {
         for (Flight iter : daoFlight.allData()){
             from.add(iter.getFrom());
             to.add(iter.getTo());
+            date.add(iter.getDate().getTime().toString());
         }
         request.setAttribute(CommandConstants.FROM, from);
         request.setAttribute(CommandConstants.TO, to);
+        request.setAttribute(CommandConstants.DATE, date);
         request.setAttribute(CommandConstants.SIZE, to.size());
     }
 
