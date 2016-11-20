@@ -1,9 +1,9 @@
 package com.netcracker.petrusev.project2.command.commands.user;
 
 import com.netcracker.petrusev.project2.DAO.DAOFlightImpl;
-import com.netcracker.petrusev.project2.DAO.DAOEmployeeImpl;
+import com.netcracker.petrusev.project2.DAO.employee.DAOStewardessImpl;
 import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
-import com.netcracker.petrusev.project2.beans.entities.office.Employee;
+import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
@@ -38,14 +38,14 @@ public class UserPageCommand implements ActionCommand {
     public void setEmployee(HttpServletRequest request) throws SQLException{
         List<Integer> age =  new ArrayList<Integer>();
         List<Integer> height =  new ArrayList<Integer>();
-        DAOEmployeeImpl daoEmployee = new DAOEmployeeImpl();
-        for (Employee iter : daoEmployee.allData()){
-            age.add(iter.getAge());
-            height.add(iter.getHeight());
-        }
-        request.setAttribute("age", age);
-        request.setAttribute("height", height);
-        request.setAttribute(CommandConstants.SIZE, age.size());
+        DAOStewardessImpl daoEmployee = new DAOStewardessImpl();
+        List<Stewardess> stewardesses = daoEmployee.allData();
+        //for (Stewardess iter : daoEmployee.allData()){
+          //  age.add(iter.getAge());
+           // height.add(iter.getHeight());
+        //}
+        request.setAttribute("stewardess_size", stewardesses.size()-1);
+        request.setAttribute("stewardess", stewardesses);
 
     }
 

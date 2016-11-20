@@ -18,6 +18,9 @@ public  class SQLConstants {
     public static final String GET_ALL_FLIGHT = "SELECT * FROM FLIGHT";
 
     public static final String GET_STEWARDESS = "SELECT * FROM STEWARDESS";
+    public static final String GET_NAVIGATOR = "SELECT * FROM NAVIGATOR";
+    public static final String GET_PILOT = "SELECT * FROM PILOT";
+    public static final String GET_RADIOMAN = "SELECT * FROM RADIOMAN";
 
     public static final String GET_EMPLOYEE = "SELECT * FROM INFORMATION where id = ?";
 

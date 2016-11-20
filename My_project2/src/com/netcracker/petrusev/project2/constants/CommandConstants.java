@@ -23,5 +23,11 @@ public class CommandConstants {
     public static final String FLIGHTS = "flights";
     public static final String EMPLOYEES = "employees";
     public static final String PRIORITY = "priority";
+    public static final String LENGTH_WAIST = "length_waist";
+    public static final String ID_INFORMATION = "id_information";
+    public static final String EXPERIENCE = "experience";
+    public static final String AGE = "age";
+    public static final String PASSPORT_DATA = "passport_data";
+    public static final String HEIGHT = "height";
 
 }

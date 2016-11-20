@@ -66,4 +66,9 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
         ConnectionPool.INSTANCE.putBack(connection);
         return answer;
     }
+
+    @Override
+    public Flight find(Integer obj) throws SQLException {
+        return null;
+    }
 }

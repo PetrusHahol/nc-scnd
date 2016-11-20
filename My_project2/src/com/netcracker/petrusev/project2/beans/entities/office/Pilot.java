@@ -13,6 +13,9 @@ public class Pilot extends Employee {
         setMileage(mileage);
         objectsCounter++;
     }
+    public Pilot(){
+
+    }
 
     @Override
     public String toString(){

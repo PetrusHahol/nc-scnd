@@ -72,4 +72,9 @@ public class DAOUserImpl implements DAOInterface<User>{
                 throw new UnsupportedOperationException();
         }
 
+        @Override
+        public User find(Integer obj) throws SQLException {
+                return null;
+        }
+
 }

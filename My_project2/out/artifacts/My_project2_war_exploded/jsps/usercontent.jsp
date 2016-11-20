@@ -155,92 +155,28 @@
                         </tl>
                     </div>
                 </div>
+
                 <div class = "column_data">
-                    <div class = "missing_employee">
-                        <tl class = "main_table_employee">
-                            <h1>NAVIGATOR
-                            </h1>
-                        </tl>
-                    </div>
-                    <div class = "missing_employee">
-                        <tl class = main_table_employee>
-                            <h1>NAVIGATOR
-                            </h1>
-                        </tl>
-                    </div>
+                    <c:forEach  var="k" begin="0" end="${stewardess_size}">
+                        <div class = "missing_employee">
+                            <tl class = "main_table_employee">
+                                <p>INDEX: <c:out value="${k+1}"/></p>
+                                <p>AGE: <c:out value="${stewardess[k].getAge()}"/> years old</p>
+                                <p>HEIGHT:<c:out value="${stewardess[k].getHeight()}"/> sm</p>
+                                <p>EXPERIENCE:<c:out value="${stewardess[k].getExperience()}"/> years</p>
+                                <p>LENGTH WAIST:<c:out value="${stewardess[k].getLengthWaist()}"/> sm</>
+                                <p>PASSPORT DATA:<c:out value="${stewardess[k].getPassportData()}"/></p>
+                            </tl>
+                        </div>
+                    </c:forEach>
+                </div>
+
+                <div class = "column_data">
 
                 </div>
+
                 <div class = "column_data">
-                    <div class = "missing_employee">
-                        <tl class = "main_table_employee">
-                            <h1>NAVIGATOR
-                            </h1>
-                        </tl>
-                    </div>
-                    <div class = "missing_employee">
-                        <tl class = "main_table_employee">
-                            <h1>NAVIGATOR
-                            </h1>
-                        </tl>
-                    </div>
 
-                    <div class = "missing_employee">
-                        <tl class = "main_table_employee">
-                            <h1>NAVIGATOR
-                            </h1>
-                        </tl>
-                    </div>
-
-                    <div class = "missing_employee">
-                        <tl class = "main_table_employee">
-                            <h1>NAVIGATOR
-                            </h1>
-                        </tl>
-                    </div>
-
-                    <div class = "missing_employee">
-                        <tl class = "main_table_employee">
-                            <h1>NAVIGATOR
-                            </h1>
-                        </tl>
-                    </div>
-
-                    <div class = "missing_employee">
-                        <tl class = "main_table_employee">
-                            <h1>NAVIGATOR
-                            </h1>
-                        </tl>
-                    </div>
-
-
-                    <div class = "missing_employee">
-                        <tl class = main_table_employee>
-                            <h1>NAVIGATOR
-                            </h1>
-                        </tl>
-                    </div>
-                </div>
-                <div class = "column_data">
-                    <div class = "missing_employee">
-                        <tl class = "main_table_employee">
-                            <h1>NAVIGATOR
-                            </h1>
-                        </tl>
-                    </div>
-                    <div class = "missing_employee">
-                        <tl class = main_table_employee>
-                            <h1>NAVIGATOR
-                            </h1>
-                        </tl>
-                    </div>
-                </div>
-                <div class = "column_data">
-                    <div class = "missing_employee">
-                        <tl class = "main_table_employee">
-                            <h1>NAVIGATOR
-                            </h1>
-                        </tl>
-                    </div>
 
                 </div>
 
