@@ -16,7 +16,8 @@ public class Radioman extends Employee {
         setCountForeignLanguage(countForeignLanguage);
         objectsCounter++;
     }
-
+    public Radioman(){
+    }
 
     @Override
     public String toString(){

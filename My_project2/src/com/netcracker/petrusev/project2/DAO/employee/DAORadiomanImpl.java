@@ -1,0 +1,62 @@
+package com.netcracker.petrusev.project2.DAO.employee;
+
+import com.netcracker.petrusev.project2.DAO.DAOInterface;
+import com.netcracker.petrusev.project2.beans.entities.office.Employee;
+import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
+import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
+import com.netcracker.petrusev.project2.connections.ConnectionPool;
+import com.netcracker.petrusev.project2.constants.CommandConstants;
+import com.netcracker.petrusev.project2.constants.SQLConstants;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by Asus on 20.11.2016.
+ */
+public class DAORadiomanImpl implements DAOEmployeeInterface<Radioman> {
+    @Override
+    public void create(Radioman obj) throws SQLException {
+
+    }
+
+    @Override
+    public void delete(Radioman obj) throws SQLException {
+
+    }
+
+    @Override
+    public Radioman find(Radioman obj) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public Radioman update(Radioman obj) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public List<Radioman> allData() throws SQLException {
+        List<Radioman> answer = new ArrayList<>();
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_RADIOMAN);
+        ResultSet set = statement.executeQuery();
+        while(set.next()){
+            DAOInterface daoInformation = new DAOInformationImpl();
+            Radioman radioman = new Radioman();
+            Employee employee = (Employee) daoInformation.find(set.getInt(CommandConstants.ID_INFORMATION));
+            radioman.setAge(employee.getAge());
+            radioman.setExperience(employee.getExperience());
+            radioman.setHeight(employee.getHeight());
+            radioman.setPassportData(employee.getPassportData());
+            radioman.setCountForeignLanguage(set.getInt(CommandConstants.COUNT_FOREIGN_LANGUAGE));
+            answer.add(radioman);
+        }
+        ConnectionPool.INSTANCE.putBack(connection);
+        return answer;
+    }
+}

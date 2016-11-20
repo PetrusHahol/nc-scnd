@@ -172,12 +172,46 @@
                 </div>
 
                 <div class = "column_data">
-
+                    <c:forEach  var="k" begin="0" end="${pilots_size}">
+                        <div class = "missing_employee">
+                            <tl class = "main_table_employee">
+                                <p>INDEX: <c:out value="${k+1}"/></p>
+                                <p>AGE: <c:out value="${pilots[k].getAge()}"/> years old</p>
+                                <p>HEIGHT:<c:out value="${pilots[k].getHeight()}"/> sm</p>
+                                <p>EXPERIENCE:<c:out value="${pilots[k].getExperience()}"/> years</p>
+                                <p>MILEAGE:<c:out value="${pilots[k].getMileage()}"/> km</>
+                                <p>PASSPORT DATA:<c:out value="${pilots[k].getPassportData()}"/></p>
+                            </tl>
+                        </div>
+                    </c:forEach>
                 </div>
-
                 <div class = "column_data">
-
-
+                    <c:forEach  var="k" begin="0" end="${radiomans_size}">
+                        <div class = "missing_employee">
+                            <tl class = "main_table_employee">
+                                <p>INDEX: <c:out value="${k+1}"/></p>
+                                <p>AGE: <c:out value="${radiomans[k].getAge()}"/> years old</p>
+                                <p>HEIGHT:<c:out value="${radiomans[k].getHeight()}"/> sm</p>
+                                <p>EXPERIENCE:<c:out value="${radiomans[k].getExperience()}"/> years</p>
+                                <p>COUNT LANGUAGES:<c:out value="${radiomans[k].getCountForeignLanguage()}"/> </p>
+                                <p>PASSPORT DATA:<c:out value="${radiomans[k].getPassportData()}"/></p>
+                            </tl>
+                        </div>
+                    </c:forEach>
+                </div>
+                <div class = "column_data">
+                    <c:forEach  var="k" begin="0" end="${navigators_size}">
+                        <div class = "missing_employee">
+                            <tl class = "main_table_employee">
+                                <p>INDEX: <c:out value="${k+1}"/></p>
+                                <p>AGE: <c:out value="${navigators[k].getAge()}"/> years old</p>
+                                <p>HEIGHT:<c:out value="${navigators[k].getHeight()}"/> sm</p>
+                                <p>EXPERIENCE:<c:out value="${navigators[k].getExperience()}"/> years</p>
+                                <p>CATEGORY:<c:out value="${navigators[k].getCategory()}"/></p>
+                                <p>PASSPORT DATA:<c:out value="${navigators[k].getPassportData()}"/></p>
+                            </tl>
+                        </div>
+                    </c:forEach>
                 </div>
 
             </td>

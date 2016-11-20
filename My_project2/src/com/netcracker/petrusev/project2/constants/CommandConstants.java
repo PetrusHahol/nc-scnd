@@ -29,5 +29,7 @@ public class CommandConstants {
     public static final String AGE = "age";
     public static final String PASSPORT_DATA = "passport_data";
     public static final String HEIGHT = "height";
-
+    public static final String MILEAGE = "mileage";
+    public static final String COUNT_FOREIGN_LANGUAGE = "count_Foreign_Language";
+    public static final String CATEGORY = "category";
 }

@@ -14,6 +14,9 @@ public class Navigator<T> extends Employee {
         setCategory(category);
         objectsCounter++;
     }
+    public Navigator(){
+
+    }
 
     @Override
     public String toString(){

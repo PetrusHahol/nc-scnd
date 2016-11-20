@@ -1,8 +1,11 @@
 package com.netcracker.petrusev.project2.command.commands.user;
 
 import com.netcracker.petrusev.project2.DAO.DAOFlightImpl;
-import com.netcracker.petrusev.project2.DAO.employee.DAOStewardessImpl;
+import com.netcracker.petrusev.project2.DAO.employee.*;
 import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
+import com.netcracker.petrusev.project2.beans.entities.office.Navigator;
+import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
+import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
 import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
@@ -20,9 +23,9 @@ import java.util.List;
 public class UserPageCommand implements ActionCommand {
 
     private void setFlight(HttpServletRequest request) throws SQLException{
-        List<String> from =  new ArrayList<String>();
-        List<String> to =  new ArrayList<String>();
-        List<String> date =  new ArrayList<String>();
+        List<String> from =  new ArrayList<>();
+        List<String> to =  new ArrayList<>();
+        List<String> date =  new ArrayList<>();
         DAOFlightImpl daoFlight = new DAOFlightImpl();
         for (Flight iter : daoFlight.allData()){
             from.add(iter.getFrom());
@@ -36,17 +39,23 @@ public class UserPageCommand implements ActionCommand {
     }
 
     public void setEmployee(HttpServletRequest request) throws SQLException{
-        List<Integer> age =  new ArrayList<Integer>();
-        List<Integer> height =  new ArrayList<Integer>();
-        DAOStewardessImpl daoEmployee = new DAOStewardessImpl();
-        List<Stewardess> stewardesses = daoEmployee.allData();
-        //for (Stewardess iter : daoEmployee.allData()){
-          //  age.add(iter.getAge());
-           // height.add(iter.getHeight());
-        //}
+
+        DAOEmployeeInterface<Stewardess> daoStewardess = new DAOStewardessImpl();
+        List<Stewardess> stewardesses = daoStewardess.allData();
+        DAOEmployeeInterface<Pilot> daoPilot = new DAOPilotImpl();
+        List<Pilot> pilots = daoPilot.allData();
+        DAOEmployeeInterface<Navigator> daoNavigator = new DAONavigatorImpl();
+        List<Navigator> navigators = daoNavigator.allData();
+        DAOEmployeeInterface<Radioman>  daoRadioman = new DAORadiomanImpl();
+        List<Radioman> radiomans = daoRadioman.allData();
+        request.setAttribute("radiomans", radiomans);
+        request.setAttribute("radiomans_size", radiomans.size() - 1);//do constants
+        request.setAttribute("pilots_size", pilots.size()-1);
+        request.setAttribute("pilots", pilots);
         request.setAttribute("stewardess_size", stewardesses.size()-1);
         request.setAttribute("stewardess", stewardesses);
-
+        request.setAttribute("navigators_size", navigators.size() - 1);
+        request.setAttribute("navigators" , navigators);
     }
 
 
