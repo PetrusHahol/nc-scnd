@@ -16,7 +16,14 @@ public class Radioman extends Employee {
         setCountForeignLanguage(countForeignLanguage);
         objectsCounter++;
     }
+
+    public Radioman(String name, int age, int height, int experience
+            , String passportData){
+        super(name, age, height, experience, passportData);
+        objectsCounter++;
+    }
     public Radioman(){
+        objectsCounter++;
     }
 
     @Override

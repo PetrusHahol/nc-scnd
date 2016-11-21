@@ -18,6 +18,14 @@ public class Stewardess extends Employee {
         objectsCounter++;
     }
 
+    public Stewardess(String name, int age, int height, int experience
+            , String passportData){
+        super(name, age, height, experience, passportData);
+        setLengthWaist(lengthWaist);
+        objectsCounter++;
+    }
+
+
     @Override
     public String toString(){
         return ("STEWARDESS Name " + name + " - Age - " + Integer.toString(age)

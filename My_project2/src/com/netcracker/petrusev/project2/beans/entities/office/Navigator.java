@@ -15,7 +15,11 @@ public class Navigator<T> extends Employee {
         objectsCounter++;
     }
     public Navigator(){
-
+    }
+    public Navigator(String name, int age, int height, int experience
+            , String passportData){
+        super(name, age, height, experience, passportData);
+        objectsCounter++;
     }
 
     @Override
