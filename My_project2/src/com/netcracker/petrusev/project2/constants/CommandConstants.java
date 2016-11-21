@@ -32,4 +32,5 @@ public class CommandConstants {
     public static final String MILEAGE = "mileage";
     public static final String COUNT_FOREIGN_LANGUAGE = "count_Foreign_Language";
     public static final String CATEGORY = "category";
+    public static final String NAME = "name";
 }

@@ -76,7 +76,7 @@ public class UserPageCommand implements ActionCommand {
             return PageConstants.USER_CONTENT;
         }
         catch (NullPointerException ex) {
-            request.setAttribute("GROUP","ska");
+            request.setAttribute("GROUP","ska");//do constants
             return PageConstants.USER_CONTENT;
         }
         return PageConstants.USER_CONTENT;

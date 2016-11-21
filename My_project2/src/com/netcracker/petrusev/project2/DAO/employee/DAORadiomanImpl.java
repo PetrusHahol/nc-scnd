@@ -49,6 +49,7 @@ public class DAORadiomanImpl implements DAOEmployeeInterface<Radioman> {
             DAOInterface daoInformation = new DAOInformationImpl();
             Radioman radioman = new Radioman();
             Employee employee = (Employee) daoInformation.find(set.getInt(CommandConstants.ID_INFORMATION));
+            radioman.setName(employee.getName());
             radioman.setAge(employee.getAge());
             radioman.setExperience(employee.getExperience());
             radioman.setHeight(employee.getHeight());

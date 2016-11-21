@@ -49,6 +49,7 @@ public class DAOPilotImpl implements DAOEmployeeInterface<Pilot> {
             DAOInterface daoInformation = new DAOInformationImpl();
             Pilot pilot = new Pilot();
             Employee employee = (Employee) daoInformation.find(set.getInt(CommandConstants.ID_INFORMATION));
+            pilot.setName(employee.getName());
             pilot.setAge(employee.getAge());
             pilot.setExperience(employee.getExperience());
             pilot.setHeight(employee.getHeight());

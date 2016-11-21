@@ -132,24 +132,52 @@
                 <div class = "container">
                     <div class = "missing">
                         <tl class = main_table>
+                            <c:choose>
+                                <c:when test = "${priority == 'dispatcher'}">
+                                    <a href = "/Controller?command=addEmployee&role=stewardess&reg=false">
+                                        <img class = "Vk_photo" src="/static/media/add_data.png" />
+                                    </a>
+                                </c:when>
+                            </c:choose>
                             <h1>STEWARDESS
                             </h1>
                         </tl>
                     </div>
                     <div class = "missing">
                         <tl class = main_table>
+                            <c:choose>
+                                <c:when test = "${priority == 'dispatcher'}">
+                                    <a href = "/Controller?command=addEmployee&role=pilot&reg=false">
+                                        <img class = "Vk_photo" src="/static/media/add_data.png" />
+                                    </a>
+                                </c:when>
+                            </c:choose>
                             <h1>PILOT
                             </h1>
                         </tl>
                     </div>
                     <div class = "missing">
                         <tl class = main_table>
+                            <c:choose>
+                                <c:when test = "${priority == 'dispatcher'}">
+                                    <a href = "/Controller?command=addEmployee&role=radioman&reg=false">
+                                        <img class = "Vk_photo" src="/static/media/add_data.png" />
+                                    </a>
+                                </c:when>
+                            </c:choose>
                             <h1>RADIOMAN
                             </h1>
                         </tl>
                     </div>
                     <div class = "missing">
                         <tl class = main_table>
+                            <c:choose>
+                                <c:when test = "${priority == 'dispatcher'}">
+                                    <a href = "/Controller?command=addEmployee&role=navigator&reg=false">
+                                        <img class = "Vk_photo" src="/static/media/add_data.png" />
+                                    </a>
+                                </c:when>
+                            </c:choose>
                             <h1>NAVIGATOR
                             </h1>
                         </tl>
@@ -159,13 +187,27 @@
                 <div class = "column_data">
                     <c:forEach  var="k" begin="0" end="${stewardess_size}">
                         <div class = "missing_employee">
+
                             <tl class = "main_table_employee">
+                                <c:choose>
+                                    <c:when test = "${priority == 'dispatcher'}">
+                                        <a href = "/Controller?command=deleteEmployee&role=stewardess&name=${stewardess[k].getName()}">
+                                            <img class = "delete_style" src="/static/media/Delete.png" />
+                                        </a>
+                                    </c:when>
+                                </c:choose>
                                 <p>INDEX: <c:out value="${k+1}"/></p>
+                                <p>NAME  <c:out value="${stewardess[k].getName()}"/></p>
                                 <p>AGE: <c:out value="${stewardess[k].getAge()}"/> years old</p>
                                 <p>HEIGHT:<c:out value="${stewardess[k].getHeight()}"/> sm</p>
                                 <p>EXPERIENCE:<c:out value="${stewardess[k].getExperience()}"/> years</p>
                                 <p>LENGTH WAIST:<c:out value="${stewardess[k].getLengthWaist()}"/> sm</>
+                                <c:choose>
+                                <c:when test = "${priority == 'dispatcher'}">
                                 <p>PASSPORT DATA:<c:out value="${stewardess[k].getPassportData()}"/></p>
+                                </c:when>
+                                </c:choose>
+
                             </tl>
                         </div>
                     </c:forEach>
@@ -175,12 +217,24 @@
                     <c:forEach  var="k" begin="0" end="${pilots_size}">
                         <div class = "missing_employee">
                             <tl class = "main_table_employee">
+                                <c:choose>
+                                    <c:when test = "${priority == 'dispatcher'}">
+                                        <a href = "/Controller?command=deleteEmployee&role=pilot&name=${pilots[k].getName()}">
+                                            <img class = "delete_style" src="/static/media/Delete.png" />
+                                        </a>
+                                    </c:when>
+                                </c:choose>
                                 <p>INDEX: <c:out value="${k+1}"/></p>
+                                <p>NAME  <c:out value="${pilots[k].getName()}"/></p>
                                 <p>AGE: <c:out value="${pilots[k].getAge()}"/> years old</p>
                                 <p>HEIGHT:<c:out value="${pilots[k].getHeight()}"/> sm</p>
                                 <p>EXPERIENCE:<c:out value="${pilots[k].getExperience()}"/> years</p>
                                 <p>MILEAGE:<c:out value="${pilots[k].getMileage()}"/> km</>
+                                <c:choose>
+                                <c:when test = "${priority == 'dispatcher'}">
                                 <p>PASSPORT DATA:<c:out value="${pilots[k].getPassportData()}"/></p>
+                                </c:when>
+                                </c:choose>
                             </tl>
                         </div>
                     </c:forEach>
@@ -189,12 +243,24 @@
                     <c:forEach  var="k" begin="0" end="${radiomans_size}">
                         <div class = "missing_employee">
                             <tl class = "main_table_employee">
+                                <c:choose>
+                                    <c:when test = "${priority == 'dispatcher'}">
+                                        <a href = "/Controller?command=deleteEmployee&role=radioman&name=${radiomans[k].getName()}">
+                                            <img class = "delete_style" src="/static/media/Delete.png" />
+                                        </a>
+                                    </c:when>
+                                </c:choose>
                                 <p>INDEX: <c:out value="${k+1}"/></p>
+                                <p>NAME  <c:out value="${radiomans[k].getName()}"/></p>
                                 <p>AGE: <c:out value="${radiomans[k].getAge()}"/> years old</p>
                                 <p>HEIGHT:<c:out value="${radiomans[k].getHeight()}"/> sm</p>
                                 <p>EXPERIENCE:<c:out value="${radiomans[k].getExperience()}"/> years</p>
                                 <p>COUNT LANGUAGES:<c:out value="${radiomans[k].getCountForeignLanguage()}"/> </p>
+                                <c:choose>
+                                <c:when test = "${priority == 'dispatcher'}">
                                 <p>PASSPORT DATA:<c:out value="${radiomans[k].getPassportData()}"/></p>
+                                </c:when>
+                                </c:choose>
                             </tl>
                         </div>
                     </c:forEach>
@@ -203,12 +269,26 @@
                     <c:forEach  var="k" begin="0" end="${navigators_size}">
                         <div class = "missing_employee">
                             <tl class = "main_table_employee">
+                                <c:choose>
+                                    <c:when test = "${priority == 'dispatcher'}">
+
+                                        <a href = "/Controller?command=deleteEmployee&role=navigator&name=${navigators[k].getName()}">
+                                            <img class = "delete_style" src="/static/media/Delete.png" />
+                                        </a>
+
+                                    </c:when>
+                                </c:choose>
                                 <p>INDEX: <c:out value="${k+1}"/></p>
+                                <p>NAME  <c:out value="${navigators[k].getName()}"/></p>
                                 <p>AGE: <c:out value="${navigators[k].getAge()}"/> years old</p>
                                 <p>HEIGHT:<c:out value="${navigators[k].getHeight()}"/> sm</p>
                                 <p>EXPERIENCE:<c:out value="${navigators[k].getExperience()}"/> years</p>
                                 <p>CATEGORY:<c:out value="${navigators[k].getCategory()}"/></p>
+                                <c:choose>
+                                <c:when test = "${priority == 'dispatcher'}">
                                 <p>PASSPORT DATA:<c:out value="${navigators[k].getPassportData()}"/></p>
+                                </c:when>
+                                </c:choose>
                             </tl>
                         </div>
                     </c:forEach>

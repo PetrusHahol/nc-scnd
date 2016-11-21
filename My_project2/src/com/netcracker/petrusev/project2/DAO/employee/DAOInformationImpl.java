@@ -35,6 +35,7 @@ public class DAOInformationImpl implements DAOInterface<Employee> {
         statement.setInt(1, id);
         ResultSet setInfo = statement.executeQuery();
         while (setInfo.next()) {
+            employee.setName(setInfo.getString(CommandConstants.NAME));
             employee.setAge(setInfo.getInt(CommandConstants.AGE));
             employee.setExperience(setInfo.getInt(CommandConstants.EXPERIENCE));
             employee.setHeight(setInfo.getInt(CommandConstants.HEIGHT));

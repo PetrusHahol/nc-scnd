@@ -49,6 +49,7 @@ public class DAONavigatorImpl implements  DAOEmployeeInterface<Navigator> {
             DAOInterface daoInformation = new DAOInformationImpl();
             Navigator navigator = new Navigator();
             Employee employee = (Employee) daoInformation.find(set.getInt(CommandConstants.ID_INFORMATION));
+            navigator.setName(employee.getName());
             navigator.setAge(employee.getAge());
             navigator.setExperience(employee.getExperience());
             navigator.setHeight(employee.getHeight());

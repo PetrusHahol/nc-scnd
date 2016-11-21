@@ -49,6 +49,7 @@ public class DAOStewardessImpl implements DAOEmployeeInterface<Stewardess> {
             DAOInterface daoInformation = new DAOInformationImpl();
             Stewardess stewardess = new Stewardess();
             Employee employee = (Employee) daoInformation.find(set.getInt(CommandConstants.ID_INFORMATION));
+            stewardess.setName(employee.getName());
             stewardess.setAge(employee.getAge());
             stewardess.setExperience(employee.getExperience());
             stewardess.setHeight(employee.getHeight());
