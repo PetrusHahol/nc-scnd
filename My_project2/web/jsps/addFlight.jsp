@@ -52,7 +52,7 @@
 
             </div>
         <div class = "ButtonPosition3">
-            <input class = "SubmitButton3" type="submit" value="SignIn" />
+            <input class = "SubmitButton3" type="submit" value="Add flight" />
         </div>
     </form>
 </div>

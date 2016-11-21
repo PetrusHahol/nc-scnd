@@ -11,5 +11,7 @@ public class PageConstants {
     public static final String USER_CONTENT = "/jsps/usercontent.jsp";
     public static final String USER_CONTENT_REQUEST = "Controller?command=UserPageCommand";
     public static final String ADDFLIGHT = "/jsps/addFlight.jsp";
+    public static final String ADDEMPLOYEE = "/jsps/addEmployee.jsp";
+
 
 }

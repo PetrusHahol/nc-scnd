@@ -30,41 +30,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registration.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/jsps/registration.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1210">
-              <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="usercontent.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="usercontent.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/jsps/usercontent.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
+            <state relative-caret-position="570">
+              <caret line="175" column="40" selection-start-line="175" selection-start-column="40" selection-end-line="175" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DAONavigatorImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/employee/DAONavigatorImpl.java">
+      <file leaf-file-name="PageConstants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/constants/PageConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="50" />
+            <state relative-caret-position="352">
+              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestsEnum.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/enums/RequestsEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandConstants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/constants/CommandConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="542">
+              <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddEmployeeCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/commands/employee/AddEmployeeCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,10 +82,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="addEmployee.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/jsps/addEmployee.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="DAOPilotImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/employee/DAOPilotImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
+            <state relative-caret-position="400">
               <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -84,57 +104,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DAORadiomanImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/employee/DAORadiomanImpl.java">
+      <file leaf-file-name="signin.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/jsps/signin.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DAOStewardessImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/employee/DAOStewardessImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DAOInformationImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/employee/DAOInformationImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="37" column="71" selection-start-line="37" selection-start-column="71" selection-end-line="37" selection-end-column="71" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommandConstants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/constants/CommandConstants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+            <state relative-caret-position="422">
+              <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/style.css">
+      <file leaf-file-name="registration.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/jsps/registration.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2158">
-              <caret line="516" column="14" selection-start-line="516" selection-start-column="14" selection-end-line="516" selection-end-column="14" />
+            <state relative-caret-position="752">
+              <caret line="55" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addFlight.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/jsps/addFlight.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="438">
+              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -148,8 +142,8 @@
         <option value="CSS File" />
         <option value="jsf" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -164,9 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/jsps/signin.jsp" />
-        <option value="$PROJECT_DIR$/web/jsps/registration.jsp" />
-        <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/commands/SignInCommand.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/commands/DeleteUserCommand.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/commands/user/LogOutCommand.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/commands/user/UserCommand.java" />
@@ -180,14 +171,11 @@
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/commands/user/SignInCommand.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/commands/user/RegistrationCommand.java" />
         <option value="$PROJECT_DIR$/web/jsps/AddFlight.jsp" />
-        <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/constants/PageConstants.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/utils/utils.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/utils/Utils.java" />
-        <option value="$PROJECT_DIR$/web/jsps/addFlight.jsp" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/connections/ConnectionPool.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/DaoEmployeeImpl.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/commands/flight/AddFlightCommand.java" />
-        <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/enums/RequestsEnum.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/utils/UtilsGregorianCalendar.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/commands/flight/DeleteFlightCommand.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/constants/SQLConstants.java" />
@@ -208,13 +196,19 @@
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/beans/entities/office/Radioman.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/commands/user/UserPageCommand.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/employee/DAOInformationImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/constants/CommandConstants.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/employee/DAONavigatorImpl.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/employee/DAOPilotImpl.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/employee/DAORadiomanImpl.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/employee/DAOStewardessImpl.java" />
-        <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/web/jsps/usercontent.jsp" />
+        <option value="$PROJECT_DIR$/web/css/style.css" />
+        <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/enums/RequestsEnum.java" />
+        <option value="$PROJECT_DIR$/web/jsps/AddEmployee.jsp" />
+        <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/constants/PageConstants.java" />
+        <option value="$PROJECT_DIR$/web/jsps/addFlight.jsp" />
+        <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/constants/CommandConstants.java" />
+        <option value="$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/commands/employee/AddEmployeeCommand.java" />
+        <option value="$PROJECT_DIR$/web/jsps/addEmployee.jsp" />
       </list>
     </option>
   </component>
@@ -622,6 +616,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="flight" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_project2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="My_project2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="command" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commands" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="employee" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1292,12 +1316,12 @@
       <workItem from="1478556053767" duration="41438000" />
       <workItem from="1478874590385" duration="53393000" />
       <workItem from="1479244913516" duration="269000" />
-      <workItem from="1479328699310" duration="71191000" />
+      <workItem from="1479328699310" duration="74997000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197995000" />
+    <option name="totallyTimeSpent" value="201801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1309,10 +1333,10 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.055808656" sideWeight="0.2546875" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22665147" sideWeight="0.2546875" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.055808656" sideWeight="0.7453125" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22665147" sideWeight="0.7453125" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1382,22 +1406,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/beans/users/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="84" column="37" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/beans/users/Dispatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="21" column="27" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/constants/PoolConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1464,14 +1472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/constants/PageConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/commands/user/LogOutCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1520,14 +1520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/enums/RequestsEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="45" column="53" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/commands/user/DeleteUserCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
@@ -1545,14 +1537,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/jsps/addFlight.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1629,26 +1613,26 @@
         <state relative-caret-position="176">
           <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="31" />
           <folding>
-            <element signature="e#195#196#0" expanded="true" />
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#311#312#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#586#587#0" expanded="true" />
-            <element signature="e#640#641#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#724#725#0" expanded="true" />
-            <element signature="e#757#758#0" expanded="true" />
-            <element signature="e#812#813#0" expanded="true" />
-            <element signature="e#851#852#0" expanded="true" />
-            <element signature="e#914#915#0" expanded="true" />
-            <element signature="e#961#962#0" expanded="true" />
-            <element signature="e#1031#1032#0" expanded="true" />
-            <element signature="e#1082#1083#0" expanded="true" />
+            <element signature="e#195#196#0" expanded="false" />
+            <element signature="e#233#234#0" expanded="false" />
+            <element signature="e#274#275#0" expanded="false" />
+            <element signature="e#311#312#0" expanded="false" />
+            <element signature="e#355#356#0" expanded="false" />
+            <element signature="e#395#396#0" expanded="false" />
+            <element signature="e#443#444#0" expanded="false" />
+            <element signature="e#487#488#0" expanded="false" />
+            <element signature="e#540#541#0" expanded="false" />
+            <element signature="e#586#587#0" expanded="false" />
+            <element signature="e#640#641#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#724#725#0" expanded="false" />
+            <element signature="e#757#758#0" expanded="false" />
+            <element signature="e#812#813#0" expanded="false" />
+            <element signature="e#851#852#0" expanded="false" />
+            <element signature="e#914#915#0" expanded="false" />
+            <element signature="e#961#962#0" expanded="false" />
+            <element signature="e#1031#1032#0" expanded="false" />
+            <element signature="e#1082#1083#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1719,14 +1703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/jsps/signin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/employee/DAOEmployeeInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1745,28 +1721,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/jsps/registration.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1210">
-          <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/employee/DAONavigatorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
           <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/employee/DAOPilotImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1803,14 +1761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/constants/CommandConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1821,16 +1771,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2158">
-          <caret line="516" column="14" selection-start-line="516" selection-start-column="14" selection-end-line="516" selection-end-column="14" />
+        <state relative-caret-position="588">
+          <caret line="568" column="14" selection-start-line="568" selection-start-column="14" selection-end-line="568" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/enums/RequestsEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsps/signin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsps/registration.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="752">
+          <caret line="55" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/constants/PageConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/DAO/employee/DAOPilotImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/constants/CommandConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/netcracker/petrusev/project2/command/commands/employee/AddEmployeeCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/jsps/usercontent.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
+        <state relative-caret-position="570">
+          <caret line="175" column="40" selection-start-line="175" selection-start-column="40" selection-end-line="175" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsps/addFlight.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsps/addEmployee.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
           <folding />
         </state>
       </provider>

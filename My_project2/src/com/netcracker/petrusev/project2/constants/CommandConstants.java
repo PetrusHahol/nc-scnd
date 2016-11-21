@@ -33,4 +33,6 @@ public class CommandConstants {
     public static final String COUNT_FOREIGN_LANGUAGE = "count_Foreign_Language";
     public static final String CATEGORY = "category";
     public static final String NAME = "name";
+    public static final String ROLE = "role";
+    public static final String INFO = "info";
 }
