@@ -33,30 +33,30 @@
     <form class = "Registration" action="Controller?command=AddEmployee&role=${role}&reg=true" method="POST">
         <div class =  "FormPosition">
             <div class = "FieldArea">
-                <input class = "FormsLocate" type="text" name="name">
+                <input class = "FormsLocate" type="text" name="name" required/>
                 <p class = "FieldLocate">Name</p>
             </div>
             <div class = "FieldArea">
-                <input  class = "FormsLocate" type="text" name="age">
+                <input  class = "FormsLocate" type="number" name="age" required/>
                 <p class = "FieldLocate">Age</p>
             </div>
             <div class = "FieldArea">
-                <input  class = "FormsLocate" type="text" name="height">
+                <input  class = "FormsLocate" type="number" name="height" required/>
                 <p class = "FieldLocate">Height</p>
             </div>
 
             <div class = "FieldArea">
-                <input class = "FormsLocate" type="text" name="experience">
+                <input class = "FormsLocate" type="number" name="experience" required/>
                 <p class = "FieldLocate">Experience </p>
             </div>
 
             <div class = "FieldArea">
-                <input class = "FormsLocate" type="password" name="${info}">
+                <input class = "FormsLocate" type="text" name="${info}" required/>
                 <p class = "FieldLocate">${info}</p>
             </div>
 
             <div class = "FieldArea">
-                <input class = "FormsLocate" type="password" name="passportdata">
+                <input class = "FormsLocate" type="text" name="passport_data" required/>
                 <p class = "FieldLocate">Passport Data</p>
             </div>
 

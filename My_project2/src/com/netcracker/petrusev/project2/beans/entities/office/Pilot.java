@@ -16,7 +16,7 @@ public class Pilot extends Employee {
     public Pilot(){
         objectsCounter++;
     }
-    
+
     public Pilot(String name, int age, int height, int experience
             , String passportData){
         super(name, age, height, experience, passportData);

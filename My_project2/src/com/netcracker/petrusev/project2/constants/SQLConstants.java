@@ -27,4 +27,11 @@ public  class SQLConstants {
     public static final String INSERT_FLIGHT = "INSERT INTO FLIGHT("+(char)(34) +"from"+(char)(34) +", "+(char)(34) +"to" + (char)(34) +", flight_date) VALUES(?, ?, ?)";
 
     public static final String DELETE_FLIGHT = "DELETE FROM FLIGHT WHERE "+(char)(34) +"from"+(char)(34) +"=? AND "+(char)(34) +"to" + (char)(34) +"=? AND flight_date = ?";
+
+    public static final String ADD_NAVIGATOR = "INSERT INTO NAVIGATOR(category, id_information) values(? , ? )";
+    public static final String ADD_STEWARDESS = "INSERT INTO STEWARDESS(length_waist, id_information) values(? , ? )";
+    public static final String ADD_PILOT = "INSERT INTO PILOT(mileage, id_information) values(? , ? )";
+    public static final String ADD_RADIOMAN = "INSERT INTO RADIOMAN(count_foreign_language, id_information) values(? , ? )";
+
+    public static final String ADD_INFORMATION = "INSERT INTO INFORMATION(name,age,height,experience,passport_data) VALUES(?, ? , ? , ?, ?)  RETURNING id";
 }

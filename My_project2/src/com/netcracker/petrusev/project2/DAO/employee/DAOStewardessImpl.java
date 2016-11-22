@@ -1,9 +1,11 @@
 package com.netcracker.petrusev.project2.DAO.employee;
 
+import com.netcracker.petrusev.project2.DAO.DAOInformationImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
 import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
+import com.netcracker.petrusev.project2.connections.DataMemory;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.SQLConstants;
 
@@ -21,7 +23,14 @@ public class DAOStewardessImpl implements DAOEmployeeInterface<Stewardess> {
 
     @Override
     public void create(Stewardess obj) throws SQLException {
-
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.ADD_STEWARDESS);
+        DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+        daoInformation.create(obj);
+        statement.setInt(1, obj.getLengthWaist());
+        statement.setInt(2 , DataMemory.INSTANCE.getId());
+        statement.execute();
+        ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override

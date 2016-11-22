@@ -1,9 +1,10 @@
-package com.netcracker.petrusev.project2.DAO.employee;
+package com.netcracker.petrusev.project2.DAO;
 
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
 import com.netcracker.petrusev.project2.beans.entities.office.EmptyEmployee;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
+import com.netcracker.petrusev.project2.connections.DataMemory;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.SQLConstants;
 
@@ -19,7 +20,18 @@ import java.util.List;
 public class DAOInformationImpl implements DAOInterface<Employee> {
     @Override
     public void create(Employee obj) throws SQLException {
-
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement info_statement = connection.prepareStatement(SQLConstants.ADD_INFORMATION);
+        info_statement.setString(1,obj.getName());
+        info_statement.setInt(2,obj.getAge());
+        info_statement.setInt(3,obj.getHeight());
+        info_statement.setInt(4,obj.getExperience());
+        info_statement.setString(5,obj.getPassportData());
+        ResultSet set = info_statement.executeQuery();
+        while (set.next()){
+            DataMemory.INSTANCE.setId(set.getInt("id"));
+        }
+        ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override

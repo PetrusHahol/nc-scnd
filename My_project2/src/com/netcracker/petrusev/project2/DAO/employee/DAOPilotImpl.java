@@ -1,10 +1,11 @@
 package com.netcracker.petrusev.project2.DAO.employee;
 
+import com.netcracker.petrusev.project2.DAO.DAOInformationImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
 import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
-import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
+import com.netcracker.petrusev.project2.connections.DataMemory;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.SQLConstants;
 
@@ -21,7 +22,14 @@ import java.util.List;
 public class DAOPilotImpl implements DAOEmployeeInterface<Pilot> {
     @Override
     public void create(Pilot obj) throws SQLException {
-
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.ADD_PILOT);
+        DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+        daoInformation.create(obj);
+        statement.setInt(1, obj.getMileage());
+        statement.setInt(2 , DataMemory.INSTANCE.getId());
+        statement.execute();
+        ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override
