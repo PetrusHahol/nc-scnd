@@ -97,6 +97,7 @@
                                 </c:choose>
                                 <h1>Flight №
                                     <c:out value = "${k+1}"/>
+                                    (id=<c:out value = "${id[k]}"/>)
                                 </h1>
                             </tl>
                         </div>
@@ -196,7 +197,7 @@
                                         </a>
                                     </c:when>
                                 </c:choose>
-                                <p>INDEX: <c:out value="${k+1}"/></p>
+                                <p>INDEX: <c:out value="${k+1}"/>(id=<c:out value="${stewardess[k].getId()}"/> )</p>
                                 <p>NAME  <c:out value="${stewardess[k].getName()}"/></p>
                                 <p>AGE: <c:out value="${stewardess[k].getAge()}"/> years old</p>
                                 <p>HEIGHT:<c:out value="${stewardess[k].getHeight()}"/> sm</p>
@@ -224,7 +225,7 @@
                                         </a>
                                     </c:when>
                                 </c:choose>
-                                <p>INDEX: <c:out value="${k+1}"/></p>
+                                <p>INDEX: <c:out value="${k+1}"/>(id=<c:out value="${pilot[k].getId()}"/> )</p>
                                 <p>NAME  <c:out value="${pilot[k].getName()}"/></p>
                                 <p>AGE: <c:out value="${pilots[k].getAge()}"/> years old</p>
                                 <p>HEIGHT:<c:out value="${pilot[k].getHeight()}"/> sm</p>
@@ -250,7 +251,7 @@
                                         </a>
                                     </c:when>
                                 </c:choose>
-                                <p>INDEX: <c:out value="${k+1}"/></p>
+                                <p>INDEX: <c:out value="${k+1}"/>(id=<c:out value="${radioman[k].getId()}"/> )</p>
                                 <p>NAME  <c:out value="${radioman[k].getName()}"/></p>
                                 <p>AGE: <c:out value="${radioman[k].getAge()}"/> years old</p>
                                 <p>HEIGHT:<c:out value="${radioman[k].getHeight()}"/> sm</p>
@@ -278,7 +279,7 @@
 
                                     </c:when>
                                 </c:choose>
-                                <p>INDEX: <c:out value="${k+1}"/></p>
+                                <p>INDEX: <c:out value="${k+1}"/>(id=<c:out value="${navigator[k].getId()}"/> )</p>
                                 <p>NAME  <c:out value="${navigator[k].getName()}"/></p>
                                 <p>AGE: <c:out value="${navigator[k].getAge()}"/> years old</p>
                                 <p>HEIGHT:<c:out value="${navigator[k].getHeight()}"/> sm</p>
@@ -296,6 +297,17 @@
 
             </td>
         </div>
+    </c:when>
+    <c:when test="${group == 'brigades'}">
+        <div class = "data2">
+            <td>
+                <div class = "container">
+                    <div class = "missing">
+
+                     </div>
+                </div>
+            </td>
+            </div>
     </c:when>
 </c:choose>
 

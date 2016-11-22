@@ -1,12 +1,15 @@
 package com.netcracker.petrusev.project2.command.commands.user;
 
 import com.netcracker.petrusev.project2.DAO.DAOFlightImpl;
+import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.DAO.employee.*;
+import com.netcracker.petrusev.project2.DAO.team.DAOBrigadeImpl;
 import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.beans.entities.office.Navigator;
 import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
 import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
 import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
+import com.netcracker.petrusev.project2.beans.entities.teams.Brigade;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.EntityConstants;
@@ -42,7 +45,7 @@ public class UserPageCommand implements ActionCommand {
         request.setAttribute(CommandConstants.SIZE, to.size()-1);
     }
 
-    public void setEmployee(HttpServletRequest request) throws SQLException{
+    private void setEmployee(HttpServletRequest request) throws SQLException{
 
         DAOEmployeeInterface<Stewardess> daoStewardess = new DAOStewardessImpl();
         List<Stewardess> stewardesses = daoStewardess.getAllData();
@@ -58,6 +61,12 @@ public class UserPageCommand implements ActionCommand {
         request.setAttribute(EntityConstants.NAVIGATOR , navigators);
     }
 
+    private void setBrigades(HttpServletRequest request) throws  SQLException{
+        DAOInterface<Brigade> daoBrigade = new DAOBrigadeImpl();
+        List<Brigade> brigades = daoBrigade.getAllData();
+        request.setAttribute(CommandConstants.BRIGADES, brigades);
+    }
+
 
     @Override
     public String execute(HttpServletRequest request) {
@@ -69,6 +78,10 @@ public class UserPageCommand implements ActionCommand {
             if (request.getParameter(CommandConstants.GROUP).equals(CommandConstants.EMPLOYEES)){
                 request.setAttribute(CommandConstants.GROUP,CommandConstants.EMPLOYEES);
                 setEmployee(request);
+            }
+            if (request.getParameter(CommandConstants.GROUP).equals(CommandConstants.BRIGADES)){
+                request.setAttribute(CommandConstants.GROUP,CommandConstants.BRIGADES);
+                setBrigades(request);
             }
         }catch (SQLException ex){
             //тут будут логи)0)0)0

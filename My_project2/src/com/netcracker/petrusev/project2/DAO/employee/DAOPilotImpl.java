@@ -3,6 +3,7 @@ package com.netcracker.petrusev.project2.DAO.employee;
 import com.netcracker.petrusev.project2.DAO.DAOInformationImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
+import com.netcracker.petrusev.project2.beans.entities.office.Navigator;
 import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.connections.DataMemory;
@@ -46,8 +47,25 @@ public class DAOPilotImpl implements DAOEmployeeInterface<Pilot> {
     }
 
     @Override
-    public Pilot find(Pilot obj) throws SQLException {
-        return null;
+    public Pilot find(int id) throws SQLException {
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.FIND_PILOT);
+        statement.setInt(1, id);
+        ResultSet set = statement.executeQuery();
+        Pilot pilot = new Pilot();
+        while(set.next()){
+            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
+            Employee employee =(Employee) daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
+            pilot.setName(employee.getName());
+            pilot.setAge(employee.getAge());
+            pilot.setExperience(employee.getExperience());
+            pilot.setHeight(employee.getHeight());
+            pilot.setPassportData(employee.getPassportData());
+            pilot.setMileage(set.getInt(CommandConstants.MILEAGE));
+        }
+        ConnectionPool.INSTANCE.putBack(connection);
+        return pilot;
     }
 
     @Override

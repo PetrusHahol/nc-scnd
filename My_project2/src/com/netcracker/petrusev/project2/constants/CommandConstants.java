@@ -36,5 +36,12 @@ public class CommandConstants {
     public static final String ROLE = "role";
     public static final String INFO = "info";
     public static final String ID = "id";
+    public static final String BRIGADES = "brigades";
+    public static final String ID_FIRST_PILOT = "id_first_pilot";
+    public static final String ID_SECOND_PILOT = "id_second_pilot";
+    public static final String ID_STEWARDESS = "id_stewardess";
+    public static final String ID_RADIOMAN = "id_radioman";
+    public static final String ID_NAVIGATOR = "id_navigator";
+
 
 }

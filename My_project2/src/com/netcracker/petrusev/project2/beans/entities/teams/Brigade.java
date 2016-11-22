@@ -16,7 +16,15 @@ public class Brigade implements Comparable {
     private Stewardess stewardess;
     private Radioman radioman;
     private Navigator navigator;
+    private int id;
 
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public int getId(){
+        return this.id;
+    }
 
     private static int objectsCounter;
 
@@ -26,6 +34,10 @@ public class Brigade implements Comparable {
         setStewardess(stewardess);
         setRadioman(radioman);
         setNavigator(navigator);
+        objectsCounter++;
+    }
+
+    public Brigade(){
         objectsCounter++;
     }
 

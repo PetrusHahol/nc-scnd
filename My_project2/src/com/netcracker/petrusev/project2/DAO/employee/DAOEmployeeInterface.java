@@ -11,7 +11,7 @@ import java.util.List;
 public interface DAOEmployeeInterface<T extends Employee> {
     public void create(T obj) throws SQLException;
     public void delete(int id) throws SQLException;
-    public T find(T obj) throws SQLException;
+    public T find(int id) throws SQLException;
     public T update(T obj) throws SQLException;
     public List<T> getAllData() throws SQLException;
 }

@@ -3,6 +3,7 @@ package com.netcracker.petrusev.project2.DAO.employee;
 import com.netcracker.petrusev.project2.DAO.DAOInformationImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
+import com.netcracker.petrusev.project2.beans.entities.office.Navigator;
 import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.connections.DataMemory;
@@ -46,8 +47,25 @@ public class DAORadiomanImpl implements DAOEmployeeInterface<Radioman> {
     }
 
     @Override
-    public Radioman find(Radioman obj) throws SQLException {
-        return null;
+    public Radioman find(int id) throws SQLException {
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.FIND_RADIOMAN);
+        statement.setInt(1, id);
+        ResultSet set = statement.executeQuery();
+        Radioman radioman = new Radioman();
+        while(set.next()){
+            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
+            Employee employee =(Employee) daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
+            radioman.setName(employee.getName());
+            radioman.setAge(employee.getAge());
+            radioman.setExperience(employee.getExperience());
+            radioman.setHeight(employee.getHeight());
+            radioman.setPassportData(employee.getPassportData());
+            radioman.setCountForeignLanguage(set.getInt(CommandConstants.COUNT_FOREIGN_LANGUAGE));
+        }
+        ConnectionPool.INSTANCE.putBack(connection);
+        return radioman;
     }
 
     @Override

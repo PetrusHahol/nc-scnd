@@ -44,8 +44,25 @@ public class DAONavigatorImpl implements  DAOEmployeeInterface<Navigator> {
     }
 
     @Override
-    public Navigator find(Navigator obj) throws SQLException {
-        return null;
+    public Navigator find(int id) throws SQLException {
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.FIND_NAVIGATOR);
+        statement.setInt(1, id);
+        ResultSet set = statement.executeQuery();
+        Navigator navigator = new Navigator();
+        while(set.next()){
+            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
+            Employee employee =(Employee) daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
+            navigator.setName(employee.getName());
+            navigator.setAge(employee.getAge());
+            navigator.setExperience(employee.getExperience());
+            navigator.setHeight(employee.getHeight());
+            navigator.setPassportData(employee.getPassportData());
+            navigator.setCategory(set.getString(CommandConstants.CATEGORY));
+        }
+        ConnectionPool.INSTANCE.putBack(connection);
+        return navigator;
     }
 
     @Override

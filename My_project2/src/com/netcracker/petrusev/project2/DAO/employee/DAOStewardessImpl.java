@@ -3,6 +3,7 @@ package com.netcracker.petrusev.project2.DAO.employee;
 import com.netcracker.petrusev.project2.DAO.DAOInformationImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
+import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
 import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.connections.DataMemory;
@@ -47,8 +48,25 @@ public class DAOStewardessImpl implements DAOEmployeeInterface<Stewardess> {
     }
 
     @Override
-    public Stewardess find(Stewardess obj) throws SQLException {
-        return null;
+    public Stewardess find(int id) throws SQLException {
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.FIND_STEWARDESS);
+        statement.setInt(1, id);
+        ResultSet set = statement.executeQuery();
+        Stewardess stewardess = new Stewardess();
+        while(set.next()){
+            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
+            Employee employee =(Employee) daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
+            stewardess.setName(employee.getName());
+            stewardess.setAge(employee.getAge());
+            stewardess.setExperience(employee.getExperience());
+            stewardess.setHeight(employee.getHeight());
+            stewardess.setPassportData(employee.getPassportData());
+            stewardess.setLengthWaist(set.getInt(CommandConstants.LENGTH_WAIST));
+        }
+        ConnectionPool.INSTANCE.putBack(connection);
+        return stewardess;
     }
 
     @Override

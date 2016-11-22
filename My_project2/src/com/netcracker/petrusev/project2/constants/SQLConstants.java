@@ -39,5 +39,12 @@ public  class SQLConstants {
 
     public static final String DELETE_INFORMATION = "DELETE FROM INFORMATION WHERE id = ?";
 
+    public static final String FIND_NAVIGATOR = "SELECT * FROM NAVIGATOR WHERE id = ?";
+    public static final String FIND_PILOT = "SELECT * FROM PILOT WHERE id = ?";
+    public static final String FIND_STEWARDESS = "SELECT * FROM STEWARDESS WHERE id = ?";
+    public static final String FIND_RADIOMAN = "SELECT * FROM RADIOMAN WHERE id = ?";
+
+    public static final String GET_ALL_BRIGADES = "SELECT * FROM BRIGADE";
+
 
 }
