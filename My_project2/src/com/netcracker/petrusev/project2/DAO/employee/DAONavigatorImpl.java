@@ -3,6 +3,7 @@ package com.netcracker.petrusev.project2.DAO.employee;
 import com.netcracker.petrusev.project2.DAO.DAOInformationImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
+import com.netcracker.petrusev.project2.beans.entities.office.EmptyEmployee;
 import com.netcracker.petrusev.project2.beans.entities.office.Navigator;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.connections.DataMemory;
@@ -30,8 +31,16 @@ public class DAONavigatorImpl implements  DAOEmployeeInterface<Navigator> {
     }
 
     @Override
-    public void delete(Navigator obj) throws SQLException {
-
+    public void delete(int id) throws SQLException {
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_NAVIGATOR);
+        statement.setInt(1, id);
+        ResultSet set = statement.executeQuery();
+        while(set.next()){
+            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            daoInformation.delete(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
+        }
+        ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override
@@ -60,6 +69,7 @@ public class DAONavigatorImpl implements  DAOEmployeeInterface<Navigator> {
             navigator.setHeight(employee.getHeight());
             navigator.setPassportData(employee.getPassportData());
             navigator.setCategory(set.getString(CommandConstants.CATEGORY));
+            navigator.setId(set.getInt(CommandConstants.ID));
             answer.add(navigator);
         }
         ConnectionPool.INSTANCE.putBack(connection);

@@ -33,8 +33,16 @@ public class DAORadiomanImpl implements DAOEmployeeInterface<Radioman> {
     }
 
     @Override
-    public void delete(Radioman obj) throws SQLException {
-
+    public void delete(int id) throws SQLException {
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_RADIOMAN);
+        statement.setInt(1, id);
+        ResultSet set = statement.executeQuery();
+        while(set.next()){
+            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            daoInformation.delete(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
+        }
+        ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override
@@ -63,6 +71,7 @@ public class DAORadiomanImpl implements DAOEmployeeInterface<Radioman> {
             radioman.setHeight(employee.getHeight());
             radioman.setPassportData(employee.getPassportData());
             radioman.setCountForeignLanguage(set.getInt(CommandConstants.COUNT_FOREIGN_LANGUAGE));
+            radioman.setId(set.getInt(CommandConstants.ID));
             answer.add(radioman);
         }
         ConnectionPool.INSTANCE.putBack(connection);

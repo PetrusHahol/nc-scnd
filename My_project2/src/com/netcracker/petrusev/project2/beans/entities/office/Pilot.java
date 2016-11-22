@@ -7,6 +7,17 @@ public class Pilot extends Employee {
     private int mileage;
     public static int objectsCounter;
 
+    private int id;
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
+
     public Pilot(String name, int age, int height, int experience
             , String passportData, int mileage){
         super(name, age, height, experience, passportData);

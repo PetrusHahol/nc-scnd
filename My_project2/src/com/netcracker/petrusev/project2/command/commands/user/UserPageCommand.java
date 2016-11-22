@@ -49,12 +49,8 @@ public class UserPageCommand implements ActionCommand {
         DAOEmployeeInterface<Radioman>  daoRadioman = new DAORadiomanImpl();
         List<Radioman> radiomans = daoRadioman.allData();
         request.setAttribute("radiomans", radiomans);
-        request.setAttribute("radiomans_size", radiomans.size() - 1);//do constants
-        request.setAttribute("pilots_size", pilots.size()-1);
         request.setAttribute("pilots", pilots);
-        request.setAttribute("stewardess_size", stewardesses.size()-1);
         request.setAttribute("stewardess", stewardesses);
-        request.setAttribute("navigators_size", navigators.size() - 1);
         request.setAttribute("navigators" , navigators);
     }
 

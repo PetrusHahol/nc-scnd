@@ -29,6 +29,11 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
     }
 
     @Override
+    public void delete(int id) throws SQLException {
+
+    }
+
+    @Override
     public void delete(Flight obj) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_FLIGHT);

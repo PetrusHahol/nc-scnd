@@ -22,7 +22,7 @@ public  class SQLConstants {
     public static final String GET_PILOT = "SELECT * FROM PILOT";
     public static final String GET_RADIOMAN = "SELECT * FROM RADIOMAN";
 
-    public static final String GET_EMPLOYEE = "SELECT * FROM INFORMATION where id = ?";
+    public static final String GET_INFORMATION = "SELECT * FROM INFORMATION where id = ?";
 
     public static final String INSERT_FLIGHT = "INSERT INTO FLIGHT("+(char)(34) +"from"+(char)(34) +", "+(char)(34) +"to" + (char)(34) +", flight_date) VALUES(?, ?, ?)";
 
@@ -34,4 +34,13 @@ public  class SQLConstants {
     public static final String ADD_RADIOMAN = "INSERT INTO RADIOMAN(count_foreign_language, id_information) values(? , ? )";
 
     public static final String ADD_INFORMATION = "INSERT INTO INFORMATION(name,age,height,experience,passport_data) VALUES(?, ? , ? , ?, ?)  RETURNING id";
+
+    public static final String DELETE_NAVIGATOR = "DELETE FROM NAVIGATOR WHERE id = ? RETURNING id_information";
+    public static final String DELETE_STEWARDESS = "DELETE FROM STEWARDESS WHERE id = ? RETURNING id_information";
+    public static final String DELETE_PILOT = "DELETE FROM PILOT WHERE id = ? RETURNING id_information";
+    public static final String DELETE_RADIOMAN = "DELETE FROM RADIOMAN WHERE id = ? RETURNING id_information";
+
+    public static final String DELETE_INFORMATION = "DELETE FROM INFORMATION WHERE id = ?";
+
+
 }

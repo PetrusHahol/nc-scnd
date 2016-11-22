@@ -185,13 +185,13 @@
                 </div>
 
                 <div class = "column_data">
-                    <c:forEach  var="k" begin="0" end="${stewardess_size}">
+                    <c:forEach  var="k" begin="0" end="${stewardess.size()-1}">
                         <div class = "missing_employee">
 
                             <tl class = "main_table_employee">
                                 <c:choose>
                                     <c:when test = "${priority == 'dispatcher'}">
-                                        <a href = "/Controller?command=deleteEmployee&role=stewardess&name=${stewardess[k].getName()}">
+                                        <a href = "/Controller?command=deleteEmployee&role=stewardess&id=${stewardess[k].getId()}">
                                             <img class = "delete_style" src="/static/media/Delete.png" />
                                         </a>
                                     </c:when>
@@ -214,12 +214,12 @@
                 </div>
 
                 <div class = "column_data">
-                    <c:forEach  var="k" begin="0" end="${pilots_size}">
+                    <c:forEach  var="k" begin="0" end="${pilots.size()-1}">
                         <div class = "missing_employee">
                             <tl class = "main_table_employee">
                                 <c:choose>
                                     <c:when test = "${priority == 'dispatcher'}">
-                                        <a href = "/Controller?command=deleteEmployee&role=pilot&name=${pilots[k].getName()}">
+                                        <a href = "/Controller?command=deleteEmployee&role=pilot&id=${pilots[k].getId()}">
                                             <img class = "delete_style" src="/static/media/Delete.png" />
                                         </a>
                                     </c:when>
@@ -240,12 +240,12 @@
                     </c:forEach>
                 </div>
                 <div class = "column_data">
-                    <c:forEach  var="k" begin="0" end="${radiomans_size}">
+                    <c:forEach  var="k" begin="0" end="${radiomans.size()-1}">
                         <div class = "missing_employee">
                             <tl class = "main_table_employee">
                                 <c:choose>
                                     <c:when test = "${priority == 'dispatcher'}">
-                                        <a href = "/Controller?command=deleteEmployee&role=radioman&name=${radiomans[k].getName()}">
+                                        <a href = "/Controller?command=deleteEmployee&role=radioman&id=${radiomans[k].getId()}">
                                             <img class = "delete_style" src="/static/media/Delete.png" />
                                         </a>
                                     </c:when>
@@ -266,13 +266,13 @@
                     </c:forEach>
                 </div>
                 <div class = "column_data">
-                    <c:forEach  var="k" begin="0" end="${navigators_size}">
+                    <c:forEach  var="k" begin="0" end="${navigators.size()-1}">
                         <div class = "missing_employee">
                             <tl class = "main_table_employee">
                                 <c:choose>
                                     <c:when test = "${priority == 'dispatcher'}">
 
-                                        <a href = "/Controller?command=deleteEmployee&role=navigator&name=${navigators[k].getName()}">
+                                        <a href = "/Controller?command=deleteEmployee&role=navigator&id=${navigators[k].getId()}">
                                             <img class = "delete_style" src="/static/media/Delete.png" />
                                         </a>
 

@@ -1,6 +1,5 @@
 package com.netcracker.petrusev.project2.command.commands.employee;
 
-import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.DAO.employee.*;
 import com.netcracker.petrusev.project2.beans.entities.office.*;
 import com.netcracker.petrusev.project2.command.ActionCommand;
@@ -35,7 +34,7 @@ public class AddEmployeeCommand implements ActionCommand{
         daoEmployee.create(stewardess);
     }
 
-    private void navigator_execute(HttpServletRequest request) throws SQLException{
+    private void navigatorExecute(HttpServletRequest request) throws SQLException{
         Employee employee =getEmployee(request);
         Navigator navigator = new Navigator(employee.getName(), employee.getAge(), employee.getHeight()
                 , employee.getExperience(), employee.getPassportData());
@@ -44,7 +43,7 @@ public class AddEmployeeCommand implements ActionCommand{
         daoEmployee.create(navigator);
     }
 
-    private void radioman_execute(HttpServletRequest request) throws SQLException{
+    private void radiomanExecute(HttpServletRequest request) throws SQLException{
         Employee employee =getEmployee(request);
         Radioman radioman = new Radioman(employee.getName(), employee.getAge(), employee.getHeight()
                 , employee.getExperience(), employee.getPassportData());
@@ -53,7 +52,7 @@ public class AddEmployeeCommand implements ActionCommand{
         daoEmployee.create(radioman);
     }
 
-    private void pilot_execute(HttpServletRequest request) throws SQLException{
+    private void pilotExecute(HttpServletRequest request) throws SQLException{
         Employee employee = getEmployee(request);
         Pilot pilot = new Pilot(employee.getName(), employee.getAge(), employee.getHeight()
                 , employee.getExperience(), employee.getPassportData());
@@ -68,9 +67,9 @@ public class AddEmployeeCommand implements ActionCommand{
             String role = request.getParameter(CommandConstants.ROLE);
             try {
                 if (role.equals(EntityConstants.STEWARDESS)) stewardess_execute(request);// do constants
-                if (role.equals(EntityConstants.NAVIGATOR)) navigator_execute(request);
-                if (role.equals(EntityConstants.RADIOMAN)) radioman_execute(request);
-                if (role.equals(EntityConstants.PILOT)) pilot_execute(request);
+                if (role.equals(EntityConstants.NAVIGATOR)) navigatorExecute(request);
+                if (role.equals(EntityConstants.RADIOMAN)) radiomanExecute(request);
+                if (role.equals(EntityConstants.PILOT)) pilotExecute(request);
             }catch (SQLException ex){
                 return PageConstants.ADDEMPLOYEE;
             }

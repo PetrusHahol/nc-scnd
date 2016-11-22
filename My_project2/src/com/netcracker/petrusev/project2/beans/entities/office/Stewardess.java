@@ -9,6 +9,16 @@ public class Stewardess extends Employee {
 
     public static int objectsCounter;
 
+    private int id;
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
     public Stewardess(){}
 
     public Stewardess(String name, int age, int height, int experience

@@ -9,6 +9,16 @@ public class Radioman extends Employee {
 
     public static int objectsCounter;
 
+    private int id;
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
     public Radioman(String name, int age, int height, int experience
                    , String passportData, int countForeignLanguage){
 

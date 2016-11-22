@@ -34,8 +34,16 @@ public class DAOStewardessImpl implements DAOEmployeeInterface<Stewardess> {
     }
 
     @Override
-    public void delete(Stewardess obj) throws SQLException {
-
+    public void delete(int id) throws SQLException {
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_STEWARDESS);
+        statement.setInt(1, id);
+        ResultSet set = statement.executeQuery();
+        while(set.next()){
+            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            daoInformation.delete(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
+        }
+        ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override
@@ -64,6 +72,7 @@ public class DAOStewardessImpl implements DAOEmployeeInterface<Stewardess> {
             stewardess.setHeight(employee.getHeight());
             stewardess.setPassportData(employee.getPassportData());
             stewardess.setLengthWaist(set.getInt(CommandConstants.LENGTH_WAIST));
+            stewardess.setId(set.getInt(CommandConstants.ID));
             answer.add(stewardess);
         }
         ConnectionPool.INSTANCE.putBack(connection);

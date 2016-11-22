@@ -1,12 +1,12 @@
 package com.netcracker.petrusev.project2.DAO;
 
-import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
 import com.netcracker.petrusev.project2.beans.entities.office.EmptyEmployee;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.connections.DataMemory;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.SQLConstants;
+import javafx.scene.control.TableView;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,10 +40,19 @@ public class DAOInformationImpl implements DAOInterface<Employee> {
     }
 
     @Override
+    public void delete(int id) throws SQLException {
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_INFORMATION);
+        statement.setInt(1, id);
+        statement.execute();
+        ConnectionPool.INSTANCE.putBack(connection);
+    }
+
+    @Override
     public Employee find(Integer id) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         Employee employee =  new EmptyEmployee();
-        PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_EMPLOYEE);
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_INFORMATION);
         statement.setInt(1, id);
         ResultSet setInfo = statement.executeQuery();
         while (setInfo.next()) {

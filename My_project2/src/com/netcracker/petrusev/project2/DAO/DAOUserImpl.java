@@ -73,6 +73,11 @@ public class DAOUserImpl implements DAOInterface<User>{
         }
 
         @Override
+        public void delete(int id) throws SQLException {
+
+        }
+
+        @Override
         public User find(Integer obj) throws SQLException {
                 return null;
         }

@@ -35,5 +35,6 @@ public class CommandConstants {
     public static final String NAME = "name";
     public static final String ROLE = "role";
     public static final String INFO = "info";
+    public static final String ID = "id";
 
 }

@@ -6,8 +6,18 @@ package com.netcracker.petrusev.project2.beans.entities.office;
 public class Navigator<T> extends Employee {
 
     private T category;
+
     public static int objectsCounter;
 
+    private int id;
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public int getId(){
+        return this.id;
+    }
     public Navigator(String name, int age, int height, int experience
             , String passportData, T category){
         super(name, age, height, experience, passportData);

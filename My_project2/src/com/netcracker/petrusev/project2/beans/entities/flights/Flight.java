@@ -9,6 +9,7 @@ import java.util.GregorianCalendar;
  */
 public class Flight implements  Serializable,Comparable, Comparator<Flight> {
 
+
     private String from;
     private String to;
     private GregorianCalendar date;

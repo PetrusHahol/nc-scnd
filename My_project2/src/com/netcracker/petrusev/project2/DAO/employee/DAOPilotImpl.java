@@ -33,8 +33,16 @@ public class DAOPilotImpl implements DAOEmployeeInterface<Pilot> {
     }
 
     @Override
-    public void delete(Pilot obj) throws SQLException {
-
+    public void delete(int id) throws SQLException {
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_PILOT);
+        statement.setInt(1, id);
+        ResultSet set = statement.executeQuery();
+        while(set.next()){
+            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            daoInformation.delete(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
+        }
+        ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override
@@ -63,6 +71,7 @@ public class DAOPilotImpl implements DAOEmployeeInterface<Pilot> {
             pilot.setHeight(employee.getHeight());
             pilot.setPassportData(employee.getPassportData());
             pilot.setMileage(set.getInt(CommandConstants.MILEAGE));
+            pilot.setId(set.getInt(CommandConstants.ID));
             answer.add(pilot);
         }
         ConnectionPool.INSTANCE.putBack(connection);
