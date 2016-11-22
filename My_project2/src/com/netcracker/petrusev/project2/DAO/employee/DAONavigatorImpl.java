@@ -54,7 +54,7 @@ public class DAONavigatorImpl implements  DAOEmployeeInterface<Navigator> {
     }
 
     @Override
-    public List<Navigator> allData() throws SQLException {
+    public List<Navigator> getAllData() throws SQLException {
         List<Navigator> answer = new ArrayList<>();
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_NAVIGATOR);

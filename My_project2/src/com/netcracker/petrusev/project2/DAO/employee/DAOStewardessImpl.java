@@ -57,7 +57,7 @@ public class DAOStewardessImpl implements DAOEmployeeInterface<Stewardess> {
     }
 
     @Override
-    public List<Stewardess> allData() throws SQLException {
+    public List<Stewardess> getAllData() throws SQLException {
         List<Stewardess> answer = new ArrayList<>();
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_STEWARDESS);

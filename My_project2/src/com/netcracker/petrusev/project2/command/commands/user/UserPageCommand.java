@@ -9,6 +9,7 @@ import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
 import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
+import com.netcracker.petrusev.project2.constants.EntityConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.utils.UtilsGregorianCalendar;
 
@@ -26,12 +27,15 @@ public class UserPageCommand implements ActionCommand {
         List<String> from =  new ArrayList<>();
         List<String> to =  new ArrayList<>();
         List<String> date =  new ArrayList<>();
+        List<Integer> id = new ArrayList<>();
         DAOFlightImpl daoFlight = new DAOFlightImpl();
-        for (Flight iter : daoFlight.allData()){
+        for (Flight iter : daoFlight.getAllData()){
             from.add(iter.getFrom());
             to.add(iter.getTo());
             date.add(UtilsGregorianCalendar.INSTANCE.convertFromGregorianCalendar(iter.getDate()));
+            id.add(iter.getId());
         }
+        request.setAttribute(CommandConstants.ID, id);
         request.setAttribute(CommandConstants.FROM, from);
         request.setAttribute(CommandConstants.TO, to);
         request.setAttribute(CommandConstants.DATE, date);
@@ -41,17 +45,17 @@ public class UserPageCommand implements ActionCommand {
     public void setEmployee(HttpServletRequest request) throws SQLException{
 
         DAOEmployeeInterface<Stewardess> daoStewardess = new DAOStewardessImpl();
-        List<Stewardess> stewardesses = daoStewardess.allData();
+        List<Stewardess> stewardesses = daoStewardess.getAllData();
         DAOEmployeeInterface<Pilot> daoPilot = new DAOPilotImpl();
-        List<Pilot> pilots = daoPilot.allData();
+        List<Pilot> pilots = daoPilot.getAllData();
         DAOEmployeeInterface<Navigator> daoNavigator = new DAONavigatorImpl();
-        List<Navigator> navigators = daoNavigator.allData();
+        List<Navigator> navigators = daoNavigator.getAllData();
         DAOEmployeeInterface<Radioman>  daoRadioman = new DAORadiomanImpl();
-        List<Radioman> radiomans = daoRadioman.allData();
-        request.setAttribute("radiomans", radiomans);
-        request.setAttribute("pilots", pilots);
-        request.setAttribute("stewardess", stewardesses);
-        request.setAttribute("navigators" , navigators);
+        List<Radioman> radiomans = daoRadioman.getAllData();
+        request.setAttribute(EntityConstants.RADIOMAN, radiomans);
+        request.setAttribute(EntityConstants.PILOT, pilots);
+        request.setAttribute(EntityConstants.STEWARDESS, stewardesses);
+        request.setAttribute(EntityConstants.NAVIGATOR , navigators);
     }
 
 

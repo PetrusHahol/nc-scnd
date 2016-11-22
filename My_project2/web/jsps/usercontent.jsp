@@ -90,7 +90,7 @@
                             <tl class = flight>
                                 <c:choose>
                                     <c:when test = "${priority == 'admin'}">
-                                        <a href ="/Controller?command=DeleteFlight&from=${from[k]}&to=${to[k]}&flight_date=${flight_date[k]}">
+                                        <a href ="/Controller?command=DeleteFlight&id=${id[k]}">
                                             <img class = "Vk_photo" src="/static/media/Delete.png"/>
                                         </a>
                                     </c:when>
@@ -214,25 +214,25 @@
                 </div>
 
                 <div class = "column_data">
-                    <c:forEach  var="k" begin="0" end="${pilots.size()-1}">
+                    <c:forEach  var="k" begin="0" end="${pilot.size()-1}">
                         <div class = "missing_employee">
                             <tl class = "main_table_employee">
                                 <c:choose>
                                     <c:when test = "${priority == 'dispatcher'}">
-                                        <a href = "/Controller?command=deleteEmployee&role=pilot&id=${pilots[k].getId()}">
+                                        <a href = "/Controller?command=deleteEmployee&role=pilot&id=${pilot[k].getId()}">
                                             <img class = "delete_style" src="/static/media/Delete.png" />
                                         </a>
                                     </c:when>
                                 </c:choose>
                                 <p>INDEX: <c:out value="${k+1}"/></p>
-                                <p>NAME  <c:out value="${pilots[k].getName()}"/></p>
+                                <p>NAME  <c:out value="${pilot[k].getName()}"/></p>
                                 <p>AGE: <c:out value="${pilots[k].getAge()}"/> years old</p>
-                                <p>HEIGHT:<c:out value="${pilots[k].getHeight()}"/> sm</p>
-                                <p>EXPERIENCE:<c:out value="${pilots[k].getExperience()}"/> years</p>
-                                <p>MILEAGE:<c:out value="${pilots[k].getMileage()}"/> km</>
+                                <p>HEIGHT:<c:out value="${pilot[k].getHeight()}"/> sm</p>
+                                <p>EXPERIENCE:<c:out value="${pilot[k].getExperience()}"/> years</p>
+                                <p>MILEAGE:<c:out value="${pilot[k].getMileage()}"/> km</>
                                 <c:choose>
                                 <c:when test = "${priority == 'dispatcher'}">
-                                <p>PASSPORT DATA:<c:out value="${pilots[k].getPassportData()}"/></p>
+                                <p>PASSPORT DATA:<c:out value="${pilot[k].getPassportData()}"/></p>
                                 </c:when>
                                 </c:choose>
                             </tl>
@@ -240,25 +240,25 @@
                     </c:forEach>
                 </div>
                 <div class = "column_data">
-                    <c:forEach  var="k" begin="0" end="${radiomans.size()-1}">
+                    <c:forEach  var="k" begin="0" end="${radioman.size()-1}">
                         <div class = "missing_employee">
                             <tl class = "main_table_employee">
                                 <c:choose>
                                     <c:when test = "${priority == 'dispatcher'}">
-                                        <a href = "/Controller?command=deleteEmployee&role=radioman&id=${radiomans[k].getId()}">
+                                        <a href = "/Controller?command=deleteEmployee&role=radioman&id=${radioman[k].getId()}">
                                             <img class = "delete_style" src="/static/media/Delete.png" />
                                         </a>
                                     </c:when>
                                 </c:choose>
                                 <p>INDEX: <c:out value="${k+1}"/></p>
-                                <p>NAME  <c:out value="${radiomans[k].getName()}"/></p>
-                                <p>AGE: <c:out value="${radiomans[k].getAge()}"/> years old</p>
-                                <p>HEIGHT:<c:out value="${radiomans[k].getHeight()}"/> sm</p>
-                                <p>EXPERIENCE:<c:out value="${radiomans[k].getExperience()}"/> years</p>
-                                <p>COUNT LANGUAGES:<c:out value="${radiomans[k].getCountForeignLanguage()}"/> </p>
+                                <p>NAME  <c:out value="${radioman[k].getName()}"/></p>
+                                <p>AGE: <c:out value="${radioman[k].getAge()}"/> years old</p>
+                                <p>HEIGHT:<c:out value="${radioman[k].getHeight()}"/> sm</p>
+                                <p>EXPERIENCE:<c:out value="${radioman[k].getExperience()}"/> years</p>
+                                <p>COUNT LANGUAGES:<c:out value="${radioman[k].getCountForeignLanguage()}"/> </p>
                                 <c:choose>
                                 <c:when test = "${priority == 'dispatcher'}">
-                                <p>PASSPORT DATA:<c:out value="${radiomans[k].getPassportData()}"/></p>
+                                <p>PASSPORT DATA:<c:out value="${radioman[k].getPassportData()}"/></p>
                                 </c:when>
                                 </c:choose>
                             </tl>
@@ -266,27 +266,27 @@
                     </c:forEach>
                 </div>
                 <div class = "column_data">
-                    <c:forEach  var="k" begin="0" end="${navigators.size()-1}">
+                    <c:forEach  var="k" begin="0" end="${navigator.size()-1}">
                         <div class = "missing_employee">
                             <tl class = "main_table_employee">
                                 <c:choose>
                                     <c:when test = "${priority == 'dispatcher'}">
 
-                                        <a href = "/Controller?command=deleteEmployee&role=navigator&id=${navigators[k].getId()}">
+                                        <a href = "/Controller?command=deleteEmployee&role=navigator&id=${navigator[k].getId()}">
                                             <img class = "delete_style" src="/static/media/Delete.png" />
                                         </a>
 
                                     </c:when>
                                 </c:choose>
                                 <p>INDEX: <c:out value="${k+1}"/></p>
-                                <p>NAME  <c:out value="${navigators[k].getName()}"/></p>
-                                <p>AGE: <c:out value="${navigators[k].getAge()}"/> years old</p>
-                                <p>HEIGHT:<c:out value="${navigators[k].getHeight()}"/> sm</p>
-                                <p>EXPERIENCE:<c:out value="${navigators[k].getExperience()}"/> years</p>
-                                <p>CATEGORY:<c:out value="${navigators[k].getCategory()}"/></p>
+                                <p>NAME  <c:out value="${navigator[k].getName()}"/></p>
+                                <p>AGE: <c:out value="${navigator[k].getAge()}"/> years old</p>
+                                <p>HEIGHT:<c:out value="${navigator[k].getHeight()}"/> sm</p>
+                                <p>EXPERIENCE:<c:out value="${navigator[k].getExperience()}"/> years</p>
+                                <p>CATEGORY:<c:out value="${navigator[k].getCategory()}"/></p>
                                 <c:choose>
                                 <c:when test = "${priority == 'dispatcher'}">
-                                <p>PASSPORT DATA:<c:out value="${navigators[k].getPassportData()}"/></p>
+                                <p>PASSPORT DATA:<c:out value="${navigator[k].getPassportData()}"/></p>
                                 </c:when>
                                 </c:choose>
                             </tl>

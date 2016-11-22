@@ -32,16 +32,6 @@ public class DAOUserImpl implements DAOInterface<User>{
                 ConnectionPool.INSTANCE.putBack(connection);
         }
 
-        @Override
-        public void delete(User user) throws SQLException {
-                Connection connection = ConnectionPool.INSTANCE.retrieve();
-                PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_USER_BY_LOGIN_AND_NAME);
-                statement.setString(1,user.getLogin());
-                statement.setString(2,user.getFirstName());
-                statement.setString(3,user.getSecondName());
-                statement.execute();
-                ConnectionPool.INSTANCE.putBack(connection);
-        }
 
         @Override
         public User find(User user) throws SQLException {
@@ -57,6 +47,7 @@ public class DAOUserImpl implements DAOInterface<User>{
                         user.setFirstName(set.getString(CommandConstants.FIRST_NAME));
                         user.setSecondName(set.getString(CommandConstants.SECOND_NAME));
                         user.setPriority(set.getString(CommandConstants.PRIORITY));
+                        user.setId(set.getInt(CommandConstants.ID));
                 }
                 ConnectionPool.INSTANCE.putBack(connection);
                 return user;
@@ -68,13 +59,17 @@ public class DAOUserImpl implements DAOInterface<User>{
         }
 
         @Override
-        public List<User> allData() throws SQLException {
+        public List<User> getAllData() throws SQLException {
                 throw new UnsupportedOperationException();
         }
 
         @Override
         public void delete(int id) throws SQLException {
-
+                Connection connection = ConnectionPool.INSTANCE.retrieve();
+                PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_USER);
+                statement.setInt(1, id);
+                statement.execute();
+                ConnectionPool.INSTANCE.putBack(connection);
         }
 
         @Override

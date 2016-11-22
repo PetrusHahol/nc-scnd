@@ -15,6 +15,16 @@ public class Flight implements  Serializable,Comparable, Comparator<Flight> {
     private GregorianCalendar date;
     public static int objectsCounter = 0;
 
+    private int id;
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
     public Flight(String from, String to, GregorianCalendar date ) {
         this.from = from;
         this.to = to;
@@ -22,6 +32,7 @@ public class Flight implements  Serializable,Comparable, Comparator<Flight> {
         objectsCounter++;
 
     }
+
 
     public Flight(){
         objectsCounter++;

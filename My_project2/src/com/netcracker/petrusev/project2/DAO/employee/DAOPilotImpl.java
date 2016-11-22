@@ -56,7 +56,7 @@ public class DAOPilotImpl implements DAOEmployeeInterface<Pilot> {
     }
 
     @Override
-    public List<Pilot> allData() throws SQLException {
+    public List<Pilot> getAllData() throws SQLException {
         List<Pilot> answer = new ArrayList<>();
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_PILOT);

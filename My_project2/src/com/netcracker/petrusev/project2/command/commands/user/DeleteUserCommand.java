@@ -16,15 +16,9 @@ public class DeleteUserCommand implements ActionCommand{
 
     @Override
     public String execute(HttpServletRequest request) {
-        User user = new User();
-
-        System.out.println(request.getSession().getAttribute(CommandConstants.LOGIN).toString());
-        user.setLogin(request.getSession().getAttribute(CommandConstants.LOGIN).toString());
-        user.setFirstName(request.getSession().getAttribute(CommandConstants.FIRST_NAME).toString());
-        user.setSecondName(request.getSession().getAttribute(CommandConstants.SECOND_NAME).toString());
         DAOUserImpl daoUser = new DAOUserImpl();
         try {
-            daoUser.delete(user);
+            daoUser.delete(Integer.valueOf(request.getSession().getAttribute(CommandConstants.ID).toString()));
             request.getSession().invalidate();
         }
         catch (SQLException ex){

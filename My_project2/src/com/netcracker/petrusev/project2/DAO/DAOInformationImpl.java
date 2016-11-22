@@ -34,10 +34,6 @@ public class DAOInformationImpl implements DAOInterface<Employee> {
         ConnectionPool.INSTANCE.putBack(connection);
     }
 
-    @Override
-    public void delete(Employee obj) throws SQLException {
-
-    }
 
     @Override
     public void delete(int id) throws SQLException {
@@ -77,7 +73,7 @@ public class DAOInformationImpl implements DAOInterface<Employee> {
     }
 
     @Override
-    public List<Employee> allData() throws SQLException {
+    public List<Employee> getAllData() throws SQLException {
         return null;
     }
 }

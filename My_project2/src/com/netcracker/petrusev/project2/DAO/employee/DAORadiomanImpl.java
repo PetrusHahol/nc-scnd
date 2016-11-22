@@ -56,7 +56,7 @@ public class DAORadiomanImpl implements DAOEmployeeInterface<Radioman> {
     }
 
     @Override
-    public List<Radioman> allData() throws SQLException {
+    public List<Radioman> getAllData() throws SQLException {
         List<Radioman> answer = new ArrayList<>();
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_RADIOMAN);

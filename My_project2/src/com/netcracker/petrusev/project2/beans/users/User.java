@@ -12,6 +12,16 @@ public class User {
     private String password = null;
     private String priority = null;
 
+    private int id;
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
     public void setPage(String page) {
         this.page = page;
     }

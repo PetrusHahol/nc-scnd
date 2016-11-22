@@ -30,20 +30,13 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
 
     @Override
     public void delete(int id) throws SQLException {
-
-    }
-
-    @Override
-    public void delete(Flight obj) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_FLIGHT);
-        java.sql.Date date = new java.sql.Date(obj.getDate().getTime().getTime());
-        statement.setString(1, obj.getFrom());
-        statement.setString(2, obj.getTo());
-        statement.setDate(3, date);
+        statement.setInt(1, id);
         statement.executeUpdate();
         ConnectionPool.INSTANCE.putBack(connection);
     }
+
 
     @Override
     public Flight find(Flight obj) throws SQLException {
@@ -56,7 +49,7 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
     }
 
     @Override
-    public List<Flight> allData() throws SQLException {
+    public List<Flight> getAllData() throws SQLException {
         List<Flight> answer = new ArrayList<>();
         Connection connection  = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_ALL_FLIGHT);
@@ -66,6 +59,7 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
             flight.setFrom(set.getString(CommandConstants.FROM));
             flight.setTo(set.getString(CommandConstants.TO));
             flight.setDate(UtilsGregorianCalendar.INSTANCE.convertIntoGregorianCalendar(set.getTimestamp(CommandConstants.DATE)));
+            flight.setId(set.getInt(CommandConstants.ID));
             answer.add(flight);
         }
         ConnectionPool.INSTANCE.putBack(connection);

@@ -13,5 +13,5 @@ public interface DAOEmployeeInterface<T extends Employee> {
     public void delete(int id) throws SQLException;
     public T find(T obj) throws SQLException;
     public T update(T obj) throws SQLException;
-    public List<T> allData() throws SQLException;
+    public List<T> getAllData() throws SQLException;
 }
