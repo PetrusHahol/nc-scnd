@@ -42,6 +42,8 @@ public class CommandConstants {
     public static final String ID_STEWARDESS = "id_stewardess";
     public static final String ID_RADIOMAN = "id_radioman";
     public static final String ID_NAVIGATOR = "id_navigator";
+    public static final String ID_FLIGHT = "id_flight";
+
 
 
 }

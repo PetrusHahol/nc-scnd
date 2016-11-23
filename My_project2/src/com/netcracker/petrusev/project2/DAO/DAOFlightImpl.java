@@ -1,6 +1,8 @@
 package com.netcracker.petrusev.project2.DAO;
 
 import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
+import com.netcracker.petrusev.project2.beans.entities.office.Employee;
+import com.netcracker.petrusev.project2.beans.entities.office.EmptyEmployee;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PermissionsConstants;
@@ -67,7 +69,18 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
     }
 
     @Override
-    public Flight find(Integer obj) throws SQLException {
-        return null;
+    public Flight find(Integer id) throws SQLException {
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.FIND_FLIGHT);
+        statement.setInt(1, id);
+        Flight flight = new Flight();
+        ResultSet set = statement.executeQuery();
+        while (set.next()){
+            flight.setFrom(set.getString(CommandConstants.FROM));
+            flight.setTo(set.getString(CommandConstants.TO));
+            flight.setDate(UtilsGregorianCalendar.INSTANCE.convertIntoGregorianCalendar(set.getString(CommandConstants.DATE)));
+        }
+        ConnectionPool.INSTANCE.putBack(connection);
+        return flight;
     }
 }

@@ -300,13 +300,99 @@
     </c:when>
     <c:when test="${group == 'brigades'}">
         <div class = "data2">
-            <td>
+            <tr>
                 <div class = "container">
-                    <div class = "missing">
+                    <c:forEach  var="k" begin="0" end="${brigades.size()-1}">
+                        <div class = "missing_employee">
+                                <tl class = "main_table_employee">
+                                    <c:choose>
+                                        <c:when test = "${priority == 'dispatcher'}">
+                                            <a href = "/Controller?command=deleteBrigade&id=${brigades[k].getId()}">
+                                                <img class = "VK_photo" src="/static/media/Delete.png" />
+                                            </a>
 
-                     </div>
+                                        </c:when>
+                                    </c:choose>
+                                    <div class = "six_parts">
+                                        <p>NAVIGATOR</p>
+                                        <p>NAME  <c:out value="${brigades[k].getNavigator().getName()}"/></p>
+                                        <p>AGE: <c:out value="${brigades[k].getNavigator().getAge()}"/> years old</p>
+                                        <p>HEIGHT:<c:out value="${brigades[k].getNavigator().getHeight()}"/> sm</p>
+                                        <p>EXPERIENCE:<c:out value="${brigades[k].getNavigator().getExperience()}"/> years</p>
+                                        <p>CATEGORY:<c:out value="${brigades[k].getNavigator().getCategory()}"/></p>
+                                        <c:choose>
+                                            <c:when test = "${priority == 'dispatcher'}">
+                                                <p>PASSPORT DATA:<c:out value="${brigades[k].getNavigator().getPassportData()}"/></p>
+                                            </c:when>
+                                        </c:choose>
+                                    </div>
+                                    <div class = "six_parts">
+                                        <p>FIRST PILOT</p>
+                                        <p>NAME  <c:out value="${brigades[k].getFirstPilot().getName()}"/></p>
+                                        <p>AGE: <c:out value="${brigades[k].getFirstPilot().getAge()}"/> years old</p>
+                                        <p>HEIGHT:<c:out value="${brigades[k].getFirstPilot().getHeight()}"/> sm</p>
+                                        <p>EXPERIENCE:<c:out value="${brigades[k].getFirstPilot().getExperience()}"/> years</p>
+                                        <p>MILEAGE:<c:out value="${brigades[k].getFirstPilot().getMileage()}"/> km</>
+                                        <c:choose>
+                                            <c:when test = "${priority == 'dispatcher'}">
+                                                <p>PASSPORT DATA:<c:out value="${brigades[k].getFirstPilot().getPassportData()}"/></p>
+                                            </c:when>
+                                        </c:choose>
+                                    </div>
+                                    <div class = "six_parts">
+                                        <p>SECOND PILOT</p>
+                                        <p>NAME  <c:out value="${brigades[k].getSecondPilot().getName()}"/></p>
+                                        <p>AGE: <c:out value="${brigades[k].getSecondPilot().getAge()}"/> years old</p>
+                                        <p>HEIGHT:<c:out value="${brigades[k].getSecondPilot().getHeight()}"/> sm</p>
+                                        <p>EXPERIENCE:<c:out value="${brigades[k].getSecondPilot().getExperience()}"/> years</p>
+                                        <p>MILEAGE:<c:out value="${brigades[k].getSecondPilot().getMileage()}"/> km</>
+                                        <c:choose>
+                                            <c:when test = "${priority == 'dispatcher'}">
+                                                <p>PASSPORT DATA:<c:out value="${brigades[k].getSecondPilot().getPassportData()}"/></p>
+                                            </c:when>
+                                        </c:choose>
+                                    </div>
+                                    <div class = "six_parts">
+                                        <p>RADIOMAN</p>
+                                        <p>NAME  <c:out value="${brigades[k].getRadioman().getName()}"/></p>
+                                        <p>AGE: <c:out value="${brigades[k].getRadioman().getAge()}"/> years old</p>
+                                        <p>HEIGHT:<c:out value="${brigades[k].getRadioman().getHeight()}"/> sm</p>
+                                        <p>EXPERIENCE:<c:out value="${brigades[k].getRadioman().getExperience()}"/> years</p>
+                                        <p>COUNT LANGUAGES:<c:out value="${brigades[k].getRadioman().getCountForeignLanguage()}"/> </p>
+                                        <c:choose>
+                                            <c:when test = "${priority == 'dispatcher'}">
+                                                <p>PASSPORT DATA:<c:out value="${brigades[k].getRadioman().getPassportData()}"/></p>
+                                            </c:when>
+                                        </c:choose>
+                                    </div>
+                                    <div class = "six_parts">
+                                        <p>STEWARDESS</p>
+                                        <p>NAME  <c:out value="${brigades[k].getStewardess().getName()}"/></p>
+                                        <p>AGE: <c:out value="${brigades[k].getStewardess().getAge()}"/> years old</p>
+                                        <p>HEIGHT:<c:out value="${brigades[k].getStewardess().getHeight()}"/> sm</p>
+                                        <p>EXPERIENCE:<c:out value="${brigades[k].getStewardess().getExperience()}"/> years</p>
+                                        <p>LENGTH WAIST:<c:out value="${brigades[k].getStewardess().getLengthWaist()}"/> sm</>
+                                        <c:choose>
+                                            <c:when test = "${priority == 'dispatcher'}">
+                                                <p>PASSPORT DATA:<c:out value="${brigades[k].getStewardess().getPassportData()}"/></p>
+                                            </c:when>
+                                        </c:choose>
+                                    </div>
+
+                                    <div class = "six_parts">
+                                        <p>FLIGHT</p>
+                                        <p>FROM  <c:out value="${brigades[k].getFlight().getFrom()}"/></p>
+                                        <p>TO: <c:out value="${brigades[k].getFlight().getTo()}"/></p>
+                                        <p>DATE: <c:out value="${brigades[k].getFlight().getDate().getTime()}"/></p>
+                                    </div>
+
+                                </tl>
+
+                            </div>
+                        </div>
+                    </c:forEach>
                 </div>
-            </td>
+            </tr>
             </div>
     </c:when>
 </c:choose>

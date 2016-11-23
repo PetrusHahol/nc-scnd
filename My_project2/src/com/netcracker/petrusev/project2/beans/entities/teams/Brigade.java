@@ -1,6 +1,7 @@
 package com.netcracker.petrusev.project2.beans.entities.teams;
 
 
+import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.beans.entities.office.Navigator;
 import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
 import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
@@ -16,6 +17,7 @@ public class Brigade implements Comparable {
     private Stewardess stewardess;
     private Radioman radioman;
     private Navigator navigator;
+    private Flight flight;
     private int id;
 
     public void setId(int id){
@@ -81,6 +83,11 @@ public class Brigade implements Comparable {
         this.navigator = navigator;
     }
 
+    public void setFlight(Flight flight){
+        this.flight = flight;
+    }
+
+    public Flight getFlight(){ return this.flight;}
 
     @Override
     public String toString() {

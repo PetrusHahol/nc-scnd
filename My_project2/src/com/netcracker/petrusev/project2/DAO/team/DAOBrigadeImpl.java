@@ -1,7 +1,9 @@
 package com.netcracker.petrusev.project2.DAO.team;
 
+import com.netcracker.petrusev.project2.DAO.DAOFlightImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.DAO.employee.*;
+import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.beans.entities.office.Navigator;
 import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
 import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
@@ -55,14 +57,17 @@ public class DAOBrigadeImpl implements DAOInterface<Brigade>{
             DAOEmployeeInterface<Pilot> daoPilot = new DAOPilotImpl();
             DAOEmployeeInterface<Radioman> daoRadioman = new DAORadiomanImpl();
             DAOEmployeeInterface<Navigator> daoNavigator = new DAONavigatorImpl();
+            DAOInterface<Flight> daoFlight = new DAOFlightImpl();
             brigade.setId(set.getInt(CommandConstants.ID));
             brigade.setStewardess(daoStewardess.find(set.getInt(CommandConstants.ID_STEWARDESS)));
             brigade.setFirstPilot(daoPilot.find(set.getInt(CommandConstants.ID_FIRST_PILOT)));
             brigade.setSecondPilot(daoPilot.find(set.getInt(CommandConstants.ID_SECOND_PILOT)));
             brigade.setNavigator(daoNavigator.find(set.getInt(CommandConstants.ID_NAVIGATOR)));
             brigade.setRadioman(daoRadioman.find(set.getInt(CommandConstants.ID_RADIOMAN)));
+            brigade.setFlight(daoFlight.find(set.getInt(CommandConstants.ID_FLIGHT)));
             answer.add(brigade);
         }
+        ConnectionPool.INSTANCE.putBack(connection);
         return answer;
     }
 
