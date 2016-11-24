@@ -19,6 +19,13 @@ public class Brigade implements Comparable {
     private Navigator navigator;
     private Flight flight;
     private int id;
+    private int id_first_pilot;
+    private int id_second_pilot;
+    private int id_navigator;
+    private int id_radioman;
+    private int id_stewardess;
+    private int id_flight;
+
 
     public void setId(int id){
         this.id = id;
@@ -130,5 +137,52 @@ public class Brigade implements Comparable {
         result = 31 * result + radioman.hashCode();
         result = 31 * result + navigator.hashCode();
         return result;
+    }
+    public int getId_first_pilot() {
+        return id_first_pilot;
+    }
+
+    public void setId_first_pilot(int id_first_pilot) {
+        this.id_first_pilot = id_first_pilot;
+    }
+
+    public int getId_second_pilot() {
+        return id_second_pilot;
+    }
+
+    public void setId_second_pilot(int id_second_pilot) {
+        this.id_second_pilot = id_second_pilot;
+    }
+
+    public int getId_navigator() {
+        return id_navigator;
+    }
+
+    public void setId_navigator(int id_navigator) {
+        this.id_navigator = id_navigator;
+    }
+
+    public int getId_radioman() {
+        return id_radioman;
+    }
+
+    public void setId_radioman(int id_radioman) {
+        this.id_radioman = id_radioman;
+    }
+
+    public int getId_stewardess() {
+        return id_stewardess;
+    }
+
+    public void setId_stewardess(int id_stewardess) {
+        this.id_stewardess = id_stewardess;
+    }
+
+    public int getId_flight() {
+        return id_flight;
+    }
+
+    public void setId_flight(int id_flight) {
+        this.id_flight = id_flight;
     }
 }

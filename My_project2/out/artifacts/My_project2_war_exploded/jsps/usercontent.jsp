@@ -299,9 +299,18 @@
         </div>
     </c:when>
     <c:when test="${group == 'brigades'}">
+        <c:choose>
+            <c:when test = "${priority == 'dispatcher'}">
+                <a href = "/Controller?command=addBrigade&reg=false">
+                    <img class = "Vk_photo" src="/static/media/add_data.png" />
+                </a>
+            </c:when>
+        </c:choose>
         <div class = "data2">
             <tr>
+
                 <div class = "container">
+
                     <c:forEach  var="k" begin="0" end="${brigades.size()-1}">
                         <div class = "missing_employee">
                                 <tl class = "main_table_employee">

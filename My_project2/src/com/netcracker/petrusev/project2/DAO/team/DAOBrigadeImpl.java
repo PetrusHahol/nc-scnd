@@ -27,12 +27,25 @@ public class DAOBrigadeImpl implements DAOInterface<Brigade>{
 
     @Override
     public void create(Brigade obj) throws SQLException {
-
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.ADD_BRIGADE);
+        statement.setInt(1,obj.getId_first_pilot());
+        statement.setInt(2,obj.getId_second_pilot());
+        statement.setInt(3,obj.getId_stewardess());
+        statement.setInt(4,obj.getId_navigator());
+        statement.setInt(5,obj.getId_radioman());
+        statement.setInt(6,obj.getId_flight());
+        statement.execute();
+        ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override
     public void delete(int id) throws SQLException {
-
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_BRIGADE);
+        statement.setInt(1, id);
+        statement.execute();
+        ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override

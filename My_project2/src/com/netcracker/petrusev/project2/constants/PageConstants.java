@@ -13,6 +13,7 @@ public class PageConstants {
     public static final String ADDFLIGHT = "/jsps/addFlight.jsp";
     public static final String ADDEMPLOYEE = "/jsps/addEmployee.jsp";
     public static final String EMPLOYEE_MENU = "/Controller?command=main&group=employees";
+    public static final String ADDBRIGADE = "/jsps/addBrigade.jsp";
 
 
 }

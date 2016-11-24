@@ -2,6 +2,8 @@ package com.netcracker.petrusev.project2.command.enums;
 
 import com.netcracker.petrusev.project2.command.*;
 import com.netcracker.petrusev.project2.command.commands.*;
+import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
+import com.netcracker.petrusev.project2.command.commands.brigade.DeleteBrigadeCommand;
 import com.netcracker.petrusev.project2.command.commands.employee.AddEmployeeCommand;
 import com.netcracker.petrusev.project2.command.commands.employee.DeleteEmployeeCommand;
 import com.netcracker.petrusev.project2.command.commands.flight.AddFlightCommand;
@@ -61,6 +63,16 @@ public enum RequestsEnum {
     DELETEEMPLOYEE{
         {
             this.command = new DeleteEmployeeCommand();
+        }
+    },
+    ADDBRIGADE{
+        {
+            this.command = new AddBrigadeCommand();
+        }
+    },
+    DELETEBRIGADE{
+        {
+            this.command = new DeleteBrigadeCommand();
         }
     };
 

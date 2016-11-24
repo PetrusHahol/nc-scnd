@@ -29,7 +29,7 @@ public class DAOInformationImpl implements DAOInterface<Employee> {
         info_statement.setString(5,obj.getPassportData());
         ResultSet set = info_statement.executeQuery();
         while (set.next()){
-            DataMemory.INSTANCE.setId(set.getInt("id"));
+            DataMemory.INSTANCE.setId(set.getInt(CommandConstants.ID));
         }
         ConnectionPool.INSTANCE.putBack(connection);
     }
