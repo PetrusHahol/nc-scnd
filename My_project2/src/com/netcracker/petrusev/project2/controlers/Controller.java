@@ -1,6 +1,5 @@
 package com.netcracker.petrusev.project2.controlers;
 
-import com.netcracker.petrusev.project2.beans.users.Admin;
 import com.netcracker.petrusev.project2.connections.JDBC;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.command.finder.FindRequest;
@@ -25,7 +24,6 @@ import java.util.*;
 public class Controller extends HttpServlet{
 
     JDBC user = new JDBC();
-    Admin admin = new Admin();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -40,7 +38,8 @@ public class Controller extends HttpServlet{
     private void servletProcessing(HttpServletRequest req, HttpServletResponse resp){
         try {
         ActionCommand findReq = new FindRequest().Command(req);
-        String page = findReq.execute(req);req.getRequestDispatcher(page).forward(req,resp);
+        String page = findReq.execute(req);
+        req.getRequestDispatcher(page).forward(req,resp);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

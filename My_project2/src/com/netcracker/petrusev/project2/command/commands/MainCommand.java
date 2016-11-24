@@ -11,7 +11,6 @@ public class MainCommand implements ActionCommand {
  @Override
  public String execute(HttpServletRequest request) {
   try {
-   System.err.println();
    if (request.getSession().getAttribute(CommandConstants.LOGIN).toString() != null)
     return PageConstants.USER_CONTENT_REQUEST;
   } catch (Exception ex) {

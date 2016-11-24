@@ -74,6 +74,11 @@ public enum RequestsEnum {
         {
             this.command = new DeleteBrigadeCommand();
         }
+    },
+    ACCESSEXCEPTION {
+        {
+            this.command =new AccessExceptionCommand();
+        }
     };
 
     ActionCommand command;

@@ -5,7 +5,7 @@
      Time: 15:01
      To change this template use File | Settings | File Templates.
      --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -53,7 +53,7 @@
     <c:when test="${group == 'flights'}">
         <c:choose>
             <c:when test = "${priority == 'admin'}">
-                <a href = "/Controller?command=addflight&reg=false">
+                <a href = "/Controller?command=addFlight&reg=false">
                     <img class = "Vk_photo" src="/static/media/add_data.png" />
                 </a>
             </c:when>
@@ -90,7 +90,7 @@
                             <tl class = flight>
                                 <c:choose>
                                     <c:when test = "${priority == 'admin'}">
-                                        <a href ="/Controller?command=DeleteFlight&id=${id[k]}">
+                                        <a href ="/Controller?command=deleteFlight&id=${id[k]}">
                                             <img class = "Vk_photo" src="/static/media/Delete.png"/>
                                         </a>
                                     </c:when>

@@ -9,7 +9,7 @@
 <jsp:forward page="/Controller?command=main" ></jsp:forward>
 <html>
   <head>
-    <title>Indeex</title>
+    <title>Index</title>
   </head>
   <body>
   </body>

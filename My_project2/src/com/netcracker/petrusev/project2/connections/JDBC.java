@@ -7,7 +7,7 @@ import java.sql.*;
 public class JDBC {
     private static final String driver = "org.postgresql.Driver";
     public Connection connection = null;
-    private static final String url = "jdbc:postgresql://127.0.0.1:5432/airs";
+    private static final String url = "jdbc:postgresql://127.0.0.1:5432/airs?useEncoding=yes&amp;characterEncoding=UTF-8";
     private static final String name = "postgres";
     private static final String password = "qwerty12345";
 
