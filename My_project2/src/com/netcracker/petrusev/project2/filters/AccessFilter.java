@@ -25,13 +25,16 @@ public class AccessFilter implements Filter{
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
+
         if (request.getSession(false) != null && request.getSession().getAttribute(CommandConstants.PRIORITY) != null) {
+            if (request.getParameter(CommandConstants.COMMAND) != null)
             if (request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.SIGNIN)
                 || request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.REGISTRATION)) {
                 request.getRequestDispatcher(PageConstants.ACCESSEXEPTION).forward(request,response);
             }
         }
         if (request.getSession(false) != null && request.getSession().getAttribute(CommandConstants.PRIORITY) != null) {
+            if (request.getParameter(CommandConstants.COMMAND) != null)
             if (request.getSession().getAttribute(CommandConstants.PRIORITY).equals(PermissionsConstants.USER)) {
                 if (request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.ADDBRIGADE) ||
                         request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.DELETEBRIGADE) ||
@@ -56,6 +59,7 @@ public class AccessFilter implements Filter{
         }
 
         if (request.getSession(false) != null && request.getSession().getAttribute(CommandConstants.PRIORITY) != null) {
+            if (request.getParameter(CommandConstants.COMMAND) != null)
             if (request.getSession().getAttribute(CommandConstants.PRIORITY).equals(PermissionsConstants.DISPATCHER)) {
                 if (request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.ADDFLIGHT) ||
                         request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.DELETEFLIGHT)) {

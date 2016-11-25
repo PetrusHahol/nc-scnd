@@ -20,12 +20,18 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
     @Override
     public void create(Flight obj) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();
-        PreparedStatement statement = connection.prepareStatement(SQLConstants.INSERT_FLIGHT);
         java.sql.Date date = new java.sql.Date(obj.getDate().getTime().getTime());
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_FLIGHT_BY_DATA);//validation
         statement.setString(1, (obj.getFrom()));
         statement.setString(2, obj.getTo());
         statement.setDate(3, date);
-        statement.executeUpdate();
+        if (!statement.executeQuery().next()) {
+            statement = connection.prepareStatement(SQLConstants.INSERT_FLIGHT);
+            statement.setString(1, (obj.getFrom()));
+            statement.setString(2, obj.getTo());
+            statement.setDate(3, date);
+            statement.executeUpdate();
+        }
         ConnectionPool.INSTANCE.putBack(connection);
     }
 

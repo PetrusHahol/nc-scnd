@@ -1,4 +1,4 @@
-package com.netcracker.petrusev.project2.DAO.team;
+package com.netcracker.petrusev.project2.DAO.teams;
 
 import com.netcracker.petrusev.project2.DAO.DAOFlightImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
@@ -28,14 +28,18 @@ public class DAOBrigadeImpl implements DAOInterface<Brigade>{
     @Override
     public void create(Brigade obj) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();
-        PreparedStatement statement = connection.prepareStatement(SQLConstants.ADD_BRIGADE);
-        statement.setInt(1,obj.getId_first_pilot());
-        statement.setInt(2,obj.getId_second_pilot());
-        statement.setInt(3,obj.getId_stewardess());
-        statement.setInt(4,obj.getId_navigator());
-        statement.setInt(5,obj.getId_radioman());
-        statement.setInt(6,obj.getId_flight());
-        statement.execute();
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_ALL_BRIGADES_BY_ID_FLIGHT);
+        statement.setInt(1,obj.getId_flight());
+        if (!statement.executeQuery().next()) {
+            statement = connection.prepareStatement(SQLConstants.ADD_BRIGADE);
+            statement.setInt(1, obj.getId_first_pilot());
+            statement.setInt(2, obj.getId_second_pilot());
+            statement.setInt(3, obj.getId_stewardess());
+            statement.setInt(4, obj.getId_navigator());
+            statement.setInt(5, obj.getId_radioman());
+            statement.setInt(6, obj.getId_flight());
+            statement.execute();
+        }
         ConnectionPool.INSTANCE.putBack(connection);
     }
 

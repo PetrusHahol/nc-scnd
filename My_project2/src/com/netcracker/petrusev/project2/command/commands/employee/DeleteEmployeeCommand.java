@@ -1,11 +1,9 @@
 package com.netcracker.petrusev.project2.command.commands.employee;
 
-import com.netcracker.petrusev.project2.DAO.employee.DAOEmployeeInterface;
-import com.netcracker.petrusev.project2.DAO.employee.DAONavigatorImpl;
-import com.netcracker.petrusev.project2.DAO.employee.DAOPilotImpl;
-import com.netcracker.petrusev.project2.DAO.employee.DAOStewardessImpl;
+import com.netcracker.petrusev.project2.DAO.employee.*;
 import com.netcracker.petrusev.project2.beans.entities.office.Navigator;
 import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
+import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
 import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
@@ -33,8 +31,8 @@ public class DeleteEmployeeCommand implements ActionCommand{
     }
 
     private void radiomanExecute(HttpServletRequest request)  throws SQLException{
-        DAOEmployeeInterface<Pilot> daoPilot = new DAOPilotImpl();
-        daoPilot.delete(Integer.valueOf(request.getParameter(CommandConstants.ID)));
+        DAOEmployeeInterface<Radioman> daoRadioman = new DAORadiomanImpl();
+        daoRadioman.delete(Integer.valueOf(request.getParameter(CommandConstants.ID)));
     }
 
     private void stewardessExecute(HttpServletRequest request) throws SQLException {

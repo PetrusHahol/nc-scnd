@@ -1,7 +1,7 @@
 package com.netcracker.petrusev.project2.command.commands.brigade;
 
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
-import com.netcracker.petrusev.project2.DAO.team.DAOBrigadeImpl;
+import com.netcracker.petrusev.project2.DAO.teams.DAOBrigadeImpl;
 import com.netcracker.petrusev.project2.beans.entities.teams.Brigade;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;

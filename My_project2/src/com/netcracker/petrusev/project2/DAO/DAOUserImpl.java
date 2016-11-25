@@ -21,14 +21,18 @@ public class DAOUserImpl implements DAOInterface<User>{
         @Override
         public void create(User user) throws SQLException{
                 Connection connection = ConnectionPool.INSTANCE.retrieve();
-                PreparedStatement statement = connection.prepareStatement(SQLConstants.INSERT_USER);
-                statement.setString(1, (user.getLogin()));
-                statement.setString(2, user.getFirstName());
-                statement.setString(3, user.getSecondName());
-                statement.setString(4, user.getMail());
-                statement.setString(5, user.getPassword());
-                statement.setString(6, PermissionsConstants.USER);
-                statement.executeUpdate();
+                PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_USER_BY_LOGIN);//validation
+                statement.setString(1, user.getLogin());
+                if (!statement.executeQuery().next()) {
+                        statement = connection.prepareStatement(SQLConstants.INSERT_USER);
+                        statement.setString(1, (user.getLogin()));
+                        statement.setString(2, user.getFirstName());
+                        statement.setString(3, user.getSecondName());
+                        statement.setString(4, user.getMail());
+                        statement.setString(5, user.getPassword());
+                        statement.setString(6, PermissionsConstants.USER);
+                        statement.executeUpdate();
+                } else System.out.println("BItCH");
                 ConnectionPool.INSTANCE.putBack(connection);
         }
 
