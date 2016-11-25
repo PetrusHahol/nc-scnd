@@ -70,7 +70,7 @@ public class DAORadiomanImpl implements DAOEmployeeInterface<Radioman> {
 
     @Override
     public Radioman update(Radioman obj) throws SQLException {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     @Override

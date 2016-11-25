@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Created by Asus on 13.11.2016.
  */
-public class UserPageCommand implements ActionCommand {
+public class GetUserPageCommand implements ActionCommand {
 
     private void setFlight(HttpServletRequest request) throws SQLException{
         List<String> from =  new ArrayList<>();
@@ -84,12 +84,9 @@ public class UserPageCommand implements ActionCommand {
                 setBrigades(request);
             }
         }catch (SQLException ex){
-            //тут будут логи)0)0)0
-            request.setAttribute("GROUP","ska");
             return PageConstants.USER_CONTENT;
         }
         catch (NullPointerException ex) {
-            request.setAttribute("GROUP","ska");//do constants
             return PageConstants.USER_CONTENT;
         }
         return PageConstants.USER_CONTENT;

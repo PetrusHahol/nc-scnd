@@ -70,7 +70,7 @@ public class DAOPilotImpl implements DAOEmployeeInterface<Pilot> {
 
     @Override
     public Pilot update(Pilot obj) throws SQLException {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     @Override

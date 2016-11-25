@@ -21,6 +21,7 @@ public class UTFCodeFilter implements Filter {
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         String requestEncoding = req.getCharacterEncoding();
+
         if (initParamEncoding != null && !initParamEncoding.equalsIgnoreCase(requestEncoding)) {
             req.setCharacterEncoding(initParamEncoding);
             resp.setCharacterEncoding(initParamEncoding);

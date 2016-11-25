@@ -15,6 +15,7 @@
             list-style-type: none;
         }
     </style>
+    <script type="text/javascript" src="../js/validations.js"></script>
 </head>
 <body>
 <div class = "cloud">
@@ -24,15 +25,15 @@
     </a>
 </div>
 <div class = "FormLocate">
-    <form class = "SignIn" action="Controller?command=SignIn&auto=true" method="POST">
+    <form class = "SignIn" action="Controller?command=SignIn&auto=true" method="POST" onsubmit="return validation_signIn();">
         <div class =  "FormPosition">
                 <div class = "FieldArea">
-                    <input  class = "FormsLocate" type="text" name="login">
+                    <input  class = "FormsLocate" type="text" name="login" required/>
                     <p class = "FieldLocate">Login:</p>
                 </div>
 
                 <div class = "FieldArea">
-                    <input class = "FormsLocate" type="password" name="password1">
+                    <input class = "FormsLocate" type="password" name="password1" required/>
                     <p class = "FieldLocate">Password</p>
                 </div>
         </div>

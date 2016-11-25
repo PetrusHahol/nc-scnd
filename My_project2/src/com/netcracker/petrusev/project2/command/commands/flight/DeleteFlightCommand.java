@@ -4,11 +4,8 @@ import com.netcracker.petrusev.project2.DAO.DAOFlightImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.command.ActionCommand;
-import com.netcracker.petrusev.project2.command.commands.user.UserPageCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
-import com.netcracker.petrusev.project2.constants.SQLConstants;
-import com.netcracker.petrusev.project2.utils.UtilsGregorianCalendar;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;

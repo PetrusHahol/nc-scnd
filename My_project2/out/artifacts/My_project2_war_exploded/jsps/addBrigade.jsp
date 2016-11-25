@@ -15,6 +15,7 @@
             list-style-type: none;
         }
     </style>
+    
 </head>
 <body>
 <div class = "cloud">
@@ -30,7 +31,7 @@
 </div>
 
 <div class = "FormLocate">
-    <form class = "Registration" action="Controller?command=AddBrigade&reg=true" method="POST">
+    <form class = "Registration" action="Controller?command=AddBrigade&reg=true" method="POST" >
         <div class =  "FormPosition">
             <div class = "FieldArea">
                 <input class = "FormsLocate" type="number" name="id_first_pilot" required/>

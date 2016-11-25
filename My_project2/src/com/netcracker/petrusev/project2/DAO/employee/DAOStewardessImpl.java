@@ -71,7 +71,7 @@ public class DAOStewardessImpl implements DAOEmployeeInterface<Stewardess> {
 
     @Override
     public Stewardess update(Stewardess obj) throws SQLException {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     @Override

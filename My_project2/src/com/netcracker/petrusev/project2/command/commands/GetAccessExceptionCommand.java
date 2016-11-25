@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by Asus on 24.11.2016.
  */
-public class AccessExceptionCommand  implements ActionCommand{
+public class GetAccessExceptionCommand implements ActionCommand{
     @Override
     public String execute(HttpServletRequest request) {
         return PageConstants.NO_ACCESS;

@@ -64,16 +64,16 @@ public class DAOInformationImpl implements DAOInterface<Employee> {
 
     @Override
     public Employee find(Employee obj) throws SQLException {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public Employee update(Employee obj) throws SQLException {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public List<Employee> getAllData() throws SQLException {
-        return null;
+        throw new UnsupportedOperationException();
     }
 }

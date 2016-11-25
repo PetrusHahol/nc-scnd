@@ -50,9 +50,9 @@ public enum RequestsEnum {
             this.command = new DeleteFlightCommand();
         }
     },
-    USERPAGECOMMAND{
+    GETUSERPAGECOMMAND{
         {
-            this.command = new UserPageCommand();
+            this.command = new GetUserPageCommand();
         }
     },
     ADDEMPLOYEE{
@@ -77,7 +77,7 @@ public enum RequestsEnum {
     },
     ACCESSEXCEPTION {
         {
-            this.command =new AccessExceptionCommand();
+            this.command =new GetAccessExceptionCommand();
         }
     };
 

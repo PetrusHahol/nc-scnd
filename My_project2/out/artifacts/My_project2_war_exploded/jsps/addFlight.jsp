@@ -16,6 +16,7 @@
             list-style-type: none;
         }
     </style>
+    <script type="text/javascript" src="../js/validations.js"></script>
 
 </head>
 <body link="black"
@@ -35,24 +36,25 @@
 </div>
 
 <div class = "FormLocate">
-    <form class = "SignIn" action="Controller?command=AddFlight&reg=true" method="POST">
+    <form class = "SignIn" action="Controller?command=AddFlight&reg=true" method="POST" onsubmit = "return validation_addFlight();">
         <div class =  "FormPosition">
             <div class = "FieldArea">
-                <input class = "FormsLocate" type="text" name="from">
+                <input class = "FormsLocate" type="text" name="from"  required/>
                 <p class = "FieldLocate">From</p>
             </div>
             <div class = "FieldArea">
-                <input  class = "FormsLocate" type="text" name="to">
+                <input  class = "FormsLocate" type="text" name="to" required/>
                 <p class = "FieldLocate">To</p>
             </div>
             <div class = "FieldArea">
-                <input  class = "FormsLocate" type="text" name="flight_date">
+                <input  class = "FormsLocate" type="text" name="flight_date" required/>
                 <p class = "FieldLocate">When in format</p>
                 <p class = "FieldLocate">"02.05.2009"</p>
 
             </div>
         <div class = "ButtonPosition3">
             <input class = "SubmitButton3" type="submit" value="Add flight" />
+        </div>
         </div>
     </form>
 </div>

@@ -67,7 +67,7 @@ public class DAONavigatorImpl implements  DAOEmployeeInterface<Navigator> {
 
     @Override
     public Navigator update(Navigator obj) throws SQLException {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     @Override
