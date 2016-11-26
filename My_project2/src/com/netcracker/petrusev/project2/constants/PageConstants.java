@@ -16,6 +16,7 @@ public class PageConstants {
     public static final String ADDBRIGADE = "/jsps/addBrigade.jsp";
     public static final String NO_ACCESS = "/jsps/accessException.jsp";
     public static final String ACCESSEXEPTION = "Controller?command=accessException";
+    public static final String UPDATE_FLIGHT = "/jsps/updateFlight.jsp";
 
 
 }

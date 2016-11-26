@@ -103,7 +103,7 @@
                         </div>
                         <div class = "missing">
                             <tl class = "table">
-                                <p>
+                                <p >
                                     <c:out value="${from[k]}"/>
                                 </p>
                             </tl>
@@ -122,7 +122,16 @@
                                 </p>
                             </tl>
                         </div>
+                        <c:choose>
+                            <c:when test = "${priority == 'admin'}">
+                                <a href ="/Controller?command=updateFlight&id=${id[k]}&reg=false">
+                                    <img class = "Vk_photo" src="/static/media/redacting.png"/>
+
+                                </a>
+                            </c:when>
+                        </c:choose>
                     </div>
+
                 </c:forEach>
             </td>
         </div>

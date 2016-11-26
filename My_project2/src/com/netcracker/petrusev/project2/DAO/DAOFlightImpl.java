@@ -51,8 +51,22 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
     }
 
     @Override
-    public Flight update(Flight obj) throws SQLException {
-        throw new UnsupportedOperationException();
+    public void update(Flight obj) throws SQLException {
+        Connection connection = ConnectionPool.INSTANCE.retrieve();
+        java.sql.Date date = new java.sql.Date(obj.getDate().getTime().getTime());
+        PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_FLIGHT_BY_DATA);//validation
+        statement.setString(1, (obj.getFrom()));
+        statement.setString(2, obj.getTo());
+        statement.setDate(3, date);
+        if (!statement.executeQuery().next()) {
+            statement = connection.prepareStatement(SQLConstants.UPDATE_FLIGHT);
+            statement.setString(1, (obj.getFrom()));
+            statement.setString(2, obj.getTo());
+            statement.setDate(3, date);
+            statement.setInt(4,obj.getId());
+            statement.executeUpdate();
+        }
+        ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override
@@ -81,9 +95,10 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
         Flight flight = new Flight();
         ResultSet set = statement.executeQuery();
         while (set.next()){
+            flight.setId(id);
             flight.setFrom(set.getString(CommandConstants.FROM));
             flight.setTo(set.getString(CommandConstants.TO));
-            flight.setDate(UtilsGregorianCalendar.INSTANCE.convertIntoGregorianCalendar(set.getString(CommandConstants.DATE)));
+            flight.setDate(UtilsGregorianCalendar.INSTANCE.convertIntoGregorianCalendar(set.getTimestamp(CommandConstants.DATE)));
         }
         ConnectionPool.INSTANCE.putBack(connection);
         return flight;

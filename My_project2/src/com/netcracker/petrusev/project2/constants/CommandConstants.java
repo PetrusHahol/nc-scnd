@@ -18,9 +18,12 @@ public class CommandConstants {
     public static final String FROM = "from";
     public static final String TO = "to";
     public static final String DATE = "flight_date";
+    public static final String MONTH = "flight_month";
+    public static final String YEAR = "flight_year";
     public static final String SIZE = "size";
     public static final String GROUP = "group";
     public static final String FLIGHTS = "flights";
+    public static final String FLIGHT = "flight";
     public static final String EMPLOYEES = "employees";
     public static final String PRIORITY = "priority";
     public static final String LENGTH_WAIST = "length_waist";

@@ -58,7 +58,7 @@ public class DAOUserImpl implements DAOInterface<User>{
         }
 
         @Override
-        public User update(User obj) throws SQLException {
+        public void update(User obj) throws SQLException {
                 throw new UnsupportedOperationException();
         }
 

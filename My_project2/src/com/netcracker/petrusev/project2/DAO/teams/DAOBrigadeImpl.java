@@ -54,12 +54,12 @@ public class DAOBrigadeImpl implements DAOInterface<Brigade>{
 
     @Override
     public Brigade find(Brigade obj) throws SQLException {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     @Override
-    public Brigade update(Brigade obj) throws SQLException {
-        return null;
+    public void update(Brigade obj) throws SQLException {
+        throw new UnsupportedOperationException();
     }
 
     @Override

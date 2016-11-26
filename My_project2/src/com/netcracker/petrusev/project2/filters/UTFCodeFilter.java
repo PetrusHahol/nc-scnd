@@ -9,23 +9,15 @@ import java.util.logging.Logger;
 /**
  * Created by Asus on 24.11.2016.
  */
-
+@WebFilter( urlPatterns = { "/jsps/*" })
 public class UTFCodeFilter implements Filter {
-    private String initParamEncoding;
 
     @Override
     public void init(FilterConfig config) throws ServletException {
-        initParamEncoding = config.getInitParameter("encoding");
     }
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-        String requestEncoding = req.getCharacterEncoding();
-
-        if (initParamEncoding != null && !initParamEncoding.equalsIgnoreCase(requestEncoding)) {
-            req.setCharacterEncoding(initParamEncoding);
-            resp.setCharacterEncoding(initParamEncoding);
-        }
         resp.setContentType("UTF-8");
         chain.doFilter(req, resp);
     }

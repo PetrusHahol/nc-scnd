@@ -68,7 +68,7 @@ public class DAOInformationImpl implements DAOInterface<Employee> {
     }
 
     @Override
-    public Employee update(Employee obj) throws SQLException {
+    public void update(Employee obj) throws SQLException {
         throw new UnsupportedOperationException();
     }
 

@@ -12,4 +12,5 @@ public class FilterConstants {
     public static final String ADDEMPLOYEE = "addEmployee";
     public static final String DELETEEMPLOYEE = "deleteEmployee";
     public static final String REGISTRATION = "Registration";
+    public static final String UPDATEFLIGHT = "updateFlight";
 }

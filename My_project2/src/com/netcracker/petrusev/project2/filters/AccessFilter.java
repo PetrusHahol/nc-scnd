@@ -41,7 +41,8 @@ public class AccessFilter implements Filter{
                         request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.DELETEFLIGHT) ||
                         request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.ADDFLIGHT) ||
                         request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.ADDEMPLOYEE) ||
-                        request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.DELETEEMPLOYEE)) {
+                        request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.DELETEEMPLOYEE) ||
+                        request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.UPDATEFLIGHT)){
                     request.getRequestDispatcher(PageConstants.ACCESSEXEPTION).forward(request, response);
                 }
             }
@@ -50,7 +51,7 @@ public class AccessFilter implements Filter{
         if (request.getSession(false) != null && request.getSession().getAttribute(CommandConstants.PRIORITY) != null) {
             if (request.getSession().getAttribute(CommandConstants.PRIORITY).equals(PermissionsConstants.ADMIN)) {
                 if (request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.ADDBRIGADE) ||
-                        request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.DELETEBRIGADE) ||
+                        request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.ADDBRIGADE) ||
                         request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.ADDEMPLOYEE) ||
                         request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.DELETEBRIGADE)) {
                     request.getRequestDispatcher(PageConstants.ACCESSEXEPTION).forward(request, response);
@@ -62,7 +63,8 @@ public class AccessFilter implements Filter{
             if (request.getParameter(CommandConstants.COMMAND) != null)
             if (request.getSession().getAttribute(CommandConstants.PRIORITY).equals(PermissionsConstants.DISPATCHER)) {
                 if (request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.ADDFLIGHT) ||
-                        request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.DELETEFLIGHT)) {
+                        request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.DELETEFLIGHT)||
+                        request.getParameter(CommandConstants.COMMAND).equals(FilterConstants.UPDATEFLIGHT)) {
                     request.getRequestDispatcher(PageConstants.ACCESSEXEPTION).forward(request, response);
                 }
             }

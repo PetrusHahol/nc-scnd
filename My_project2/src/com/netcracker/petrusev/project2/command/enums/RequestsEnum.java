@@ -8,6 +8,7 @@ import com.netcracker.petrusev.project2.command.commands.employee.AddEmployeeCom
 import com.netcracker.petrusev.project2.command.commands.employee.DeleteEmployeeCommand;
 import com.netcracker.petrusev.project2.command.commands.flight.AddFlightCommand;
 import com.netcracker.petrusev.project2.command.commands.flight.DeleteFlightCommand;
+import com.netcracker.petrusev.project2.command.commands.flight.UpdateFlightCommand;
 import com.netcracker.petrusev.project2.command.commands.user.*;
 
 /**
@@ -78,6 +79,11 @@ public enum RequestsEnum {
     ACCESSEXCEPTION {
         {
             this.command =new GetAccessExceptionCommand();
+        }
+    },
+    UPDATEFLIGHT{
+        {
+            this.command = new UpdateFlightCommand();
         }
     };
 

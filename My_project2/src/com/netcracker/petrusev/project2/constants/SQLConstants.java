@@ -6,6 +6,10 @@ import java.text.Format;
  * Created by Asus on 12.11.2016.
  */
 public  class SQLConstants {
+    public static final String UPDATE_FLIGHT = "UPDATE FLIGHT SET " +(char)(34) +"from"+(char)(34)
+            +" = ? , "+(char)(34) +"to" + (char)(34) +" =? , flight_date = ? WHERE id = ?";
+
+
     public static final String GET_FLIGHT_BY_DATA =  "SELECT * FROM FLIGHT WHERE " +(char)(34) +"from"+(char)(34) + " = ? AND " +(char)(34) +"to" + (char)(34) +" = ? AND flight_date = ?";
     public static final String GET_USER_BY_LOGIN = "SELECT * FROM USERS WHERE login = ?";
     public static final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT * FROM users WHERE " +
