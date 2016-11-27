@@ -33,6 +33,7 @@ public class AddFlightCommand implements ActionCommand {
                 }
             } else return PageConstants.ADDFLIGHT;
             }
+        request.setAttribute("message", "Flight was added");
         return PageConstants.USER_CONTENT;
     }
 }

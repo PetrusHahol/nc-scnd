@@ -12,7 +12,6 @@ function validation_signIn() {
         alert(" Please enter numbers and characters and don't attach any symbols to login");
         return false;
     }
-    alert("OK");
     return true;
 }
 function validation_addFlight() {
@@ -33,7 +32,6 @@ function validation_addFlight() {
         alert("date don't match style");
         return false;
     }
-    alert("OK");
     return true;
 }
 function validation_registration() {
@@ -73,6 +71,5 @@ function validation_registration() {
         alert("password will be between 6 and 12 characters");
         return false;
     }
-    alert("OK");
     return true;
 }

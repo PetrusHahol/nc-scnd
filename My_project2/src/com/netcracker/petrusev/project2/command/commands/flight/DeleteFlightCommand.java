@@ -19,6 +19,7 @@ public class DeleteFlightCommand implements ActionCommand {
         try {
             DAOInterface<Flight> daoFlight = new DAOFlightImpl();
             daoFlight.delete(Integer.valueOf(request.getParameter(CommandConstants.ID)));
+            request.setAttribute("message", "You are deleted flight");
             return PageConstants.USER_CONTENT;
         }
         catch (SQLException ex){

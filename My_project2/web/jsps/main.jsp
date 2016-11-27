@@ -18,7 +18,11 @@
     </style>
 </head>
 <body>
-
+<c:choose>
+    <c:when test = "${message != null}">
+        <script>alert('${message}')</script>
+    </c:when>
+</c:choose>
 <div class = "cloud">
     {%
         <a href = "/Controller?command=Registration&reg=false" class="My_button">Registration</a>
@@ -27,5 +31,8 @@
          <img class = "Vk_photo" src="/static/media/vk.png" />
     </a>
 </div>
+<div class = "data2">
+    <h1 class = "TextData2">PETRUSEV PRODUCTION FOR NETCRACKER COMPANY</h1>
+    </div>
 </body>
 </html>

@@ -50,8 +50,10 @@ public class SignInCommand implements ActionCommand {
   @Override
   public String execute(HttpServletRequest request) {
     if (request.getParameter(CommandConstants.AUTHORIZATION).equals(CommandConstants.TRUE)) {
-      if (setSession(getUser(request), request))
+      if (setSession(getUser(request), request)) {
+        request.setAttribute("message", "You are log in");
         return PageConstants.USER_CONTENT_REQUEST;
+      }
       else
         return PageConstants.SIGN_IN;
     }

@@ -24,6 +24,7 @@ public class DeleteUserCommand implements ActionCommand{
         catch (SQLException ex){
             return PageConstants.MAIN;
         }
+        request.setAttribute("message", "You'r account was deleted");
         return PageConstants.SIGN_IN;
     }
 

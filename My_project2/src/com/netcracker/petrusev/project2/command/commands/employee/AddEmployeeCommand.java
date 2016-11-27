@@ -70,6 +70,7 @@ public class AddEmployeeCommand implements ActionCommand{
                 if (role.equals(EntityConstants.NAVIGATOR)) navigatorExecute(request);
                 if (role.equals(EntityConstants.RADIOMAN)) radiomanExecute(request);
                 if (role.equals(EntityConstants.PILOT)) pilotExecute(request);
+                request.setAttribute("message", "Employee was added");
             }catch (SQLException ex){
                 return PageConstants.ADDEMPLOYEE;
             }

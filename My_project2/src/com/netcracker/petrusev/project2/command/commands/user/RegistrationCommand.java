@@ -56,8 +56,10 @@ public class RegistrationCommand implements ActionCommand {
         String registration = request.getParameter(CommandConstants.REG);
 
         if (registration.equals(CommandConstants.TRUE)){
-              if (getParameters(request))
+              if (getParameters(request)) {
+                  request.setAttribute("message", "You are registered");
                   return setParameters();
+              }
         }
 
       return PageConstants.REGISTRATION;

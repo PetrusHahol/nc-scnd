@@ -30,9 +30,11 @@ public class AddBrigadeCommand implements ActionCommand{
                     daoBrigade.create(brigade);
                 } catch (SQLException ex) {
                     return PageConstants.ADDBRIGADE;
+
                 }
             } else return PageConstants.ADDBRIGADE;
         }
+        request.setAttribute("message", "Brigade was added");
         return PageConstants.USER_CONTENT;
     }
 }

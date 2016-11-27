@@ -49,6 +49,7 @@ public class DeleteEmployeeCommand implements ActionCommand{
                 stewardessExecute(request);
             if (request.getParameter(CommandConstants.ROLE).equals(EntityConstants.PILOT)) pilotExecute(request);
             if (request.getParameter(CommandConstants.ROLE).equals(EntityConstants.RADIOMAN)) radiomanExecute(request);
+            request.setAttribute("message", "Employee was deleted");
             return PageConstants.EMPLOYEE_MENU;
         } catch (SQLException ex){
             return PageConstants.EMPLOYEE_MENU;

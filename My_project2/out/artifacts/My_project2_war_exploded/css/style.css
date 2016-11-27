@@ -48,6 +48,16 @@
     font-family: Mistral;
     margin-left: 19%;
 }
+.TextData2{
+     margin-top: 100px;
+     float: left;
+     font-size: 50px;
+     text-decoration-color: black;
+     text-decoration: none;
+
+     font-family: Mistral;
+     margin-left: 19%;
+ }
 
 .footer{
     margin-top: 200px;

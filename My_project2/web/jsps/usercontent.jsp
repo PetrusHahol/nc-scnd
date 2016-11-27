@@ -50,6 +50,11 @@
     </a>
 </div>
 <c:choose>
+    <c:when test = "${message != null}">
+        <script>alert('${message}')</script>
+    </c:when>
+</c:choose>
+<c:choose>
     <c:when test="${group == 'flights'}">
         <c:choose>
             <c:when test = "${priority == 'admin'}">

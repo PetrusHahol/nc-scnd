@@ -40,6 +40,7 @@ public class UpdateFlightCommand implements ActionCommand {
         catch (SQLException ex){
             return PageConstants.USER_CONTENT;
         }
+        request.setAttribute("message", "You are updated flight date");
         return PageConstants.USER_CONTENT;
     }
 }
