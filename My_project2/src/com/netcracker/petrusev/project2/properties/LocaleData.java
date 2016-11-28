@@ -15,7 +15,7 @@ public enum  LocaleData {
 
     private static String PATH = "C:/Users/Asus/skaaa/pleease/My_project2/src/com/netcracker/petrusev/" +
                                  "project2/resources/locales/";//refactor!!!
-    private static String PATH_TO_PROPERTIES = PATH+"message_eng";
+    private static String PATH_TO_PROPERTIES = PATH+"message_eng.properties";
     private Properties prop = new Properties();
 
     public void setLocale(String locale){
@@ -34,10 +34,10 @@ public enum  LocaleData {
         try {
             try (BufferedReader in = new BufferedReader(
                     new InputStreamReader(
-                            new FileInputStream(PATH_TO_PROPERTIES), StandardCharsets.UTF_8))) {
+                            new FileInputStream(PATH_TO_PROPERTIES), "cp1251"))) {
                 prop.load(in);
                 site = prop.getProperty(nameProperty);
-                System.out.println(Locale.getDefault());
+                System.out.println(site);
             }
         } catch (IOException e) {
             e.printStackTrace();

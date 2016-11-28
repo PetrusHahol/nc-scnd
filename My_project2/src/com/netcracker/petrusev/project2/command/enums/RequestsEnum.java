@@ -9,6 +9,7 @@ import com.netcracker.petrusev.project2.command.commands.employee.DeleteEmployee
 import com.netcracker.petrusev.project2.command.commands.flight.AddFlightCommand;
 import com.netcracker.petrusev.project2.command.commands.flight.DeleteFlightCommand;
 import com.netcracker.petrusev.project2.command.commands.flight.UpdateFlightCommand;
+import com.netcracker.petrusev.project2.command.commands.locale.SetLanguage;
 import com.netcracker.petrusev.project2.command.commands.user.*;
 
 /**
@@ -84,6 +85,11 @@ public enum RequestsEnum {
     UPDATEFLIGHT{
         {
             this.command = new UpdateFlightCommand();
+        }
+    },
+    SETLOCALE{
+        {
+            this.command = new SetLanguage();
         }
     };
 

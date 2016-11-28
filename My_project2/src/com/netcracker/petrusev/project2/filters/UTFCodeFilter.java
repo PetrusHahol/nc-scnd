@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 /**
  * Created by Asus on 24.11.2016.
  */
-@WebFilter( urlPatterns = { "/jsps/*" })
+@WebFilter( urlPatterns = { "/*" })
 public class UTFCodeFilter implements Filter {
 
     @Override

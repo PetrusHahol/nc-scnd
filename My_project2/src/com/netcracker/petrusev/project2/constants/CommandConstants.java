@@ -56,6 +56,7 @@ public class CommandConstants {
     public static final String DELETE_EMPLOYEE = "DeleteEmployee";
     public static final String ADD_USER = "AddUser";
     public static final String DELETE_USER = "DeleteUser";
+    public static final String LANGUAGE = "lang";
 
 
 

@@ -20,7 +20,6 @@
     <script type="text/javascript">
         function clicker()
         {
-            alert("You'r profile was deleted ");
             this.href = "Controller/command=delete";
         }
     </script>
@@ -31,6 +30,12 @@
 <div class = "cloud">
     <a href = "/Controller?command=LogOut" class="My_button">LogOut
     </a>
+    <p class = "My_button">
+        <a href = "/Controller?command=setLocale&lang=eng"><img class = "Vk_photo" src="/static/media/English.jpg" /></a>
+        <a href = "/Controller?command=setLocale&lang=ru"> <img class = "Vk_photo" src="/static/media/Russian.jpg" /></a>
+    </p>
+
+
     <a href = "http://vk.com/pet1us">
         <img class = "Vk_photo" src="/static/media/vk.png" />
     </a>
@@ -410,14 +415,17 @@
                                 </tl>
 
                             </div>
-                        </div>
                     </c:forEach>
                 </div>
+
             </tr>
-            </div>
+        </div>
     </c:when>
 </c:choose>
 
+<div class = "data3">
+    <h1 class = "TextData2">PETRUSEV PRODUCTION FOR NETCRACKER COMPANY</h1>
+</div>
 <div class = "footer">
     <p onclick="clicker()">
         <a href = "/Controller?command=deleteUser" class= "name"> DELETE ACCOUNT

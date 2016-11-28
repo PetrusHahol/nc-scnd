@@ -11,6 +11,15 @@
     height: auto;
 }
 
+
+.data3{
+    width: 1500px;
+    color: black;
+    margin-top: 40px;
+    height: auto;
+    min-height: 200px;
+}
+
 .data2{
     width: 1500px;
     color: black;

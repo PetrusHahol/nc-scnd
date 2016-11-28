@@ -20,7 +20,7 @@ public class DeleteBrigadeCommand implements ActionCommand {
         try {
             DAOInterface<Brigade> daoBrigade = new DAOBrigadeImpl();
             daoBrigade.delete(Integer.valueOf(request.getParameter(CommandConstants.ID)));
-            request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.DELETE_EMPLOYEE));
+            request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.DELETE_BRIGADE));
             return PageConstants.USER_CONTENT;
         }
         catch (SQLException ex){
