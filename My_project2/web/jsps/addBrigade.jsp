@@ -33,7 +33,6 @@
 
 <div class = "FormLocate2">
     <form class = "Registration_brigade" action="Controller?command=AddBrigade&reg=true" method="POST" >
-
                         <ul class="dropdown">
                             <div class = "FieldArea2">
                                     <li class="dropdown-top">
@@ -46,7 +45,7 @@
                                                  HEIGHT: <c:out value="${pilot[k].getHeight()}"></c:out>
                                                  PASSPORTDATA: <c:out value="${pilot[k].getPassportData()}"></c:out>
                                                  MILEAGE: <c:out value="${pilot[k].getMileage()}"></c:out>
-                                                 <input type="checkbox" id = "id_first_pilot" name="id_first_pilot" required/>
+                                                 <input type="radio" id = "id_first_pilot" name="id_first_pilot" value = "${pilot[k].getId()}" required/>
                                                  </div>
                                                  </li>
 
@@ -63,7 +62,7 @@
                                                     HEIGHT: <c:out value="${pilot[k].getHeight()}"></c:out>
                                                     PASSPORTDATA: <c:out value="${pilot[k].getPassportData()}"></c:out>
                                                     MILEAGE: <c:out value="${pilot[k].getMileage()}"></c:out>
-                                                    <input type="checkbox" id = "id_second_pilot" name="id_second_pilot" required/>
+                                                    <input type="radio" id = "id_second_pilot" name="id_second_pilot"  value = "${pilot[k].getId()}" required/>
                                                 </div>
                                                 </li>
 
@@ -80,7 +79,7 @@
                                                 HEIGHT: <c:out value="${stewardess[k].getHeight()}"></c:out>
                                                 PASSPORTDATA: <c:out value="${stewardess[k].getPassportData()}"></c:out>
                                                 LENGTH WAIST: <c:out value="${stewardess[k].getLengthWaist()}"></c:out>
-                                                <input type="checkbox" id = "id_stewardess" name="id_stewardess" required/>
+                                                <input type="radio" id = "id_stewardess" name="id_stewardess" value = "${stewardess[k].getId()}" required/>
                                             </div>
                                             </li>
 
@@ -97,7 +96,7 @@
                                                 HEIGHT: <c:out value="${navigator[k].getHeight()}"></c:out>
                                                 PASSPORTDATA: <c:out value="${navigator[k].getPassportData()}"></c:out>
                                                 CATEGORY: <c:out value="${navigator[k].getCategory()}"></c:out>
-                                                <input type="checkbox" id = "id_navigator" name="id_navigator" required/>
+                                                <input type="radio" id = "id_navigator" name="id_navigator" value = "${navigator[k].getId()}" required/>
                                             </div>
                                             </li>
 
@@ -114,7 +113,7 @@
                                                 HEIGHT: <c:out value="${radioman[k].getHeight()}"></c:out>
                                                 PASSPORTDATA: <c:out value="${radioman[k].getPassportData()}"></c:out>
                                                 COUNT FOREIGN LANGUAGE: <c:out value="${radioman[k].getCountForeignLanguage()}"></c:out>
-                                                <input type="checkbox" id = "id_radioman" name="id_radioman" required/>
+                                                <input type="radio" id = "id_radioman" name="id_radioman" value = "${radioman[k].getId()}" required/>
                                             </div>
                                             </li>
                                         </c:forEach>
@@ -123,25 +122,26 @@
                                 <li class="dropdown-top">
                                     <p class="dropdown-top">Enter flight</p>
                                     <ul class="dropdown-inside">
-                                        <c:forEach  var="k" begin="0" end="${radioman.size()-1}">
-                                            <li><div class = "flight"> NAME: <c:out value="${radioman[k].getName()}"> </c:out>
-                                                AGE: <c:out value="${radioman[k].getAge()}"></c:out>
-                                                EXPERIENCE: <c:out value="${radioman[k].getExperience()}"></c:out>
-                                                HEIGHT: <c:out value="${radioman[k].getHeight()}"></c:out>
-                                                PASSPORTDATA: <c:out value="${radioman[k].getPassportData()}"></c:out>
-                                                COUNT FOREIGN LANGUAGE: <c:out value="${radioman[k].getCountForeignLanguage()}"></c:out>
-                                                <input type="checkbox" id = "id_radioman" name="id_radioman" required/>
+                                        <c:forEach  var="k" begin="0" end="${flight.size()-1}">
+                                            <li><div class = "flight">
+                                                FROM: <c:out value="${flight[k].getFrom()}"></c:out>
+                                                TO: <c:out value="${flight[k].getTo()}"></c:out>
+                                                DATE: <c:out value="${flight[k].getDate().get(flight_date)}.${flight[k].getDate().get(flight_month)}.${flight[k].getDate().get(flight_year)}"/>
+                                                <input type="radio" id = "id_flight" name="id_flight" value = "${flight[k].getId()}" required/>
                                             </div>
                                             </li>
                                         </c:forEach>
                                     </ul>
                                 </li>
+                                <li class="dropdown-top">
+                                    <p class="dropdown-top" ><c:out value="---PETRUSEV FOR NETCRACKER---"></c:out> </p>
+                                </li>
                             </div>
                         </ul>
 
 
-        <div class = "ButtonPosition">
-            <input class = "SubmitButton" type="submit" value="Add brigade" />
+        <div class = "ButtonBrigadePosition">
+            <input class = "SubmitButton2" type="submit" value="Add brigade" />
         </div>
     </form>
 </div>

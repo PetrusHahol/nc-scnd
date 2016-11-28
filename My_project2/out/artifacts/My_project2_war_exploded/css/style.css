@@ -260,7 +260,7 @@
 .FormLocate2{
     height: 600px;
     padding-top: 100px;
-    padding-left: 5%;
+    padding-left: 15%;
 }
 
 
@@ -319,6 +319,11 @@
 }
 .ButtonPosition{
     padding-top: 12.7%;
+
+}
+.ButtonBrigadePosition{
+    padding-top: 12.7%;
+    padding-left: 33%;
 
 }
 .FieldArea{
@@ -630,10 +635,10 @@ ul.dropdown li.dropdown-top:hover .dropdown-inside {
 .Registration_brigade{
     font-family:  Candara, sans-serif;
     font-size: 16px;
-    width: 80%;
+    width: 85%;
     float: left;
     min-width: 400px;
-    height: 800px;
+    height: auto;
     color: #152c9e;
     background: -moz-linear-gradient(
             top,

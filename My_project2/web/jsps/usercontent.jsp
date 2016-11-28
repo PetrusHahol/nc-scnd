@@ -130,7 +130,6 @@
                             <c:when test = "${priority == 'admin'}">
                                 <a href ="/Controller?command=updateFlight&id=${flight[k].getId()}&reg=false">
                                     <img class = "Vk_photo" src="/static/media/redacting.png"/>
-
                                 </a>
                             </c:when>
                         </c:choose>

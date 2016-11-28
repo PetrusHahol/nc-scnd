@@ -35,6 +35,7 @@ public class AddBrigadeCommand implements ActionCommand {
                 } else {
                     SetRequestData requestData = new SetRequestData();
                     requestData.setEmployee(request);
+                    requestData.setFlight(request);
                     return PageConstants.ADDBRIGADE;
                 }
             }
