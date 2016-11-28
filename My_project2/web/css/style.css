@@ -1,0 +1,667 @@
+.cloud{
+    height: 50px;
+    width: auto;
+    background: black;
+}
+.data{
+    width: 1350px;
+    color: black;
+    margin-top: 40px;
+    min-height: 200px;
+    height: auto;
+}
+
+.data2{
+    width: 1500px;
+    color: black;
+    margin-top: 40px;
+    height: auto;
+    min-height: 1500px;
+}
+
+.name{
+    float: left;
+    color: azure;
+    font-size: 10px;
+    padding-left: 0.5%;
+    height: 100%;
+    padding-top: 13px;
+    text-decoration: none;
+    font-family: MingLiU-ExtB;
+}
+.My_button{
+    float: right;
+    color: azure;
+    margin-right: 20px;
+    font-size: 25px;
+    margin-top: 7px;
+    text-decoration: none;
+    font-family: Garamond;
+}
+.TextData{
+    margin-top: 100px;
+    float: left;
+    font-size: 50px;
+    text-decoration-color: black;
+    text-decoration: none;
+
+    font-family: Mistral;
+    margin-left: 19%;
+}
+.TextData2{
+     margin-top: 100px;
+     float: left;
+     font-size: 50px;
+     text-decoration-color: black;
+     text-decoration: none;
+
+     font-family: Mistral;
+     margin-left: 19%;
+ }
+
+.footer{
+    margin-top: 200px;
+    background: black;
+    height: 200px;
+    width: auto;
+
+}
+.user{
+    float: left;
+    color: azure;
+    font-size: 29px;
+    padding-left: 10%;
+    height: 100%;
+    margin-top: 6px;
+    text-decoration: none;
+    font-family: Mistral;
+}
+
+.Vk_photo {
+    float: left;
+    margin-left: 10px;
+    margin-top: 7px;
+    height: 30px;
+    width: auto;
+}
+
+.container{
+    width: 100%;
+    margin-top: 5px;
+    height: 100px;
+    align-content: center;
+}
+
+.missing{
+    margin-left: 5px;
+    width: 24%;
+    height: 100%;
+    float: left;
+}
+.table{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+
+    width: 96%;
+    height: 60%;
+    float: left;
+    color: #032300;
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #b5b5b5);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ffffff),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #1f0626;
+    -moz-box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px -1px 0px rgba(000,000,000,0.2),
+            0px 1px 0px rgba(255,255,255,1);
+}
+
+
+.main_table{
+    font-family:  Candara, sans-serif;
+    font-size: 14px;
+    text-align: center ;
+    width: 96%;
+    height: 60%;
+    float: left;
+    color: #343e9e;
+
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #b5b5b5);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ffffff),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #343e9e;
+    -moz-box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px -1px 0px rgba(000,000,000,0.2),
+            0px 1px 0px rgba(255,255,255,1);
+}
+
+.flight{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+    width: 95%;
+    height: 60%;
+    float: left;
+    color: #032300;
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #b5b5b5);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ffffff),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #62090a;
+    -moz-box-shadow:
+
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+
+            0px 1px 3px rgba(172, 9, 0, 0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+
+            0px -1px 0px rgba(000,000,000,0.2),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            0px 1px 0px rgba(255,255,255,1);
+}
+
+.flight:hover{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+
+    width: 95%;
+    height: 60%;
+    float: left;
+    color: #9e1b1b;
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #b5b5b5);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ffffff),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #1f0626;
+    -moz-box-shadow:
+
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+
+            0px -1px 0px rgba(000,000,000,0.2),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px 1px 3px rgba(12, 48, 57, 0.5),
+            0px 1px 0px rgba(255,255,255,1);
+}
+
+.FormLocate{
+    height: 600px;
+    padding-top: 100px;
+    padding-left: 40%;
+}
+.FormLocate2{
+    height: 600px;
+    padding-top: 100px;
+    padding-left: 5%;
+}
+
+
+.Registration{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+    width: 40%;
+    min-width: 400px;
+    height: 400px;
+    color: #152c9e;
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #b5632f);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ffbfb7),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #ac0c16;
+    -moz-box-shadow:
+
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+
+            0px 1px 3px rgba(19, 58, 128, 0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+
+            0px -1px 0px rgba(32, 74, 114, 0.2),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px 1px 3px rgba(12, 48, 57, 0.5),
+            0px 1px 0px rgba(255,255,255,1);
+}
+
+.FieldLocate{
+   padding-left: 3px;
+    width: 50%;
+}
+.FormsLocate{
+    float: right;
+    width: 50%;
+}
+.FormPosition{
+    padding-top: 13%;
+    width: 90%;
+    padding-left: 5%;
+    height: 70%;
+}
+.ButtonPosition{
+    padding-top: 12.7%;
+
+}
+.FieldArea{
+    height: 12%;
+}
+
+.FieldArea2{
+    padding-left: 20px;
+    height: 15%;
+}
+
+.SubmitButton{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+    width: 50%;
+    height: 9%;
+    color: #2a129e;
+    background: -moz-linear-gradient(
+    top,
+    #ffffff 0%,
+    #ffffff 50%,
+    #06159e);
+    background: -webkit-gradient(
+    linear, left top, left bottom,
+    from(#ffffff),
+    color-stop(0.50, #fff3f6),
+    to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #ac7078;
+    -moz-box-shadow:
+
+    0px 1px 3px rgba(000,000,000,0.5),
+    inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+
+    0px 1px 3px rgba(28, 18, 172, 0.5),
+    inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+
+    0px -1px 0px rgba(32, 74, 114, 0.2),
+    inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+    0px 1px 3px rgba(12, 48, 57, 0.5),
+    0px 1px 0px rgba(255,255,255,1);
+}
+
+.SubmitButton:hover{
+    cursor: hand;
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ff6673),
+            to(#b5b5b5));
+    )
+}
+
+
+
+.SignIn{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+    width: 30%;
+    min-width: 300px;
+    height: 200px;
+    color: #152c9e;
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #b5632f);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ffbfb7),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #ac0c16;
+    -moz-box-shadow:
+
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+
+            0px 1px 3px rgba(19, 58, 128, 0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+
+            0px -1px 0px rgba(32, 74, 114, 0.2),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px 1px 3px rgba(12, 48, 57, 0.5),
+            0px 1px 0px rgba(255,255,255,1);
+}
+
+.ButtonPosition2{
+    padding-top: 2.5%;
+
+}
+
+.ButtonPosition3{
+    padding-top: 19.5%;
+
+}
+
+
+.SubmitButton2{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+    width: 50%;
+    height: 15%;
+    color: #2a129e;
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #06159e);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #fff3f6),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #ac7078;
+    -moz-box-shadow:
+
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+
+            0px 1px 3px rgba(28, 18, 172, 0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+
+            0px -1px 0px rgba(32, 74, 114, 0.2),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px 1px 3px rgba(12, 48, 57, 0.5),
+            0px 1px 0px rgba(255,255,255,1);
+}
+
+.SubmitButton2:hover{
+    cursor: hand;
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ff6673),
+            to(#b5b5b5));
+)
+}
+
+.SubmitButton3{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    text-align: center ;
+    width: 50%;
+    height: 20%;
+    color: #2a129e;
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #06159e);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #fff3f6),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #ac7078;
+    -moz-box-shadow:
+
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+
+            0px 1px 3px rgba(28, 18, 172, 0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+
+            0px -1px 0px rgba(32, 74, 114, 0.2),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px 1px 3px rgba(12, 48, 57, 0.5),
+            0px 1px 0px rgba(255,255,255,1);
+}
+
+.SubmitButton3:hover {
+    cursor: hand;
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ff6673),
+            to(#b5b5b5));
+}
+
+.column_data{
+    min-height: 500px;
+    height: 100%;
+    float: left;
+    width: 23.5%;
+    margin-left: 10px;
+}
+
+.missing_employee{
+    padding: 5px;
+    height: 270px;
+}
+
+
+.main_table_employee{
+    font-family:  Candara, sans-serif;
+    font-size: 14px;
+    text-align: center ;
+    width: 96%;
+    height: 95%;
+    float: left;
+    color: #04050b;
+
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #b5b5b5);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ffffff),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #04050b;
+    -moz-box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px -1px 0px rgba(000,000,000,0.2),
+            0px 1px 0px rgba(255,255,255,1);
+}
+.main_table_employee p{
+    font-family: "Arial Narrow";
+}
+
+.table p{
+    font-family: "Arial Narrow";
+}
+
+.delete_style{
+    margin-left: 10px;
+    margin-top: 1px;
+    padding-left: 80%;
+    height: 25px;
+    width: auto;
+}
+
+.six_parts{
+    height: 100%;
+    float: left;
+    width: 15%;
+    margin-left: 5px;
+}
+
+ul.dropdown li { position: relative; }
+ul.dropdown,
+ul.dropdown-inside {
+    list-style-type: none;
+    padding: 0;
+}
+ul.dropdown-inside {
+    position: absolute;
+    left: -9999px;
+}
+ul.dropdown li.dropdown-top {
+    display: inline;
+    float: left;
+    margin: 0 1px 0 0;
+}
+ul.dropdown li.dropdown-top p {
+    float: left;
+    padding-left: 20px;
+    display: block;
+}
+ul.dropdown p.dropdown-top { }
+ul.dropdown li.dropdown-top:hover .dropdown-inside {
+    padding-top: 50px;
+    width: 400px;
+    display: block;
+    left: 0;
+}
+
+
+.Registration_brigade{
+    font-family:  Candara, sans-serif;
+    font-size: 16px;
+    width: 80%;
+    float: left;
+    min-width: 400px;
+    height: 800px;
+    color: #152c9e;
+    background: -moz-linear-gradient(
+            top,
+            #ffffff 0%,
+            #ffffff 50%,
+            #b5632f);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#ffffff),
+            color-stop(0.50, #ffbfb7),
+            to(#b5b5b5));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #ac0c16;
+    -moz-box-shadow:
+
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    -webkit-box-shadow:
+
+            0px 1px 3px rgba(19, 58, 128, 0.5),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    box-shadow:
+
+            0px -1px 0px rgba(32, 74, 114, 0.2),
+            inset 0px 0px 3px rgba(255,255,255,1);
+    text-shadow:
+            0px 1px 3px rgba(12, 48, 57, 0.5),
+            0px 1px 0px rgba(255,255,255,1);
+}
