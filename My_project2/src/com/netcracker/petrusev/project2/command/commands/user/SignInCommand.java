@@ -51,7 +51,6 @@ public class SignInCommand implements ActionCommand {
   public String execute(HttpServletRequest request) {
     if (request.getParameter(CommandConstants.AUTHORIZATION).equals(CommandConstants.TRUE)) {
       if (setSession(getUser(request), request)) {
-        request.setAttribute("message", "You are log in");
         return PageConstants.USER_CONTENT_REQUEST;
       }
       else

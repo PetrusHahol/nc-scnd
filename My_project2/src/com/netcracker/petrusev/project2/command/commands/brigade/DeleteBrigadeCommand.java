@@ -6,6 +6,7 @@ import com.netcracker.petrusev.project2.beans.entities.teams.Brigade;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
+import com.netcracker.petrusev.project2.properties.LocaleData;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
@@ -19,7 +20,7 @@ public class DeleteBrigadeCommand implements ActionCommand {
         try {
             DAOInterface<Brigade> daoBrigade = new DAOBrigadeImpl();
             daoBrigade.delete(Integer.valueOf(request.getParameter(CommandConstants.ID)));
-            request.setAttribute("message", "Brigade was deleted");
+            request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.DELETE_EMPLOYEE));
             return PageConstants.USER_CONTENT;
         }
         catch (SQLException ex){

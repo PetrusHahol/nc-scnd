@@ -6,6 +6,7 @@ import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.constants.SQLConstants;
+import com.netcracker.petrusev.project2.properties.LocaleData;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
@@ -57,7 +58,7 @@ public class RegistrationCommand implements ActionCommand {
 
         if (registration.equals(CommandConstants.TRUE)){
               if (getParameters(request)) {
-                  request.setAttribute("message", "You are registered");
+                  request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.ADD_USER));
                   return setParameters();
               }
         }

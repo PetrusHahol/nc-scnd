@@ -6,6 +6,7 @@ import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
+import com.netcracker.petrusev.project2.properties.LocaleData;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
@@ -19,7 +20,7 @@ public class DeleteFlightCommand implements ActionCommand {
         try {
             DAOInterface<Flight> daoFlight = new DAOFlightImpl();
             daoFlight.delete(Integer.valueOf(request.getParameter(CommandConstants.ID)));
-            request.setAttribute("message", "You are deleted flight");
+            request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.DELETE_FLIGHT));
             return PageConstants.USER_CONTENT;
         }
         catch (SQLException ex){

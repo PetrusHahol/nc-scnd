@@ -14,7 +14,6 @@ public class LogOutCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) {
         request.getSession().invalidate();
-        request.setAttribute("message", "You are log out");
         return PageConstants.MAIN;
     }
 }

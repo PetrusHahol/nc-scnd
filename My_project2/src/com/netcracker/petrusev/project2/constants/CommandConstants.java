@@ -46,6 +46,18 @@ public class CommandConstants {
     public static final String ID_RADIOMAN = "id_radioman";
     public static final String ID_NAVIGATOR = "id_navigator";
     public static final String ID_FLIGHT = "id_flight";
+    public static final String MESSAGE = "message";
+    public static final String ADD_FLIGHT = "AddFlight";
+    public static final String DELETE_FLIGHT = "DeleteFlight";
+    public static final String UPDATE_FLIGHT = "UpdateFlight";
+    public static final String ADD_BRIGADE = "AddBrigade";
+    public static final String DELETE_BRIGADE = "DeleteBrigade";
+    public static final String ADD_EMPLOYEE = "AddEmployee";
+    public static final String DELETE_EMPLOYEE = "DeleteEmployee";
+    public static final String ADD_USER = "AddUser";
+    public static final String DELETE_USER = "DeleteUser";
+
+
 
 
 

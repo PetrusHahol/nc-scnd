@@ -7,6 +7,7 @@ import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.constants.PermissionsConstants;
+import com.netcracker.petrusev.project2.properties.LocaleData;
 import com.netcracker.petrusev.project2.services.SetRequestData;
 
 import javax.servlet.http.HttpServletRequest;
@@ -43,7 +44,7 @@ public class AddBrigadeCommand implements ActionCommand {
             return PageConstants.ADDBRIGADE;
 
         }
-        request.setAttribute("message", "Brigade was added");
+        request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.ADD_BRIGADE));
         return PageConstants.USER_CONTENT;
     }
 }

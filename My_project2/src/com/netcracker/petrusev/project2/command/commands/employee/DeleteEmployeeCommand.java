@@ -9,6 +9,7 @@ import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.EntityConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
+import com.netcracker.petrusev.project2.properties.LocaleData;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.servlet.http.HttpServletRequest;
@@ -49,7 +50,7 @@ public class DeleteEmployeeCommand implements ActionCommand{
                 stewardessExecute(request);
             if (request.getParameter(CommandConstants.ROLE).equals(EntityConstants.PILOT)) pilotExecute(request);
             if (request.getParameter(CommandConstants.ROLE).equals(EntityConstants.RADIOMAN)) radiomanExecute(request);
-            request.setAttribute("message", "Employee was deleted");
+            request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.DELETE_EMPLOYEE));
             return PageConstants.EMPLOYEE_MENU;
         } catch (SQLException ex){
             return PageConstants.EMPLOYEE_MENU;

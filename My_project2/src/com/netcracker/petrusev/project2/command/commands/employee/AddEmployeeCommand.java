@@ -6,6 +6,7 @@ import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.EntityConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
+import com.netcracker.petrusev.project2.properties.LocaleData;
 import com.netcracker.petrusev.project2.services.SetRequestData;
 
 import javax.servlet.http.HttpServletRequest;
@@ -71,8 +72,7 @@ public class AddEmployeeCommand implements ActionCommand{
                 if (role.equals(EntityConstants.NAVIGATOR)) navigatorExecute(request);
                 if (role.equals(EntityConstants.RADIOMAN)) radiomanExecute(request);
                 if (role.equals(EntityConstants.PILOT)) pilotExecute(request);
-
-                request.setAttribute("message", "Employee was added");
+                request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.ADD_EMPLOYEE));
             }catch (SQLException ex){
                 return PageConstants.ADDEMPLOYEE;
             }

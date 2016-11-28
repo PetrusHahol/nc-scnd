@@ -7,9 +7,11 @@ import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.constants.PermissionsConstants;
+import com.netcracker.petrusev.project2.properties.LocaleData;
 import com.netcracker.petrusev.project2.utils.UtilsGregorianCalendar;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.sql.SQLException;
 
 /**
@@ -33,7 +35,7 @@ public class AddFlightCommand implements ActionCommand {
                 }
             } else return PageConstants.ADDFLIGHT;
             }
-        request.setAttribute("message", "Flight was added");
+        request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.ADD_FLIGHT));
         return PageConstants.USER_CONTENT;
     }
 }

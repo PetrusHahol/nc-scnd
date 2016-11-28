@@ -6,6 +6,7 @@ import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
+import com.netcracker.petrusev.project2.properties.LocaleData;
 import com.netcracker.petrusev.project2.utils.UtilsGregorianCalendar;
 
 import javax.servlet.http.HttpServletRequest;
@@ -40,7 +41,7 @@ public class UpdateFlightCommand implements ActionCommand {
         catch (SQLException ex){
             return PageConstants.USER_CONTENT;
         }
-        request.setAttribute("message", "You are updated flight date");
+        request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.UPDATE_FLIGHT));
         return PageConstants.USER_CONTENT;
     }
 }
