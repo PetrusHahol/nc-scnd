@@ -2,8 +2,10 @@ package com.netcracker.petrusev.project2.command.commands.user;
 import com.netcracker.petrusev.project2.DAO.DAOUserImpl;
 import com.netcracker.petrusev.project2.beans.users.User;
 import com.netcracker.petrusev.project2.command.ActionCommand;
+import com.netcracker.petrusev.project2.command.commands.flight.DeleteFlightCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
+import com.netcracker.petrusev.project2.logger.LoggerError;
 import com.netcracker.petrusev.project2.properties.LocaleData;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,8 +30,7 @@ public class RegistrationCommand implements ActionCommand {
         return password1.equals(password2);
     }
 
-    private String setParameters(){
-        try {
+    private String setParameters() throws SQLException{
             User user = new User();
             user.setLogin(login);
             user.setFirstName(firstName);
@@ -38,10 +39,6 @@ public class RegistrationCommand implements ActionCommand {
             user.setPassword(password1);
             DAOUserImpl daoUser = new DAOUserImpl();
             daoUser.create(user);
-        } catch (SQLException e) {
-            return PageConstants.REGISTRATION;
-        }
-
         return  PageConstants.MAIN;
     }
 
@@ -49,14 +46,19 @@ public class RegistrationCommand implements ActionCommand {
      public String execute(HttpServletRequest request) {
 
         String registration = request.getParameter(CommandConstants.REG);
+            try {
+                if (registration.equals(CommandConstants.TRUE)) {
+                    if (getParameters(request)) {
+                        request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.ADD_USER));
+                        return setParameters();
+                    }
+                }
+            } catch (SQLException e) {
+                request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.DONT_ADD_USER));
+                LoggerError.INSTANCE.logError(RegistrationCommand.class, e.getMessage());
+                return PageConstants.REGISTRATION;
+            }
+        return PageConstants.REGISTRATION;
+    }
 
-        if (registration.equals(CommandConstants.TRUE)){
-              if (getParameters(request)) {
-                  request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.ADD_USER));
-                  return setParameters();
-              }
-        }
-
-      return PageConstants.REGISTRATION;
-     }
 }

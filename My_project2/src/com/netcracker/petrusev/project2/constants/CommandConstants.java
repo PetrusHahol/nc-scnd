@@ -56,7 +56,19 @@ public class CommandConstants {
     public static final String DELETE_EMPLOYEE = "DeleteEmployee";
     public static final String ADD_USER = "AddUser";
     public static final String DELETE_USER = "DeleteUser";
+    public static final String DONT_ADD_FLIGHT = "DontAddFlight";
+    public static final String DONT_DELETE_FLIGHT = "DontDeleteFlight";
+    public static final String DONT_UPDATE_FLIGHT = "DontUpdateFlight";
+    public static final String DONT_ADD_BRIGADE = "DontAddBrigade";
+    public static final String DONT_DELETE_BRIGADE = "DontDeleteBrigade";
+    public static final String DONT_ADD_EMPLOYEE = "DontAddEmployee";
+    public static final String DONT_DELETE_EMPLOYEE = "DontDeleteEmployee";
+    public static final String DONT_ADD_USER = "DontAddUser";
+    public static final String DONT_SIGN_IN = "DontSignIn";
+    public static final String DONT_DELETE_USER = "DontDeleteUser";
+
     public static final String LANGUAGE = "lang";
+
 
 
 

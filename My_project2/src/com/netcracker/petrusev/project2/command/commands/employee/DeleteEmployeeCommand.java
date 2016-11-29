@@ -7,6 +7,7 @@ import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
 import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
+import com.netcracker.petrusev.project2.command.commands.brigade.DeleteBrigadeCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.EntityConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
@@ -54,7 +55,8 @@ public class DeleteEmployeeCommand implements ActionCommand{
             request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.DELETE_EMPLOYEE));
             return PageConstants.EMPLOYEE_MENU;
         } catch (SQLException ex){
-            LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
+            request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.DONT_DELETE_EMPLOYEE));
+            LoggerError.INSTANCE.logError(DeleteBrigadeCommand.class, ex.getMessage());
             return PageConstants.EMPLOYEE_MENU;
         }
     }

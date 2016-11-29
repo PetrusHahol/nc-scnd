@@ -4,11 +4,10 @@ import com.netcracker.petrusev.project2.DAO.DAOFlightImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.command.ActionCommand;
-import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
-import com.netcracker.petrusev.project2.properties.LocaleData;
 import com.netcracker.petrusev.project2.logger.LoggerError;
+import com.netcracker.petrusev.project2.properties.LocaleData;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
@@ -26,7 +25,8 @@ public class DeleteFlightCommand implements ActionCommand {
             return PageConstants.USER_CONTENT;
         }
         catch (SQLException ex){
-            LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
+            request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.DONT_DELETE_FLIGHT));
+            LoggerError.INSTANCE.logError(DeleteFlightCommand.class, ex.getMessage());
             return PageConstants.USER_CONTENT;
         }
     }

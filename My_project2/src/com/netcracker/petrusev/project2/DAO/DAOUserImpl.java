@@ -32,7 +32,7 @@ public class DAOUserImpl implements DAOInterface<User>{
                         statement.setString(5, user.getPassword());
                         statement.setString(6, PermissionsConstants.USER);
                         statement.executeUpdate();
-                } else System.out.println("BItCH");
+                } else throw new SQLException("error");
                 ConnectionPool.INSTANCE.putBack(connection);
         }
 

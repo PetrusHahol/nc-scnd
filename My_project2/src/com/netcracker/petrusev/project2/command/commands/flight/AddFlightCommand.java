@@ -4,13 +4,12 @@ import com.netcracker.petrusev.project2.DAO.DAOFlightImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.command.ActionCommand;
-import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.constants.PermissionsConstants;
+import com.netcracker.petrusev.project2.logger.LoggerError;
 import com.netcracker.petrusev.project2.properties.LocaleData;
 import com.netcracker.petrusev.project2.utils.UtilsGregorianCalendar;
-import com.netcracker.petrusev.project2.logger.LoggerError;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
@@ -31,13 +30,15 @@ public class AddFlightCommand implements ActionCommand {
                     flight.setDate(UtilsGregorianCalendar.INSTANCE.convertIntoGregorianCalendar(request.getParameter(CommandConstants.DATE)));
                     DAOInterface<Flight> daoFlight = new DAOFlightImpl();
                     daoFlight.create(flight);
+                    request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.ADD_FLIGHT));
                 } catch (SQLException ex) {
-                    LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
+                    request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.DONT_ADD_FLIGHT));
+                    LoggerError.INSTANCE.logError(AddFlightCommand.class, ex.getMessage());
                     return PageConstants.ADDFLIGHT;
                 }
             } else return PageConstants.ADDFLIGHT;
             }
-        request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.ADD_FLIGHT));
+
         return PageConstants.USER_CONTENT;
     }
 }

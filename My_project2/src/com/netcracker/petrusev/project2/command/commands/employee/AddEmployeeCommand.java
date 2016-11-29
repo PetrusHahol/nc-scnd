@@ -3,9 +3,11 @@ package com.netcracker.petrusev.project2.command.commands.employee;
 import com.netcracker.petrusev.project2.DAO.employee.*;
 import com.netcracker.petrusev.project2.beans.entities.office.*;
 import com.netcracker.petrusev.project2.command.ActionCommand;
+import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.EntityConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
+import com.netcracker.petrusev.project2.logger.LoggerError;
 import com.netcracker.petrusev.project2.properties.LocaleData;
 
 import javax.servlet.http.HttpServletRequest;
@@ -73,6 +75,8 @@ public class AddEmployeeCommand implements ActionCommand{
                 if (role.equals(EntityConstants.PILOT)) pilotExecute(request);
                 request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.ADD_EMPLOYEE));
             }catch (SQLException ex){
+                request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.DONT_ADD_EMPLOYEE));
+                LoggerError.INSTANCE.logError(AddEmployeeCommand.class, ex.getMessage());
                 return PageConstants.ADDEMPLOYEE;
             }
 

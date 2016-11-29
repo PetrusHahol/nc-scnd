@@ -27,6 +27,11 @@
     <p  class="name">${secondname}</p>
 
 </div>
+<c:choose>
+    <c:when test = "${message != null}">
+        <script>alert('${message}')</script>
+    </c:when>
+</c:choose>
 
 <div class = "FormLocate">
     <form class = "SignIn" action="Controller?command=updateFlight&id=${flight.getId()}&reg=true" method="POST" onsubmit = "return validation_addFlight();">

@@ -29,6 +29,11 @@
     <p  class="name">${secondname}</p>
 
 </div>
+<c:choose>
+    <c:when test = "${message != null}">
+        <script>alert('${message}')</script>
+    </c:when>
+</c:choose>
 
 <div class = "FormLocate">
     <form class = "Registration" action="Controller?command=AddEmployee&role=${role}&reg=true" method="POST">

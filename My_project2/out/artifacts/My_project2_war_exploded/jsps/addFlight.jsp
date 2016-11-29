@@ -19,10 +19,15 @@
     <script type="text/javascript" src="../js/validations.js"></script>
 
 </head>
+
 <body link="black"
       alink="#00008b"
       vlink ="black">
-
+<c:choose>
+    <c:when test = "${message != null}">
+        <script>alert('${message}')</script>
+    </c:when>
+</c:choose>
 <div class = "cloud">
 
     <a href = "/Controller?command=LogOut" class="My_button">LogOut</a>

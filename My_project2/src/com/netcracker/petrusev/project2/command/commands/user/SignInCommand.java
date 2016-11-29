@@ -3,10 +3,10 @@ package com.netcracker.petrusev.project2.command.commands.user;
 import com.netcracker.petrusev.project2.DAO.DAOUserImpl;
 import com.netcracker.petrusev.project2.beans.users.User;
 import com.netcracker.petrusev.project2.command.ActionCommand;
-import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.logger.LoggerError;
+import com.netcracker.petrusev.project2.properties.LocaleData;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -24,8 +24,9 @@ public class SignInCommand implements ActionCommand {
       return user;
     }
       catch (SQLException ex) {
-      LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
-      return null;
+        request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.DONT_SIGN_IN));
+        LoggerError.INSTANCE.logError(SignInCommand.class, ex.getMessage());
+        return null;
     }
   }
 

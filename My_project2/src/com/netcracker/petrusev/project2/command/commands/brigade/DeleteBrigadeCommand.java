@@ -25,7 +25,8 @@ public class DeleteBrigadeCommand implements ActionCommand {
             return PageConstants.USER_CONTENT;
         }
         catch (SQLException ex){
-            LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
+            request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.DONT_DELETE_BRIGADE));
+            LoggerError.INSTANCE.logError(DeleteBrigadeCommand.class, ex.getMessage());
             return PageConstants.USER_CONTENT;
         }
     }

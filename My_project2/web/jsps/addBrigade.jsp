@@ -30,6 +30,11 @@
     <p  class="name">${secondname}</p>
 
 </div>
+<c:choose>
+    <c:when test = "${message != null}">
+        <script>alert('${message}')</script>
+    </c:when>
+</c:choose>
 
 <div class = "FormLocate2">
     <form class = "Registration_brigade" action="Controller?command=AddBrigade&reg=true" method="POST" >

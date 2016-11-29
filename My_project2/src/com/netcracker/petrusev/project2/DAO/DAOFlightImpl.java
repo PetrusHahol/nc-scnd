@@ -31,7 +31,7 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
             statement.setString(2, obj.getTo());
             statement.setDate(3, date);
             statement.executeUpdate();
-        }
+    } else throw new SQLException("error");
         ConnectionPool.INSTANCE.putBack(connection);
     }
 

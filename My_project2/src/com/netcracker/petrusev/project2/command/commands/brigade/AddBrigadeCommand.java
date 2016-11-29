@@ -42,6 +42,7 @@ public class AddBrigadeCommand implements ActionCommand {
                 }
             }
         } catch (SQLException ex) {
+            request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.DONT_ADD_BRIGADE));
             LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
             return PageConstants.ADDBRIGADE;
 

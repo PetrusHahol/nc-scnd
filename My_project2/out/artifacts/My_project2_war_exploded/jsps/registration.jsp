@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -25,6 +26,11 @@
         <img class = "Vk_photo" src="/static/media/vk.png" />
     </a>
 </div>
+<c:choose>
+    <c:when test = "${message != null}">
+        <script>alert('${message}')</script>
+    </c:when>
+</c:choose>
 
 <div class = "FormLocate">
     <form class = "Registration" action="Controller?command=Registration&reg=true" method="POST" onsubmit= "return validation_registration();">
