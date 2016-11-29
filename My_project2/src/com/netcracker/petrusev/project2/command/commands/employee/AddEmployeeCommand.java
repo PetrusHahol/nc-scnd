@@ -7,7 +7,6 @@ import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.EntityConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.properties.LocaleData;
-import com.netcracker.petrusev.project2.services.SetRequestData;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
@@ -68,7 +67,7 @@ public class AddEmployeeCommand implements ActionCommand{
         if (request.getParameter(CommandConstants.REG).equals(CommandConstants.TRUE)) {
             String role = request.getParameter(CommandConstants.ROLE);
             try {
-                if (role.equals(EntityConstants.STEWARDESS)) stewardess_execute(request);// do constants
+                if (role.equals(EntityConstants.STEWARDESS)) stewardess_execute(request);
                 if (role.equals(EntityConstants.NAVIGATOR)) navigatorExecute(request);
                 if (role.equals(EntityConstants.RADIOMAN)) radiomanExecute(request);
                 if (role.equals(EntityConstants.PILOT)) pilotExecute(request);
@@ -80,7 +79,7 @@ public class AddEmployeeCommand implements ActionCommand{
         } else {
             String role = request.getParameter(CommandConstants.ROLE);
             String info = null;
-            if (role.equals(EntityConstants.STEWARDESS)) info = CommandConstants.LENGTH_WAIST;// do constants
+            if (role.equals(EntityConstants.STEWARDESS)) info = CommandConstants.LENGTH_WAIST;
             if (role.equals(EntityConstants.NAVIGATOR)) info = CommandConstants.CATEGORY;
             if (role.equals(EntityConstants.RADIOMAN)) info = CommandConstants.COUNT_FOREIGN_LANGUAGE;
             if (role.equals(EntityConstants.PILOT)) info =  CommandConstants.MILEAGE;

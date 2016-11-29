@@ -4,7 +4,6 @@ import com.netcracker.petrusev.project2.DAO.DAOFlightImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.DAO.employee.*;
 import com.netcracker.petrusev.project2.DAO.teams.DAOBrigadeImpl;
-import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.beans.entities.office.Navigator;
 import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
 import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
@@ -12,11 +11,9 @@ import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
 import com.netcracker.petrusev.project2.beans.entities.teams.Brigade;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.EntityConstants;
-import com.netcracker.petrusev.project2.utils.UtilsGregorianCalendar;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -24,6 +21,8 @@ import java.util.List;
  * Created by Asus on 28.11.2016.
  */
 public class SetRequestData {
+
+
     public void setFlight(HttpServletRequest request) throws SQLException {
         DAOFlightImpl daoFlight = new DAOFlightImpl();
         request.setAttribute(CommandConstants.FLIGHT, daoFlight.getAllData());

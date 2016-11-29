@@ -2,15 +2,11 @@ package com.netcracker.petrusev.project2.command.commands.user;
 import com.netcracker.petrusev.project2.DAO.DAOUserImpl;
 import com.netcracker.petrusev.project2.beans.users.User;
 import com.netcracker.petrusev.project2.command.ActionCommand;
-import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
-import com.netcracker.petrusev.project2.constants.SQLConstants;
 import com.netcracker.petrusev.project2.properties.LocaleData;
 
 import javax.servlet.http.HttpServletRequest;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class RegistrationCommand implements ActionCommand {
@@ -29,8 +25,7 @@ public class RegistrationCommand implements ActionCommand {
         mail = request.getParameter(CommandConstants.MAIL);
         password1 = request.getParameter(CommandConstants.FIRST_PASSWORD);
         password2 = request.getParameter(CommandConstants.SECOND_PASSWORD);
-        return (password1.equals(password2) && !login.equals("") &&
-                !firstName.equals("") && !secondName.equals("") && !password1.equals(""));
+        return password1.equals(password2);
     }
 
     private String setParameters(){
@@ -43,7 +38,6 @@ public class RegistrationCommand implements ActionCommand {
             user.setPassword(password1);
             DAOUserImpl daoUser = new DAOUserImpl();
             daoUser.create(user);
-
         } catch (SQLException e) {
             return PageConstants.REGISTRATION;
         }

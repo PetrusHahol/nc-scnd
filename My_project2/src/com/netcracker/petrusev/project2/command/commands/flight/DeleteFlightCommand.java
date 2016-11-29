@@ -28,7 +28,6 @@ public class DeleteFlightCommand implements ActionCommand {
         catch (SQLException ex){
             LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
             return PageConstants.USER_CONTENT;
-            //логи
         }
     }
 }

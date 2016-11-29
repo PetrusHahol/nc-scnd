@@ -17,14 +17,6 @@ import java.sql.SQLException;
  * Created by Asus on 24.11.2016.
  */
 public class AddBrigadeCommand implements ActionCommand {
-    public AddBrigadeCommand(){
-        try {
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-        }
-    }
     @Override
     public String execute(HttpServletRequest request) {
             try {
