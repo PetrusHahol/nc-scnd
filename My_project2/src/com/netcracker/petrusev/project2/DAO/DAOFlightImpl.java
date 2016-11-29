@@ -1,15 +1,15 @@
 package com.netcracker.petrusev.project2.DAO;
 
 import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
-import com.netcracker.petrusev.project2.beans.entities.office.Employee;
-import com.netcracker.petrusev.project2.beans.entities.office.EmptyEmployee;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
-import com.netcracker.petrusev.project2.constants.PermissionsConstants;
 import com.netcracker.petrusev.project2.constants.SQLConstants;
 import com.netcracker.petrusev.project2.utils.UtilsGregorianCalendar;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +40,7 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_FLIGHT);
         statement.setInt(1, id);
-        statement.executeUpdate();
+        statement.execute();
         ConnectionPool.INSTANCE.putBack(connection);
     }
 

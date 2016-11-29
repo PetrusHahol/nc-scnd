@@ -3,17 +3,13 @@ package com.netcracker.petrusev.project2.command.commands.user;
 import com.netcracker.petrusev.project2.DAO.DAOUserImpl;
 import com.netcracker.petrusev.project2.beans.users.User;
 import com.netcracker.petrusev.project2.command.ActionCommand;
-import com.netcracker.petrusev.project2.connections.ConnectionPool;
+import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
-import com.netcracker.petrusev.project2.constants.PermissionsConstants;
-import com.netcracker.petrusev.project2.constants.SQLConstants;
+import com.netcracker.petrusev.project2.logger.LoggerError;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class SignInCommand implements ActionCommand {
@@ -28,6 +24,7 @@ public class SignInCommand implements ActionCommand {
       return user;
     }
       catch (SQLException ex) {
+      LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
       return null;
     }
   }

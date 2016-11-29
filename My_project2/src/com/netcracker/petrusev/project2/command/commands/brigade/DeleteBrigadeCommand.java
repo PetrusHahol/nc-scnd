@@ -7,6 +7,7 @@ import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.properties.LocaleData;
+import com.netcracker.petrusev.project2.logger.LoggerError;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
@@ -24,8 +25,8 @@ public class DeleteBrigadeCommand implements ActionCommand {
             return PageConstants.USER_CONTENT;
         }
         catch (SQLException ex){
+            LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
             return PageConstants.USER_CONTENT;
-            //логи
         }
     }
 }

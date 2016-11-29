@@ -18,7 +18,7 @@ public class UTFCodeFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-        resp.setContentType("UTF-8");
+        resp.setContentType("cp1251");
         chain.doFilter(req, resp);
     }
     @Override

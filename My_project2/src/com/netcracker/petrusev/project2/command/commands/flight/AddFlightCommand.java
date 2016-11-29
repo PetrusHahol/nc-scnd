@@ -4,14 +4,15 @@ import com.netcracker.petrusev.project2.DAO.DAOFlightImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.command.ActionCommand;
+import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.constants.PermissionsConstants;
 import com.netcracker.petrusev.project2.properties.LocaleData;
 import com.netcracker.petrusev.project2.utils.UtilsGregorianCalendar;
+import com.netcracker.petrusev.project2.logger.LoggerError;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
 import java.sql.SQLException;
 
 /**
@@ -31,6 +32,7 @@ public class AddFlightCommand implements ActionCommand {
                     DAOInterface<Flight> daoFlight = new DAOFlightImpl();
                     daoFlight.create(flight);
                 } catch (SQLException ex) {
+                    LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
                     return PageConstants.ADDFLIGHT;
                 }
             } else return PageConstants.ADDFLIGHT;

@@ -1,7 +1,4 @@
 package com.netcracker.petrusev.project2.connections;
-
-import com.netcracker.petrusev.project2.constants.PoolConstants;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -13,13 +10,7 @@ public enum ConnectionPool {
     private  Vector<Connection> availableConns = new Vector<Connection>();
     private  Vector<Connection> usedConns = new Vector<Connection>();
 
-    private JDBC jdbc;
-
-    {
-        for (int i = 0; i< PoolConstants.COUNT_FREE_CONN; i++)
-            jdbc = new JDBC();
-            availableConns.add(jdbc.getConnection());
-    }
+    private JDBC jdbc = new JDBC();
 
     private Connection getConnection() {
         return jdbc.getConnection();

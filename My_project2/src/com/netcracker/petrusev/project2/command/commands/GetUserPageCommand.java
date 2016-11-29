@@ -1,26 +1,14 @@
 package com.netcracker.petrusev.project2.command.commands;
 
-import com.netcracker.petrusev.project2.DAO.DAOFlightImpl;
-import com.netcracker.petrusev.project2.DAO.DAOInterface;
-import com.netcracker.petrusev.project2.DAO.employee.*;
-import com.netcracker.petrusev.project2.DAO.teams.DAOBrigadeImpl;
-import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
-import com.netcracker.petrusev.project2.beans.entities.office.Navigator;
-import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
-import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
-import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
-import com.netcracker.petrusev.project2.beans.entities.teams.Brigade;
 import com.netcracker.petrusev.project2.command.ActionCommand;
+import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
-import com.netcracker.petrusev.project2.constants.EntityConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.services.SetRequestData;
-import com.netcracker.petrusev.project2.utils.UtilsGregorianCalendar;
+import com.netcracker.petrusev.project2.logger.LoggerError;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Asus on 13.11.2016.
@@ -44,9 +32,11 @@ public class GetUserPageCommand implements ActionCommand {
                 setRequests.setBrigades(request);
             }
         }catch (SQLException ex){
+            LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
             return PageConstants.USER_CONTENT;
         }
         catch (NullPointerException ex) {
+            LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
             return PageConstants.USER_CONTENT;
         }
         return PageConstants.USER_CONTENT;

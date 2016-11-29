@@ -9,17 +9,25 @@ import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.constants.PermissionsConstants;
 import com.netcracker.petrusev.project2.properties.LocaleData;
 import com.netcracker.petrusev.project2.services.SetRequestData;
+import com.netcracker.petrusev.project2.logger.LoggerError;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
-
 /**
  * Created by Asus on 24.11.2016.
  */
 public class AddBrigadeCommand implements ActionCommand {
+    public AddBrigadeCommand(){
+        try {
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
     @Override
     public String execute(HttpServletRequest request) {
-        try {
+            try {
             if (request.getSession().getAttribute(CommandConstants.PRIORITY).toString().equals(PermissionsConstants.DISPATCHER)) {
                 if (request.getParameter(CommandConstants.REG).equals(CommandConstants.TRUE)) {
 
@@ -41,6 +49,7 @@ public class AddBrigadeCommand implements ActionCommand {
                 }
             }
         } catch (SQLException ex) {
+                LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
             return PageConstants.ADDBRIGADE;
 
         }

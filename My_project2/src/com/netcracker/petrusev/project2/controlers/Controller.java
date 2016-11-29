@@ -1,6 +1,5 @@
 package com.netcracker.petrusev.project2.controlers;
 
-import com.netcracker.petrusev.project2.connections.JDBC;
 import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.command.finder.FindRequest;
 
@@ -10,10 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.*;
 
 
 /**
@@ -23,7 +18,6 @@ import java.util.*;
 @WebServlet("/Controller")
 public class Controller extends HttpServlet{
 
-    JDBC user = new JDBC();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

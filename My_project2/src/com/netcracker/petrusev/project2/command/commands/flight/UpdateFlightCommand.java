@@ -4,10 +4,12 @@ import com.netcracker.petrusev.project2.DAO.DAOFlightImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
 import com.netcracker.petrusev.project2.command.ActionCommand;
+import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.properties.LocaleData;
 import com.netcracker.petrusev.project2.utils.UtilsGregorianCalendar;
+import com.netcracker.petrusev.project2.logger.LoggerError;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
@@ -39,6 +41,7 @@ public class UpdateFlightCommand implements ActionCommand {
             }
         }
         catch (SQLException ex){
+            LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
             return PageConstants.USER_CONTENT;
         }
         request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.UPDATE_FLIGHT));
