@@ -7,9 +7,9 @@ import com.netcracker.petrusev.project2.command.ActionCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.constants.PermissionsConstants;
+import com.netcracker.petrusev.project2.logger.LoggerError;
 import com.netcracker.petrusev.project2.properties.LocaleData;
 import com.netcracker.petrusev.project2.services.SetRequestData;
-import com.netcracker.petrusev.project2.logger.LoggerError;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
@@ -32,6 +32,7 @@ public class AddBrigadeCommand implements ActionCommand {
                     brigade.setId_flight(Integer.valueOf(request.getParameter(CommandConstants.ID_FLIGHT)));
                     DAOInterface<Brigade> daoBrigade = new DAOBrigadeImpl();
                     daoBrigade.create(brigade);
+                    request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.ADD_BRIGADE));
 
                 } else {
                     SetRequestData requestData = new SetRequestData();
@@ -41,11 +42,10 @@ public class AddBrigadeCommand implements ActionCommand {
                 }
             }
         } catch (SQLException ex) {
-                LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
+            LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
             return PageConstants.ADDBRIGADE;
 
         }
-        request.setAttribute(CommandConstants.MESSAGE, LocaleData.INSTANCE.getProperty(CommandConstants.ADD_BRIGADE));
         return PageConstants.USER_CONTENT;
     }
 }

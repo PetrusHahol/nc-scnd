@@ -13,18 +13,16 @@
 
 
 .data3{
-    width: 1600px;
+    width: 1500px;
     color: black;
     margin-top: 40px;
     height: auto;
     min-height: 200px;
-    padding-left: 50px;
 }
 
 .data2{
-    width: 1600px;
+    width: 1500px;
     color: black;
-    padding-left: 50px;
     margin-top: 40px;
     height: auto;
     min-height: 1500px;
@@ -99,7 +97,6 @@
 .container{
     width: 100%;
     margin-top: 5px;
-
     height: 100px;
     align-content: center;
 }

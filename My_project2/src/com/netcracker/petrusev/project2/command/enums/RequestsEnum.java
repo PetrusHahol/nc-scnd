@@ -79,7 +79,7 @@ public enum RequestsEnum {
     },
     ACCESSEXCEPTION {
         {
-            this.command =new GetAccessExceptionCommand();
+            this.command = new GetAccessExceptionCommand();
         }
     },
     UPDATEFLIGHT{
