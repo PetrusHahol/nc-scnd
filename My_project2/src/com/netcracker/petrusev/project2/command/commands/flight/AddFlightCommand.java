@@ -15,7 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 
 /**
- * Created by Asus on 19.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class AddFlightCommand implements ActionCommand {
     @Override

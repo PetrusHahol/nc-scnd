@@ -1,8 +1,11 @@
 package com.netcracker.petrusev.project2.connections;
 import java.sql.*;
 
+
 /**
- * Created by Asus on 30.10.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class JDBC {
     private static final String driver = "org.postgresql.Driver";

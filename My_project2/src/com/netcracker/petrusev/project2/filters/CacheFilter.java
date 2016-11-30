@@ -6,7 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Asus on 25.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 @WebFilter(urlPatterns = {"/*"})
 public class CacheFilter implements Filter{

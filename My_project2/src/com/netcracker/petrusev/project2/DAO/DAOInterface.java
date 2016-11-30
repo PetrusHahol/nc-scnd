@@ -1,12 +1,12 @@
 package com.netcracker.petrusev.project2.DAO;
 
-import com.netcracker.petrusev.project2.beans.entities.office.Employee;
-
 import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Created by Asus on 12.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public interface DAOInterface<T> {
     public void create(T obj) throws SQLException;

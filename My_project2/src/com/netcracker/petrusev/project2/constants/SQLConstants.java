@@ -1,9 +1,9 @@
 package com.netcracker.petrusev.project2.constants;
 
-import java.text.Format;
-
 /**
- * Created by Asus on 12.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public  class SQLConstants {
     public static final String UPDATE_FLIGHT = "UPDATE FLIGHT SET " +(char)(34) +"from"+(char)(34)

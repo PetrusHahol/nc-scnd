@@ -13,7 +13,9 @@ import com.netcracker.petrusev.project2.command.commands.locale.SetLanguage;
 import com.netcracker.petrusev.project2.command.commands.user.*;
 
 /**
- * Created by Asus on 10.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public enum RequestsEnum {
     SIGNIN {

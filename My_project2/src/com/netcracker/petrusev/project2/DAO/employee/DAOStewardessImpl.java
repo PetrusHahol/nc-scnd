@@ -3,7 +3,6 @@ package com.netcracker.petrusev.project2.DAO.employee;
 import com.netcracker.petrusev.project2.DAO.DAOInformationImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
-import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
 import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
 import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.connections.DataMemory;
@@ -18,7 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Asus on 18.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class DAOStewardessImpl implements DAOEmployeeInterface<Stewardess> {
 

@@ -13,7 +13,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Created by Asus on 12.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class DAOUserImpl implements DAOInterface<User>{
 

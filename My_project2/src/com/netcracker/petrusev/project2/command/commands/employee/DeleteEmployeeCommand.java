@@ -6,19 +6,21 @@ import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
 import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
 import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
 import com.netcracker.petrusev.project2.command.ActionCommand;
-import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
 import com.netcracker.petrusev.project2.command.commands.brigade.DeleteBrigadeCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.EntityConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
-import com.netcracker.petrusev.project2.properties.LocaleData;
 import com.netcracker.petrusev.project2.logger.LoggerError;
+import com.netcracker.petrusev.project2.properties.LocaleData;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 
+
 /**
- * Created by Asus on 22.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class DeleteEmployeeCommand implements ActionCommand{
 

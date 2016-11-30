@@ -12,6 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 
+/**
+ * @author Petrusev
+ * @version 1.0
+ *
+ */
 public class SignInCommand implements ActionCommand {
   private static DAOUserImpl daoUser = new DAOUserImpl();
 

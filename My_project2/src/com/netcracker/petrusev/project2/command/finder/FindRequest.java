@@ -7,8 +7,11 @@ import com.netcracker.petrusev.project2.constants.CommandConstants;
 
 import javax.servlet.http.HttpServletRequest;
 
+
 /**
- * Created by Asus on 10.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class FindRequest {
     public ActionCommand Command(HttpServletRequest request){

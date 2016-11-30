@@ -7,6 +7,11 @@ import com.netcracker.petrusev.project2.logger.LoggerError;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @author Petrusev
+ * @version 1.0
+ *
+ */
 public class MainCommand implements ActionCommand {
 
  @Override

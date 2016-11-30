@@ -1,7 +1,10 @@
 package com.netcracker.petrusev.project2.connections;
 
+
 /**
- * Created by Asus on 22.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public enum DataMemory {
     INSTANCE;

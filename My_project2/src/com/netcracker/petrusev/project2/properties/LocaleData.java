@@ -1,14 +1,16 @@
 package com.netcracker.petrusev.project2.properties;
 
-import com.netcracker.petrusev.project2.constants.PageConstants;
-
-import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.util.Locale;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Properties;
 
+
 /**
- * Created by Asus on 28.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public enum  LocaleData {
     INSTANCE;

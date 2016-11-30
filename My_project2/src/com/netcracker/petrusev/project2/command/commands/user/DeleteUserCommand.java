@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 
 /**
- * Created by Asus on 17.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class DeleteUserCommand implements ActionCommand{
 

@@ -2,7 +2,6 @@ package com.netcracker.petrusev.project2.command.commands.user;
 import com.netcracker.petrusev.project2.DAO.DAOUserImpl;
 import com.netcracker.petrusev.project2.beans.users.User;
 import com.netcracker.petrusev.project2.command.ActionCommand;
-import com.netcracker.petrusev.project2.command.commands.flight.DeleteFlightCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.logger.LoggerError;
@@ -11,6 +10,11 @@ import com.netcracker.petrusev.project2.properties.LocaleData;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 
+/**
+ * @author Petrusev
+ * @version 1.0
+ *
+ */
 public class RegistrationCommand implements ActionCommand {
 
     private String login = null;

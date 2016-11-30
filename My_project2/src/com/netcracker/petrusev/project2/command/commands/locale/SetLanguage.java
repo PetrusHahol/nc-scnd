@@ -8,7 +8,9 @@ import com.netcracker.petrusev.project2.properties.LocaleData;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by Asus on 29.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class SetLanguage implements ActionCommand {
     @Override

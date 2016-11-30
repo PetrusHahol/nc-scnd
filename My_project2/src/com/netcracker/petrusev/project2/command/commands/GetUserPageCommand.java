@@ -10,8 +10,11 @@ import com.netcracker.petrusev.project2.logger.LoggerError;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 
+
 /**
- * Created by Asus on 13.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class GetUserPageCommand implements ActionCommand {
 

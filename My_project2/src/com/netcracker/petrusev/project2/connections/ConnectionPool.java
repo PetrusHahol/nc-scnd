@@ -3,6 +3,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Vector;
 
+/**
+ * @author Petrusev
+ * @version 1.0
+ *
+ */
 public enum ConnectionPool {
     INSTANCE;
 

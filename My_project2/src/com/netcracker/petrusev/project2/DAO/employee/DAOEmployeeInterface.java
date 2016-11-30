@@ -5,8 +5,11 @@ import com.netcracker.petrusev.project2.beans.entities.office.Employee;
 import java.sql.SQLException;
 import java.util.List;
 
+
 /**
- * Created by Asus on 20.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public interface DAOEmployeeInterface<T extends Employee> {
     public void create(T obj) throws SQLException;

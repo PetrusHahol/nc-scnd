@@ -21,7 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Asus on 23.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class DAOBrigadeImpl implements DAOInterface<Brigade>{
 

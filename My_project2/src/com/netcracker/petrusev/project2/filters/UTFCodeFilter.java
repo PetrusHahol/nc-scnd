@@ -2,12 +2,12 @@ package com.netcracker.petrusev.project2.filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
-import javax.servlet.annotation.WebInitParam;
 import java.io.IOException;
-import java.util.logging.Logger;
 
 /**
- * Created by Asus on 24.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 @WebFilter( urlPatterns = { "/*" })
 public class UTFCodeFilter implements Filter {

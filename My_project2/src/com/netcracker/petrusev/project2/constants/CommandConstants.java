@@ -1,7 +1,10 @@
 package com.netcracker.petrusev.project2.constants;
 
+
 /**
- * Created by Asus on 13.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class CommandConstants {
     public static final String LOGIN = "login";

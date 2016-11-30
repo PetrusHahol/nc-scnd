@@ -12,8 +12,11 @@ import com.netcracker.petrusev.project2.properties.LocaleData;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 
+
 /**
- * Created by Asus on 19.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class DeleteFlightCommand implements ActionCommand {
     @Override

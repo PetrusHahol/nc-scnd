@@ -13,8 +13,11 @@ import com.netcracker.petrusev.project2.services.SetRequestData;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
+
 /**
- * Created by Asus on 24.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class AddBrigadeCommand implements ActionCommand {
     @Override

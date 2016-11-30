@@ -2,8 +2,11 @@ package com.netcracker.petrusev.project2.logger;
 
 
 import org.apache.log4j.Logger;
+
 /**
- * Created by Asus on 29.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public enum LoggerError {
     INSTANCE;

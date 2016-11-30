@@ -14,9 +14,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Asus on 17.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class DAOFlightImpl implements DAOInterface<Flight>{
+
+    /**
+     * This is void if data access object. In this part create new object
+     * of Flight and write his in data based with help open pool connections!
+     * Create void have correct of data validation.
+     *
+     * @param  obj object of Flight with need parameters
+     *
+     */
     @Override
     public void create(Flight obj) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();

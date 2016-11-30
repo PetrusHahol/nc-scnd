@@ -1,7 +1,10 @@
 package com.netcracker.petrusev.project2.constants;
 
+
 /**
- * Created by Asus on 26.10.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class LogicConstants {
     public static final int LOWER_LENGTH_WAIST = 100;

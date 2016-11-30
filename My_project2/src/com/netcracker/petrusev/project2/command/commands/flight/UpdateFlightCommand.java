@@ -14,8 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 import java.util.Calendar;
 
+
 /**
- * Created by Asus on 26.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class UpdateFlightCommand implements ActionCommand {
     @Override

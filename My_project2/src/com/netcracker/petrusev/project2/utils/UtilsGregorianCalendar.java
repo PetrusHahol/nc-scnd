@@ -5,10 +5,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.SimpleTimeZone;
 
 /**
- * Created by Asus on 19.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public enum UtilsGregorianCalendar {
     INSTANCE;

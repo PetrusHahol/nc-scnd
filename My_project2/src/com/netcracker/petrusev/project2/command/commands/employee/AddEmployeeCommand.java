@@ -3,7 +3,6 @@ package com.netcracker.petrusev.project2.command.commands.employee;
 import com.netcracker.petrusev.project2.DAO.employee.*;
 import com.netcracker.petrusev.project2.beans.entities.office.*;
 import com.netcracker.petrusev.project2.command.ActionCommand;
-import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.EntityConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
@@ -13,8 +12,11 @@ import com.netcracker.petrusev.project2.properties.LocaleData;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 
+
 /**
- * Created by Asus on 21.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class AddEmployeeCommand implements ActionCommand{
 

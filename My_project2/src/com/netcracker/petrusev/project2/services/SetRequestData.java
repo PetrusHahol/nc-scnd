@@ -18,7 +18,9 @@ import java.util.Calendar;
 import java.util.List;
 
 /**
- * Created by Asus on 28.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class SetRequestData {
 

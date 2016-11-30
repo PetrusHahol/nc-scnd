@@ -6,7 +6,6 @@ import com.netcracker.petrusev.project2.connections.ConnectionPool;
 import com.netcracker.petrusev.project2.connections.DataMemory;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.SQLConstants;
-import javafx.scene.control.TableView;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,7 +14,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Created by Asus on 20.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class DAOInformationImpl implements DAOInterface<Employee> {
     @Override

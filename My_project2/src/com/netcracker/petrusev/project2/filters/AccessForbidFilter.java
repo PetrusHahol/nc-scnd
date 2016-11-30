@@ -6,7 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Asus on 29.11.2016.
+ * @author Petrusev
+ * @version 1.0
+ *
  */
 public class AccessForbidFilter implements Filter {
     private String indexPath;
@@ -20,7 +22,7 @@ public class AccessForbidFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         System.out.println(request.getContextPath());
-        response.sendRedirect("file://$MODULE_DIR$/web/index.jsp");
+        response.sendRedirect("file://$MODULE_DIR$/web/index.jsp");//refactor
         filterChain.doFilter(request, response);
     }
 
