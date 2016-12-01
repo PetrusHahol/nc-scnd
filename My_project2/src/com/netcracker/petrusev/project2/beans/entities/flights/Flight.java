@@ -1,46 +1,36 @@
 package com.netcracker.petrusev.project2.beans.entities.flights;
 
-import java.io.Serializable;
-import java.util.Comparator;
 import java.util.GregorianCalendar;
 
 /**
  * Created by Asus on 13.10.2016.
  */
-public class Flight implements  Serializable,Comparable, Comparator<Flight> {
+public class Flight {
 
-
-    private String from;
-    private String to;
-    private GregorianCalendar date;
     public static int objectsCounter = 0;
+    private String from  = null;
+    private String to = null;
+    private GregorianCalendar date = null;
+    private int id = 0;
 
-    private int id;
-
-    public void setId(int id){
-        this.id = id;
-    }
-
-    public int getId(){
-        return this.id;
-    }
 
     public Flight(String from, String to, GregorianCalendar date ) {
         this.from = from;
         this.to = to;
         this.date = date;
         objectsCounter++;
-
     }
-
 
     public Flight(){
         objectsCounter++;
     }
 
     @Override
-    public String toString(){
-        return ("FLIGHT From " + from + " - TO - " + to + " - in - " + date.getTime() + "\n");
+    public int hashCode() {
+        int result = from != null ? from.hashCode() : 0;
+        result = 31 * result + (to != null ? to.hashCode() : 0);
+        result = 31 * result + date.hashCode();
+        return result;
     }
 
     @Override
@@ -54,6 +44,10 @@ public class Flight implements  Serializable,Comparable, Comparator<Flight> {
         return to.equals(temper.to) || from.equals(temper.from) || !date.equals(temper.date);
     }
 
+    @Override
+    public String toString(){
+        return ("FLIGHT From " + from + " - TO - " + to + " - in - " + date.getTime() + "\n");
+    }
 
     /**
      *
@@ -85,26 +79,12 @@ public class Flight implements  Serializable,Comparable, Comparator<Flight> {
         this.date = date;
     }
 
-    @Override
-    public int compareTo(Object obj) {
-        Flight entry = (Flight) obj;
-        int result =  entry.date.compareTo(this.date);
-        if(result != 0) {
-            return result;
-        }
-        return 0;
+    public void setId(int id){
+        this.id = id;
     }
 
-    @Override
-    public int compare(Flight obj1,Flight  obj2) {
-        return obj1.from.compareTo(obj2.from);
+    public int getId(){
+        return this.id;
     }
 
-    @Override
-    public int hashCode() {
-        int result = from != null ? from.hashCode() : 0;
-        result = 31 * result + (to != null ? to.hashCode() : 0);
-        result = 31 * result + date.hashCode();
-        return result;
-    }
 }

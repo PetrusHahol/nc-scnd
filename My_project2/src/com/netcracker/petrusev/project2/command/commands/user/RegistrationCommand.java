@@ -1,7 +1,7 @@
 package com.netcracker.petrusev.project2.command.commands.user;
 import com.netcracker.petrusev.project2.DAO.DAOUserImpl;
 import com.netcracker.petrusev.project2.beans.users.User;
-import com.netcracker.petrusev.project2.command.ActionCommand;
+import com.netcracker.petrusev.project2.command.ActionCommandInterface;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.logger.LoggerError;
@@ -15,7 +15,7 @@ import java.sql.SQLException;
  * @version 1.0
  *
  */
-public class RegistrationCommand implements ActionCommand {
+public class RegistrationCommand implements ActionCommandInterface {
 
     private String login = null;
     private String firstName = null;

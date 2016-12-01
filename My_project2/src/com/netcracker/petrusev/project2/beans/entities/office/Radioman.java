@@ -5,19 +5,11 @@ package com.netcracker.petrusev.project2.beans.entities.office;
  */
 public class Radioman extends Employee {
 
-    private int countForeignLanguage;
-
     public static int objectsCounter;
 
-    private int id;
+    private int countForeignLanguage = 0;
+    private int id = 0;
 
-    public void setId(int id){
-        this.id = id;
-    }
-
-    public int getId(){
-        return this.id;
-    }
 
     public Radioman(String name, int age, int height, int experience
                    , String passportData, int countForeignLanguage){
@@ -35,20 +27,6 @@ public class Radioman extends Employee {
     public Radioman(){
         objectsCounter++;
     }
-
-    @Override
-    public String toString(){
-        return ("RADIOMEN Name " + name + " - Age - " + Integer.toString(age)
-                + " - Height - " + Integer.toString(height)
-                + " - Experience - " + Integer.toString(experience)
-                + " - Passport Data - " + passportData
-                + " - Count Foreign Language - " + countForeignLanguage + "\n");
-     }
-
-     public int getCountForeignLanguage() {
-        return this.countForeignLanguage;
-    }
-
     @Override
     public int hashCode() {
         return getCountForeignLanguage();
@@ -65,8 +43,28 @@ public class Radioman extends Employee {
                 && temp.passportData.equals(this.passportData) && temp.countForeignLanguage == this.countForeignLanguage);
     }
 
+    @Override
+    public String toString(){
+        return ("RADIOMEN Name " + name + " - Age - " + Integer.toString(age)
+                + " - Height - " + Integer.toString(height)
+                + " - Experience - " + Integer.toString(experience)
+                + " - Passport Data - " + passportData
+                + " - Count Foreign Language - " + countForeignLanguage + "\n");
+     }
+
+     public int getCountForeignLanguage() {
+        return this.countForeignLanguage;
+    }
+
+
     public void setCountForeignLanguage(int countForeignLanguage) {
         this.countForeignLanguage = countForeignLanguage;
+    }
+    public void setId(int id){
+        this.id = id;
+    }
+    public int getId(){
+        return this.id;
     }
 
 }

@@ -2,7 +2,7 @@ package com.netcracker.petrusev.project2.command.commands.employee;
 
 import com.netcracker.petrusev.project2.DAO.employee.*;
 import com.netcracker.petrusev.project2.beans.entities.office.*;
-import com.netcracker.petrusev.project2.command.ActionCommand;
+import com.netcracker.petrusev.project2.command.ActionCommandInterface;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.EntityConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
@@ -18,7 +18,7 @@ import java.sql.SQLException;
  * @version 1.0
  *
  */
-public class AddEmployeeCommand implements ActionCommand{
+public class AddEmployeeCommand implements ActionCommandInterface {
 
     private Employee getEmployee(HttpServletRequest request){
             Employee employee = new EmptyEmployee();

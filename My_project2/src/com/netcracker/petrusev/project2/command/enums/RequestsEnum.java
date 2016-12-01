@@ -95,9 +95,9 @@ public enum RequestsEnum {
         }
     };
 
-    ActionCommand command;
+    ActionCommandInterface command;
 
-    public ActionCommand getCurrentCommand() {
+    public ActionCommandInterface getCurrentCommand() {
         return command;
     }
 }

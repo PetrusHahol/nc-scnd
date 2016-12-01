@@ -1,6 +1,6 @@
 package com.netcracker.petrusev.project2.command.commands;
 
-import com.netcracker.petrusev.project2.command.ActionCommand;
+import com.netcracker.petrusev.project2.command.ActionCommandInterface;
 import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
@@ -16,7 +16,7 @@ import java.sql.SQLException;
  * @version 1.0
  *
  */
-public class GetUserPageCommand implements ActionCommand {
+public class GetUserPageCommand implements ActionCommandInterface {
 
 
     @Override

@@ -5,7 +5,7 @@ import com.netcracker.petrusev.project2.beans.entities.office.Navigator;
 import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
 import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
 import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
-import com.netcracker.petrusev.project2.command.ActionCommand;
+import com.netcracker.petrusev.project2.command.ActionCommandInterface;
 import com.netcracker.petrusev.project2.command.commands.brigade.DeleteBrigadeCommand;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.EntityConstants;
@@ -22,7 +22,7 @@ import java.sql.SQLException;
  * @version 1.0
  *
  */
-public class DeleteEmployeeCommand implements ActionCommand{
+public class DeleteEmployeeCommand implements ActionCommandInterface {
 
 
     private void navigatorExecute(HttpServletRequest request) throws SQLException{

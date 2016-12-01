@@ -1,6 +1,6 @@
 package com.netcracker.petrusev.project2.controlers;
 
-import com.netcracker.petrusev.project2.command.ActionCommand;
+import com.netcracker.petrusev.project2.command.ActionCommandInterface;
 import com.netcracker.petrusev.project2.command.finder.FindRequest;
 
 import javax.servlet.ServletException;
@@ -31,7 +31,7 @@ public class Controller extends HttpServlet{
 
     private void servletProcessing(HttpServletRequest req, HttpServletResponse resp){
         try {
-        ActionCommand findReq = new FindRequest().Command(req);
+        ActionCommandInterface findReq = new FindRequest().Command(req);
         String page = findReq.execute(req);
         req.getRequestDispatcher(page).forward(req,resp);
         } catch (ServletException e) {

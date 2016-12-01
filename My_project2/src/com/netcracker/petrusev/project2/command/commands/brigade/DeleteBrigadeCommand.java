@@ -3,7 +3,7 @@ package com.netcracker.petrusev.project2.command.commands.brigade;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.DAO.teams.DAOBrigadeImpl;
 import com.netcracker.petrusev.project2.beans.entities.teams.Brigade;
-import com.netcracker.petrusev.project2.command.ActionCommand;
+import com.netcracker.petrusev.project2.command.ActionCommandInterface;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.properties.LocaleData;
@@ -18,7 +18,7 @@ import java.sql.SQLException;
  * @version 1.0
  *
  */
-public class DeleteBrigadeCommand implements ActionCommand {
+public class DeleteBrigadeCommand implements ActionCommandInterface {
     @Override
     public String execute(HttpServletRequest request) {
         try {

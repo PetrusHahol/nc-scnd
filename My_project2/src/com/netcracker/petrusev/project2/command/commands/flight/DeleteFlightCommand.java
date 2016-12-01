@@ -3,7 +3,7 @@ package com.netcracker.petrusev.project2.command.commands.flight;
 import com.netcracker.petrusev.project2.DAO.DAOFlightImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.flights.Flight;
-import com.netcracker.petrusev.project2.command.ActionCommand;
+import com.netcracker.petrusev.project2.command.ActionCommandInterface;
 import com.netcracker.petrusev.project2.constants.CommandConstants;
 import com.netcracker.petrusev.project2.constants.PageConstants;
 import com.netcracker.petrusev.project2.logger.LoggerError;
@@ -18,7 +18,7 @@ import java.sql.SQLException;
  * @version 1.0
  *
  */
-public class DeleteFlightCommand implements ActionCommand {
+public class DeleteFlightCommand implements ActionCommandInterface {
     @Override
     public String execute(HttpServletRequest request) {
         try {

@@ -1,18 +1,15 @@
 package com.netcracker.petrusev.project2.beans.entities.office;
 
-import java.util.Comparator;
-
 /**
  * Created by Asus on 16.10.2016.
  */
-public abstract class Employee implements  Comparator<Pilot>{
+public abstract class Employee {
 
-    protected String name;
+    protected String name = null;
     protected int age;
     protected int height;
     protected int experience;
-    protected String passportData;
-
+    protected String passportData = null;;
 
     public Employee(String name, int age, int height, int experience
             , String passportData){
@@ -24,7 +21,6 @@ public abstract class Employee implements  Comparator<Pilot>{
     }
 
     public Employee(){
-
     }
 
     public String getName() {
@@ -67,10 +63,5 @@ public abstract class Employee implements  Comparator<Pilot>{
         this.passportData = passportData;
     }
 
-    @Override
-    public int compare(Pilot obj1, Pilot obj2){
-        if (obj1.experience > obj2.experience) return 1;
-        if (obj1.experience < obj2.experience) return -1;
-        else return 0;
-    }
+
 }

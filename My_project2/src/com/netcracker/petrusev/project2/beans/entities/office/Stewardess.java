@@ -5,19 +5,10 @@ package com.netcracker.petrusev.project2.beans.entities.office;
  */
 public class Stewardess extends Employee {
 
-    private int lengthWaist;
-
     public static int objectsCounter;
 
-    private int id;
-
-    public void setId(int id){
-        this.id = id;
-    }
-
-    public int getId(){
-        return this.id;
-    }
+    private int lengthWaist = 0;
+    private int id = 0;
 
     public Stewardess(){}
 
@@ -33,16 +24,6 @@ public class Stewardess extends Employee {
         super(name, age, height, experience, passportData);
         setLengthWaist(lengthWaist);
         objectsCounter++;
-    }
-
-
-    @Override
-    public String toString(){
-        return ("STEWARDESS Name " + name + " - Age - " + Integer.toString(age)
-                +" - Height - " + Integer.toString(height)
-                + " - Experience - " + Integer.toString(experience)
-                + " - Passport Data - " + passportData
-                + " - LengthWaist - " + lengthWaist + "\n");
     }
 
     @Override
@@ -61,13 +42,27 @@ public class Stewardess extends Employee {
                 && temp.passportData.equals(this.passportData) && temp.lengthWaist == this.lengthWaist);
     }
 
+    @Override
+    public String toString(){
+        return ("STEWARDESS Name " + name + " - Age - " + Integer.toString(age)
+                +" - Height - " + Integer.toString(height)
+                + " - Experience - " + Integer.toString(experience)
+                + " - Passport Data - " + passportData
+                + " - LengthWaist - " + lengthWaist + "\n");
+    }
+
+
+
     public int getLengthWaist() {
         return this.lengthWaist;
     }
-
     public void setLengthWaist(int lengthWaist) {
         this.lengthWaist = lengthWaist;
     }
-
-
+    public void setId(int id){
+        this.id = id;
+    }
+    public int getId(){
+        return this.id;
+    }
 }
