@@ -10,20 +10,19 @@ import java.util.Vector;
  */
 public enum ConnectionPool {
     INSTANCE;
+    private static final int UPPER_BOUND_COUNT = 100;
 
     private static String url;
     private  Vector<Connection> availableConns = new Vector<Connection>();
     private  Vector<Connection> usedConns = new Vector<Connection>();
-
     private JDBC jdbc = new JDBC();
-
-    private Connection getConnection() {
-        return jdbc.getConnection();
-    }
 
     public synchronized Connection retrieve() throws SQLException {
 
         Connection newConn = null;
+        if (usedConns.size() > UPPER_BOUND_COUNT) {
+            throw new SQLException("Limit open connections");
+        }
         if (availableConns.size() == 0) {
             newConn = getConnection();
         } else {
@@ -47,4 +46,8 @@ public enum ConnectionPool {
     public int getAvailableConnsCnt() {
         return availableConns.size();
     }
+    private Connection getConnection() {
+        return jdbc.getConnection();
+    }
+
 }

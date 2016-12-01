@@ -72,10 +72,10 @@ public class DAOBrigadeImpl implements DAOInterface<Brigade>{
         List<Brigade> answer = new ArrayList<>();
         while (set.next()){
             Brigade brigade = new Brigade();
-            DAOEmployeeInterface<Stewardess> daoStewardess = new DAOStewardessImpl();
-            DAOEmployeeInterface<Pilot> daoPilot = new DAOPilotImpl();
-            DAOEmployeeInterface<Radioman> daoRadioman = new DAORadiomanImpl();
-            DAOEmployeeInterface<Navigator> daoNavigator = new DAONavigatorImpl();
+            DAOInterface<Stewardess> daoStewardess = new DAOStewardessImpl();
+            DAOInterface<Pilot> daoPilot = new DAOPilotImpl();
+            DAOInterface<Radioman> daoRadioman = new DAORadiomanImpl();
+            DAOInterface<Navigator> daoNavigator = new DAONavigatorImpl();
             DAOInterface<Flight> daoFlight = new DAOFlightImpl();
             brigade.setId(set.getInt(CommandConstants.ID));
             brigade.setStewardess(daoStewardess.find(set.getInt(CommandConstants.ID_STEWARDESS)));

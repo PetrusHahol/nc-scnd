@@ -1,6 +1,6 @@
 package com.netcracker.petrusev.project2.DAO.employee;
 
-import com.netcracker.petrusev.project2.DAO.DAOInformationImpl;
+import com.netcracker.petrusev.project2.DAO.DAOEmployeeImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
 import com.netcracker.petrusev.project2.beans.entities.office.Pilot;
@@ -22,12 +22,12 @@ import java.util.List;
  * @version 1.0
  *
  */
-public class DAOPilotImpl implements DAOEmployeeInterface<Pilot> {
+public class DAOPilotImpl implements DAOInterface<Pilot> {
     @Override
     public void create(Pilot obj) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.ADD_PILOT);
-        DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+        DAOInterface<Employee> daoInformation = new DAOEmployeeImpl();
         daoInformation.create(obj);
         statement.setInt(1, obj.getMileage());
         statement.setInt(2 , DataMemory.INSTANCE.getId());
@@ -42,21 +42,21 @@ public class DAOPilotImpl implements DAOEmployeeInterface<Pilot> {
         statement.setInt(1, id);
         ResultSet set = statement.executeQuery();
         while(set.next()){
-            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            DAOInterface<Employee> daoInformation = new DAOEmployeeImpl();
             daoInformation.delete(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
         }
         ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override
-    public Pilot find(int id) throws SQLException {
+    public Pilot find(Integer id) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.FIND_PILOT);
         statement.setInt(1, id);
         ResultSet set = statement.executeQuery();
         Pilot pilot = new Pilot();
         while(set.next()){
-            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            DAOInterface<Employee> daoInformation = new DAOEmployeeImpl();
             daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
             Employee employee =(Employee) daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
             pilot.setName(employee.getName());
@@ -71,7 +71,7 @@ public class DAOPilotImpl implements DAOEmployeeInterface<Pilot> {
     }
 
     @Override
-    public Pilot update(Pilot obj) throws SQLException {
+    public void update(Pilot obj) throws SQLException {
         throw new UnsupportedOperationException();
     }
 
@@ -82,7 +82,7 @@ public class DAOPilotImpl implements DAOEmployeeInterface<Pilot> {
         PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_PILOT);
         ResultSet set = statement.executeQuery();
         while(set.next()){
-            DAOInterface daoInformation = new DAOInformationImpl();
+            DAOInterface daoInformation = new DAOEmployeeImpl();
             Pilot pilot = new Pilot();
             Employee employee = (Employee) daoInformation.find(set.getInt(CommandConstants.ID_INFORMATION));
             pilot.setName(employee.getName());
@@ -96,5 +96,10 @@ public class DAOPilotImpl implements DAOEmployeeInterface<Pilot> {
         }
         ConnectionPool.INSTANCE.putBack(connection);
         return answer;
+    }
+
+    @Override
+    public Pilot find(Pilot obj) throws SQLException {
+        throw new UnsupportedOperationException();
     }
 }

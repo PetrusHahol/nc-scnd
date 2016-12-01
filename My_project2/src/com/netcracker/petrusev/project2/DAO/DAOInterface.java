@@ -9,10 +9,10 @@ import java.util.List;
  *
  */
 public interface DAOInterface<T> {
-    public void create(T obj) throws SQLException;
-    public void delete(int id) throws SQLException;
-    public T find(T obj) throws SQLException;
-    public void update(T obj) throws SQLException;
-    public List<T> getAllData() throws SQLException;
-    public T find(Integer obj) throws SQLException;
+    void create(T obj) throws SQLException;
+    void delete(int id) throws SQLException;
+    void update(T obj) throws SQLException;
+    List<T> getAllData() throws SQLException;
+    T find(T obj) throws SQLException;
+    T find(Integer obj) throws SQLException;
 }

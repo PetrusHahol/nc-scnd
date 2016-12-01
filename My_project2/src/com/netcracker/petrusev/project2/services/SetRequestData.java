@@ -34,13 +34,13 @@ public class SetRequestData {
     }
 
     public void setEmployee(HttpServletRequest request) throws SQLException{
-        DAOEmployeeInterface<Stewardess> daoStewardess = new DAOStewardessImpl();
+        DAOInterface<Stewardess> daoStewardess = new DAOStewardessImpl();
         List<Stewardess> stewardesses = daoStewardess.getAllData();
-        DAOEmployeeInterface<Pilot> daoPilot = new DAOPilotImpl();
+        DAOInterface<Pilot> daoPilot = new DAOPilotImpl();
         List<Pilot> pilots = daoPilot.getAllData();
-        DAOEmployeeInterface<Navigator> daoNavigator = new DAONavigatorImpl();
+        DAOInterface<Navigator> daoNavigator = new DAONavigatorImpl();
         List<Navigator> navigators = daoNavigator.getAllData();
-        DAOEmployeeInterface<Radioman>  daoRadioman = new DAORadiomanImpl();
+        DAOInterface<Radioman>  daoRadioman = new DAORadiomanImpl();
         List<Radioman> radiomans = daoRadioman.getAllData();
         request.setAttribute(EntityConstants.RADIOMAN, radiomans);
         request.setAttribute(EntityConstants.PILOT, pilots);

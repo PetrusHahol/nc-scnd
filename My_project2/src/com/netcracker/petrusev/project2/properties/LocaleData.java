@@ -39,7 +39,7 @@ public enum  LocaleData {
                             new FileInputStream(PATH_TO_PROPERTIES), "cp1251"))) {
                 prop.load(in);
                 site = prop.getProperty(nameProperty);
-                System.out.println(site);
+
             }
         } catch (IOException e) {
             e.printStackTrace();

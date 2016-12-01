@@ -26,7 +26,7 @@ public class AddFlightCommand implements ActionCommandInterface {
             if (request.getParameter(CommandConstants.REG).equals(CommandConstants.TRUE)) {
                 try {
                     Flight flight = new Flight();
-                    System.out.println(request.getParameter(CommandConstants.FROM));
+
                     flight.setFrom(request.getParameter(CommandConstants.FROM));
                     flight.setTo(request.getParameter(CommandConstants.TO));
                     flight.setDate(UtilsGregorianCalendar.INSTANCE.convertIntoGregorianCalendar(request.getParameter(CommandConstants.DATE)));

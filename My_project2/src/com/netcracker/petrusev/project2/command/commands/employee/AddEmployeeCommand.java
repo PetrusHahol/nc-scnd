@@ -1,5 +1,6 @@
 package com.netcracker.petrusev.project2.command.commands.employee;
 
+import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.DAO.employee.*;
 import com.netcracker.petrusev.project2.beans.entities.office.*;
 import com.netcracker.petrusev.project2.command.ActionCommandInterface;
@@ -35,7 +36,7 @@ public class AddEmployeeCommand implements ActionCommandInterface {
         Stewardess stewardess = new Stewardess(employee.getName(), employee.getAge(), employee.getHeight()
                                                , employee.getExperience(), employee.getPassportData());
         stewardess.setLengthWaist(Integer.valueOf(request.getParameter(CommandConstants.LENGTH_WAIST)));
-        DAOEmployeeInterface<Stewardess> daoEmployee = new DAOStewardessImpl();
+        DAOInterface<Stewardess> daoEmployee = new DAOStewardessImpl();
         daoEmployee.create(stewardess);
     }
 
@@ -44,7 +45,7 @@ public class AddEmployeeCommand implements ActionCommandInterface {
         Navigator navigator = new Navigator(employee.getName(), employee.getAge(), employee.getHeight()
                 , employee.getExperience(), employee.getPassportData());
         navigator.setCategory(request.getParameter(CommandConstants.CATEGORY));
-        DAOEmployeeInterface<Navigator> daoEmployee = new DAONavigatorImpl();
+        DAOInterface<Navigator> daoEmployee = new DAONavigatorImpl();
         daoEmployee.create(navigator);
     }
 
@@ -53,7 +54,7 @@ public class AddEmployeeCommand implements ActionCommandInterface {
         Radioman radioman = new Radioman(employee.getName(), employee.getAge(), employee.getHeight()
                 , employee.getExperience(), employee.getPassportData());
         radioman.setCountForeignLanguage(Integer.valueOf(request.getParameter(CommandConstants.COUNT_FOREIGN_LANGUAGE)));
-        DAOEmployeeInterface<Radioman> daoEmployee = new DAORadiomanImpl();
+        DAOInterface<Radioman> daoEmployee = new DAORadiomanImpl();
         daoEmployee.create(radioman);
     }
 
@@ -62,7 +63,7 @@ public class AddEmployeeCommand implements ActionCommandInterface {
         Pilot pilot = new Pilot(employee.getName(), employee.getAge(), employee.getHeight()
                 , employee.getExperience(), employee.getPassportData());
         pilot.setMileage(Integer.valueOf(request.getParameter(CommandConstants.MILEAGE)));
-        DAOEmployeeInterface<Pilot> daoEmployee = new DAOPilotImpl();
+        DAOInterface<Pilot> daoEmployee = new DAOPilotImpl();
         daoEmployee.create(pilot);
     }
 

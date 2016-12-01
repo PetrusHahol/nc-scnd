@@ -20,8 +20,8 @@ public class MainCommand implements ActionCommandInterface {
    if (request.getSession().getAttribute(CommandConstants.LOGIN).toString() != null)
     return PageConstants.USER_CONTENT_REQUEST;
   } catch (Exception ex) {
-   LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
-   return PageConstants.MAIN;
+    LoggerError.INSTANCE.logError(AddBrigadeCommand.class, ex.getMessage());
+    return PageConstants.MAIN;
   }
   return PageConstants.MAIN;
  }

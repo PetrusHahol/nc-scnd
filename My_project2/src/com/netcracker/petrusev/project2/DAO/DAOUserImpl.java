@@ -23,7 +23,7 @@ public class DAOUserImpl implements DAOInterface<User>{
         @Override
         public void create(User user) throws SQLException{
                 Connection connection = ConnectionPool.INSTANCE.retrieve();
-                PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_USER_BY_LOGIN);//validation
+                PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_USER_BY_LOGIN);
                 statement.setString(1, user.getLogin());
                 if (!statement.executeQuery().next()) {
                         statement = connection.prepareStatement(SQLConstants.INSERT_USER);

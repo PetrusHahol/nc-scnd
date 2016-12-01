@@ -1,6 +1,6 @@
 package com.netcracker.petrusev.project2.DAO.employee;
 
-import com.netcracker.petrusev.project2.DAO.DAOInformationImpl;
+import com.netcracker.petrusev.project2.DAO.DAOEmployeeImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
 import com.netcracker.petrusev.project2.beans.entities.office.Radioman;
@@ -22,12 +22,17 @@ import java.util.List;
  * @version 1.0
  *
  */
-public class DAORadiomanImpl implements DAOEmployeeInterface<Radioman> {
+public class DAORadiomanImpl implements DAOInterface<Radioman> {
+    @Override
+    public Radioman find(Radioman obj) throws SQLException {
+        throw new UnsupportedOperationException();
+    }
+
     @Override
     public void create(Radioman obj) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.ADD_RADIOMAN);
-        DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+        DAOInterface<Employee> daoInformation = new DAOEmployeeImpl();
         daoInformation.create(obj);
         statement.setInt(1, obj.getCountForeignLanguage());
         statement.setInt(2 , DataMemory.INSTANCE.getId());
@@ -42,21 +47,21 @@ public class DAORadiomanImpl implements DAOEmployeeInterface<Radioman> {
         statement.setInt(1, id);
         ResultSet set = statement.executeQuery();
         while(set.next()){
-            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            DAOInterface<Employee> daoInformation = new DAOEmployeeImpl();
             daoInformation.delete(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
         }
         ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override
-    public Radioman find(int id) throws SQLException {
+    public Radioman find(Integer id) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.FIND_RADIOMAN);
         statement.setInt(1, id);
         ResultSet set = statement.executeQuery();
         Radioman radioman = new Radioman();
         while(set.next()){
-            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            DAOInterface<Employee> daoInformation = new DAOEmployeeImpl();
             daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
             Employee employee =(Employee) daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
             radioman.setName(employee.getName());
@@ -71,7 +76,7 @@ public class DAORadiomanImpl implements DAOEmployeeInterface<Radioman> {
     }
 
     @Override
-    public Radioman update(Radioman obj) throws SQLException {
+    public void update(Radioman obj) throws SQLException {
         throw new UnsupportedOperationException();
     }
 
@@ -82,7 +87,7 @@ public class DAORadiomanImpl implements DAOEmployeeInterface<Radioman> {
         PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_RADIOMAN);
         ResultSet set = statement.executeQuery();
         while(set.next()){
-            DAOInterface daoInformation = new DAOInformationImpl();
+            DAOInterface daoInformation = new DAOEmployeeImpl();
             Radioman radioman = new Radioman();
             Employee employee = (Employee) daoInformation.find(set.getInt(CommandConstants.ID_INFORMATION));
             radioman.setName(employee.getName());

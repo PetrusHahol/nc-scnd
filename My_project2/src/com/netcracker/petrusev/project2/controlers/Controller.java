@@ -1,7 +1,9 @@
 package com.netcracker.petrusev.project2.controlers;
 
 import com.netcracker.petrusev.project2.command.ActionCommandInterface;
+import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
 import com.netcracker.petrusev.project2.command.finder.FindRequest;
+import com.netcracker.petrusev.project2.logger.LoggerError;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,9 +37,10 @@ public class Controller extends HttpServlet{
         String page = findReq.execute(req);
         req.getRequestDispatcher(page).forward(req,resp);
         } catch (ServletException e) {
-            e.printStackTrace();
+            LoggerError.INSTANCE.logError(AddBrigadeCommand.class, e.getMessage());
+
         } catch (IOException e) {
-            e.printStackTrace();
+            LoggerError.INSTANCE.logError(AddBrigadeCommand.class, e.getMessage());
         }
     }
 

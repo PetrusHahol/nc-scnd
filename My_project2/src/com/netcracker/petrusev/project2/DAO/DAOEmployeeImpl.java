@@ -18,7 +18,7 @@ import java.util.List;
  * @version 1.0
  *
  */
-public class DAOInformationImpl implements DAOInterface<Employee> {
+public class DAOEmployeeImpl implements DAOInterface<Employee> {
     @Override
     public void create(Employee obj) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();

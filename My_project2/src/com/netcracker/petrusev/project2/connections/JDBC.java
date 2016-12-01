@@ -1,4 +1,7 @@
 package com.netcracker.petrusev.project2.connections;
+import com.netcracker.petrusev.project2.command.commands.brigade.AddBrigadeCommand;
+import com.netcracker.petrusev.project2.logger.LoggerError;
+
 import java.sql.*;
 
 
@@ -18,8 +21,7 @@ public class JDBC {
         try {
             Class.forName(driver);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
+            LoggerError.INSTANCE.logError(AddBrigadeCommand.class, e.getMessage());
         }
     }
 
@@ -28,7 +30,7 @@ public class JDBC {
             try {
                 connection = DriverManager.getConnection(url, name, password);
             } catch (SQLException e) {
-                System.err.println("Bugagagaga_ERROR:)");
+                LoggerError.INSTANCE.logError(AddBrigadeCommand.class, e.getMessage());
             }
         }
         return connection;

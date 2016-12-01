@@ -1,6 +1,6 @@
 package com.netcracker.petrusev.project2.DAO.employee;
 
-import com.netcracker.petrusev.project2.DAO.DAOInformationImpl;
+import com.netcracker.petrusev.project2.DAO.DAOEmployeeImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
 import com.netcracker.petrusev.project2.beans.entities.office.Navigator;
@@ -22,12 +22,12 @@ import java.util.List;
  * @version 1.0
  *
  */
-public class DAONavigatorImpl implements  DAOEmployeeInterface<Navigator> {
+public class DAONavigatorImpl implements  DAOInterface<Navigator> {
     @Override
     public void create(Navigator obj) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.ADD_NAVIGATOR);
-        DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+        DAOInterface<Employee> daoInformation = new DAOEmployeeImpl();
         daoInformation.create(obj);
         statement.setString(1, (String) obj.getCategory());
         statement.setInt(2 , DataMemory.INSTANCE.getId());
@@ -42,21 +42,21 @@ public class DAONavigatorImpl implements  DAOEmployeeInterface<Navigator> {
         statement.setInt(1, id);
         ResultSet set = statement.executeQuery();
         while(set.next()){
-            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            DAOInterface<Employee> daoInformation = new DAOEmployeeImpl();
             daoInformation.delete(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
         }
         ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override
-    public Navigator find(int id) throws SQLException {
+    public Navigator find(Integer id) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.FIND_NAVIGATOR);
         statement.setInt(1, id);
         ResultSet set = statement.executeQuery();
         Navigator navigator = new Navigator();
         while(set.next()){
-            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            DAOInterface<Employee> daoInformation = new DAOEmployeeImpl();
             daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
             Employee employee =(Employee) daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
             navigator.setName(employee.getName());
@@ -71,7 +71,7 @@ public class DAONavigatorImpl implements  DAOEmployeeInterface<Navigator> {
     }
 
     @Override
-    public Navigator update(Navigator obj) throws SQLException {
+    public void update(Navigator obj) throws SQLException {
         throw new UnsupportedOperationException();
     }
 
@@ -82,7 +82,7 @@ public class DAONavigatorImpl implements  DAOEmployeeInterface<Navigator> {
         PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_NAVIGATOR);
         ResultSet set = statement.executeQuery();
         while(set.next()){
-            DAOInterface daoInformation = new DAOInformationImpl();
+            DAOInterface daoInformation = new DAOEmployeeImpl();
             Navigator navigator = new Navigator();
             Employee employee = (Employee) daoInformation.find(set.getInt(CommandConstants.ID_INFORMATION));
             navigator.setName(employee.getName());
@@ -96,5 +96,10 @@ public class DAONavigatorImpl implements  DAOEmployeeInterface<Navigator> {
         }
         ConnectionPool.INSTANCE.putBack(connection);
         return answer;
+    }
+
+    @Override
+    public Navigator find(Navigator obj) throws SQLException {
+        throw new UnsupportedOperationException();
     }
 }

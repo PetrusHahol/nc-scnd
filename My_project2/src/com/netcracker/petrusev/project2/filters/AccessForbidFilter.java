@@ -21,7 +21,6 @@ public class AccessForbidFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
-        System.out.println(request.getContextPath());
         response.sendRedirect("file://$MODULE_DIR$/web/index.jsp");//refactor
         filterChain.doFilter(request, response);
     }

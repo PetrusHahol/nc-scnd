@@ -1,6 +1,6 @@
 package com.netcracker.petrusev.project2.DAO.employee;
 
-import com.netcracker.petrusev.project2.DAO.DAOInformationImpl;
+import com.netcracker.petrusev.project2.DAO.DAOEmployeeImpl;
 import com.netcracker.petrusev.project2.DAO.DAOInterface;
 import com.netcracker.petrusev.project2.beans.entities.office.Employee;
 import com.netcracker.petrusev.project2.beans.entities.office.Stewardess;
@@ -21,13 +21,13 @@ import java.util.List;
  * @version 1.0
  *
  */
-public class DAOStewardessImpl implements DAOEmployeeInterface<Stewardess> {
+public class DAOStewardessImpl implements DAOInterface<Stewardess>{
 
     @Override
     public void create(Stewardess obj) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.ADD_STEWARDESS);
-        DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+        DAOInterface<Employee> daoInformation = new DAOEmployeeImpl();
         daoInformation.create(obj);
         statement.setInt(1, obj.getLengthWaist());
         statement.setInt(2 , DataMemory.INSTANCE.getId());
@@ -42,21 +42,21 @@ public class DAOStewardessImpl implements DAOEmployeeInterface<Stewardess> {
         statement.setInt(1, id);
         ResultSet set = statement.executeQuery();
         while(set.next()){
-            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            DAOInterface<Employee> daoInformation = new DAOEmployeeImpl();
             daoInformation.delete(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
         }
         ConnectionPool.INSTANCE.putBack(connection);
     }
 
     @Override
-    public Stewardess find(int id) throws SQLException {
+    public Stewardess find(Integer id) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.retrieve();
         PreparedStatement statement = connection.prepareStatement(SQLConstants.FIND_STEWARDESS);
         statement.setInt(1, id);
         ResultSet set = statement.executeQuery();
         Stewardess stewardess = new Stewardess();
         while(set.next()){
-            DAOInterface<Employee> daoInformation = new DAOInformationImpl();
+            DAOInterface<Employee> daoInformation = new DAOEmployeeImpl();
             daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
             Employee employee =(Employee) daoInformation.find(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
             stewardess.setName(employee.getName());
@@ -71,7 +71,7 @@ public class DAOStewardessImpl implements DAOEmployeeInterface<Stewardess> {
     }
 
     @Override
-    public Stewardess update(Stewardess obj) throws SQLException {
+    public void update(Stewardess obj) throws SQLException {
         throw new UnsupportedOperationException();
     }
 
@@ -82,7 +82,7 @@ public class DAOStewardessImpl implements DAOEmployeeInterface<Stewardess> {
         PreparedStatement statement = connection.prepareStatement(SQLConstants.GET_STEWARDESS);
         ResultSet set = statement.executeQuery();
         while(set.next()){
-            DAOInterface daoInformation = new DAOInformationImpl();
+            DAOInterface daoInformation = new DAOEmployeeImpl();
             Stewardess stewardess = new Stewardess();
             Employee employee = (Employee) daoInformation.find(set.getInt(CommandConstants.ID_INFORMATION));
             stewardess.setName(employee.getName());
@@ -96,5 +96,10 @@ public class DAOStewardessImpl implements DAOEmployeeInterface<Stewardess> {
         }
         ConnectionPool.INSTANCE.putBack(connection);
         return answer;
+    }
+
+    @Override
+    public Stewardess find(Stewardess obj) throws SQLException {
+        throw new UnsupportedOperationException();
     }
 }
