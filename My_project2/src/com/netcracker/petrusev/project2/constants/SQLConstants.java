@@ -48,8 +48,5 @@ public  class SQLConstants {
     public static final String FIND_STEWARDESS = "SELECT * FROM STEWARDESS WHERE id = ?";
     public static final String FIND_RADIOMAN = "SELECT * FROM RADIOMAN WHERE id = ?";
     public static final String FIND_FLIGHT = "SELECT * FROM FLIGHT WHERE id = ?";
-    p[dfskskdfg;lksdjfg;lksjdfl;gkjsd;lkfgj;lskdfjg;lsdjfg;lsdjfg;ljsdf;lgkj]
-
-
-
+    
 }
