@@ -36,6 +36,7 @@ public class DAOUserImpl implements DAOInterface<User>{
                         statement.executeUpdate();
                 } else throw new SQLException("error");
                 ConnectionPool.INSTANCE.putBack(connection);
+                statement.close();
         }
 
 
@@ -56,6 +57,8 @@ public class DAOUserImpl implements DAOInterface<User>{
                         user.setId(set.getInt(CommandConstants.ID));
                 }
                 ConnectionPool.INSTANCE.putBack(connection);
+                set.close();
+                statement.close();
                 return user;
         }
 
@@ -76,6 +79,7 @@ public class DAOUserImpl implements DAOInterface<User>{
                 statement.setInt(1, id);
                 statement.execute();
                 ConnectionPool.INSTANCE.putBack(connection);
+                statement.close();
         }
 
         @Override

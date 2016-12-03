@@ -42,6 +42,7 @@ public class DAOBrigadeImpl implements DAOInterface<Brigade>{
             statement.setInt(6, obj.getId_flight());
             statement.execute();
         }
+        statement.close();
         ConnectionPool.INSTANCE.putBack(connection);
     }
 
@@ -51,6 +52,7 @@ public class DAOBrigadeImpl implements DAOInterface<Brigade>{
         PreparedStatement statement = connection.prepareStatement(SQLConstants.DELETE_BRIGADE);
         statement.setInt(1, id);
         statement.execute();
+        statement.close();
         ConnectionPool.INSTANCE.putBack(connection);
     }
 
@@ -87,6 +89,8 @@ public class DAOBrigadeImpl implements DAOInterface<Brigade>{
             answer.add(brigade);
         }
         ConnectionPool.INSTANCE.putBack(connection);
+        set.close();
+        statement.close();
         return answer;
     }
 

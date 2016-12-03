@@ -37,6 +37,7 @@ public class DAORadiomanImpl implements DAOInterface<Radioman> {
         statement.setInt(1, obj.getCountForeignLanguage());
         statement.setInt(2 , DataMemory.INSTANCE.getId());
         statement.execute();
+        statement.close();
         ConnectionPool.INSTANCE.putBack(connection);
     }
 
@@ -50,6 +51,8 @@ public class DAORadiomanImpl implements DAOInterface<Radioman> {
             DAOInterface<Employee> daoInformation = new DAOEmployeeImpl();
             daoInformation.delete(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
         }
+        set.close();
+        statement.close();
         ConnectionPool.INSTANCE.putBack(connection);
     }
 
@@ -72,6 +75,8 @@ public class DAORadiomanImpl implements DAOInterface<Radioman> {
             radioman.setCountForeignLanguage(set.getInt(CommandConstants.COUNT_FOREIGN_LANGUAGE));
         }
         ConnectionPool.INSTANCE.putBack(connection);
+        set.close();
+        statement.close();
         return radioman;
     }
 
@@ -100,6 +105,8 @@ public class DAORadiomanImpl implements DAOInterface<Radioman> {
             answer.add(radioman);
         }
         ConnectionPool.INSTANCE.putBack(connection);
+        set.close();
+        statement.close();
         return answer;
     }
 }

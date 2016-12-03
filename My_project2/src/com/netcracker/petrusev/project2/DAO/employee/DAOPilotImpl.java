@@ -32,6 +32,7 @@ public class DAOPilotImpl implements DAOInterface<Pilot> {
         statement.setInt(1, obj.getMileage());
         statement.setInt(2 , DataMemory.INSTANCE.getId());
         statement.execute();
+        statement.close();
         ConnectionPool.INSTANCE.putBack(connection);
     }
 
@@ -45,6 +46,8 @@ public class DAOPilotImpl implements DAOInterface<Pilot> {
             DAOInterface<Employee> daoInformation = new DAOEmployeeImpl();
             daoInformation.delete(Integer.valueOf(set.getString(CommandConstants.ID_INFORMATION)));
         }
+        set.close();
+        statement.close();
         ConnectionPool.INSTANCE.putBack(connection);
     }
 
@@ -67,6 +70,8 @@ public class DAOPilotImpl implements DAOInterface<Pilot> {
             pilot.setMileage(set.getInt(CommandConstants.MILEAGE));
         }
         ConnectionPool.INSTANCE.putBack(connection);
+        set.close();
+        statement.close();
         return pilot;
     }
 
@@ -95,6 +100,8 @@ public class DAOPilotImpl implements DAOInterface<Pilot> {
             answer.add(pilot);
         }
         ConnectionPool.INSTANCE.putBack(connection);
+        set.close();
+        statement.close();
         return answer;
     }
 

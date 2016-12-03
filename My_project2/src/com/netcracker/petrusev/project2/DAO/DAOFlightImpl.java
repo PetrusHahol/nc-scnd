@@ -44,6 +44,7 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
             statement.executeUpdate();
     } else throw new SQLException("error");
         ConnectionPool.INSTANCE.putBack(connection);
+        statement.close();
     }
 
     @Override
@@ -77,6 +78,7 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
             statement.setInt(4,obj.getId());
             statement.executeUpdate();
         }
+        statement.close();
         ConnectionPool.INSTANCE.putBack(connection);
     }
 
@@ -95,6 +97,8 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
             answer.add(flight);
         }
         ConnectionPool.INSTANCE.putBack(connection);
+        set.close();
+        statement.close();
         return answer;
     }
 
@@ -112,6 +116,8 @@ public class DAOFlightImpl implements DAOInterface<Flight>{
             flight.setDate(UtilsGregorianCalendar.INSTANCE.convertIntoGregorianCalendar(set.getTimestamp(CommandConstants.DATE)));
         }
         ConnectionPool.INSTANCE.putBack(connection);
+        set.close();
+        statement.close();
         return flight;
     }
 }

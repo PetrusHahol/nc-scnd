@@ -33,6 +33,7 @@ public class DAOStewardessImpl implements DAOInterface<Stewardess>{
         statement.setInt(2 , DataMemory.INSTANCE.getId());
         statement.execute();
         ConnectionPool.INSTANCE.putBack(connection);
+        statement.close();
     }
 
     @Override
@@ -67,6 +68,8 @@ public class DAOStewardessImpl implements DAOInterface<Stewardess>{
             stewardess.setLengthWaist(set.getInt(CommandConstants.LENGTH_WAIST));
         }
         ConnectionPool.INSTANCE.putBack(connection);
+        set.close();
+        statement.close();
         return stewardess;
     }
 
@@ -95,6 +98,8 @@ public class DAOStewardessImpl implements DAOInterface<Stewardess>{
             answer.add(stewardess);
         }
         ConnectionPool.INSTANCE.putBack(connection);
+        set.close();
+        statement.close();
         return answer;
     }
 

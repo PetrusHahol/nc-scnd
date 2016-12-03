@@ -33,6 +33,7 @@ public class DAOEmployeeImpl implements DAOInterface<Employee> {
             DataMemory.INSTANCE.setId(set.getInt(CommandConstants.ID));
         }
         ConnectionPool.INSTANCE.putBack(connection);
+        set.close();
     }
 
 
@@ -43,6 +44,7 @@ public class DAOEmployeeImpl implements DAOInterface<Employee> {
         statement.setInt(1, id);
         statement.execute();
         ConnectionPool.INSTANCE.putBack(connection);
+        statement.close();
     }
 
     @Override
@@ -60,6 +62,7 @@ public class DAOEmployeeImpl implements DAOInterface<Employee> {
             employee.setPassportData(setInfo.getString(CommandConstants.PASSPORT_DATA));
         }
         ConnectionPool.INSTANCE.putBack(connection);
+        statement.close();
         return employee;
     }
 
